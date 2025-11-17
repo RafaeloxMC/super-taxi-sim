@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://8wv5dau7tb2h"]
+
+[ext_resource type="PackedScene" uid="uid://cgruhf0xq2sig" path="res://assets/models/taxi.gltf" id="1_i2df7"]
+[ext_resource type="Script" uid="uid://8r5je374hedj" path="res://scenes/taxi.gd" id="1_qfcln"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qfcln"]
+size = Vector3(1.4013672, 2.0057983, 3.2008057)
+
+[node name="Taxi" type="CharacterBody3D"]
+script = ExtResource("1_qfcln")
+
+[node name="Model" parent="." instance=ExtResource("1_i2df7")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.19850981, 0, 0)
+
+[node name="Front Lights" type="Node3D" parent="Model"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.9850981, 0, 0)
+
+[node name="Right" type="SpotLight3D" parent="Model/Front Lights"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.54945457, 1.0487045, 1.499769)
+light_color = Color(1, 1, 0.3529412, 1)
+
+[node name="Left" type="SpotLight3D" parent="Model/Front Lights"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.54689085, 1.0487045, 1.499769)
+light_color = Color(1, 1, 0.3529412, 1)
+
+[node name="Back Lights" type="Node3D" parent="Model"]
+
+[node name="Left" type="SpotLight3D" parent="Model/Back Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.001744, 6.997325, -16.069029)
+light_color = Color(1, 0.36778843, 0.3002166, 1)
+
+[node name="Right" type="SpotLight3D" parent="Model/Back Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.002406, 6.997325, -16.069029)
+light_color = Color(1, 0.36778843, 0.3002166, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012462139, 1.0018616, 0.0017700195)
+shape = SubResource("BoxShape3D_qfcln")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 1.9517145e-08, -8.521633e-08, 0, 0.9747612, 0.22325012, 8.742278e-08, 0.22325012, -0.9747612, 0, 2.6748052, -3.9805045)
