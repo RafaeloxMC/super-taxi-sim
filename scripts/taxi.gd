@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export var acceleration: float = 20.0
 @export var max_speed: float = 15.0
-@export var friction: float = 20.0
+@export var friction: float = 0.1
 @export var steer_speed: float = 8.0
 @export var steer_limit: float = 1.2
 @export var gravity: float = 20.0
