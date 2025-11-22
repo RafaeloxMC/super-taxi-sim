@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://nfbuw1d6mf3f"]
+
+[ext_resource type="FontFile" uid="uid://b0lry1hnj42jh" path="res://assets/fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="1_i86ny"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i86ny"]
+
+[resource]
+default_font = ExtResource("1_i86ny")
+Button/font_sizes/font_size = 32
+Button/styles/focus = SubResource("StyleBoxEmpty_i86ny")
