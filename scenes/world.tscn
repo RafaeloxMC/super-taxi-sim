@@ -1,17 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=3 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nnsk1"]
-[ext_resource type="Texture2D" uid="uid://ci1b1orjhxnmv" path="res://assets/sky/skybox.png" id="2_rwgxs"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4wyf3"]
-panorama = ExtResource("2_rwgxs")
-
-[sub_resource type="Sky" id="Sky_k0juu"]
-sky_material = SubResource("PanoramaSkyMaterial_4wyf3")
-
-[sub_resource type="Environment" id="Environment_71j4m"]
-background_mode = 2
-sky = SubResource("Sky_k0juu")
+[ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="2_rwgxs"]
 
 [node name="World" type="Node3D"]
 
@@ -33,4 +23,4 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 light_angular_distance = 32.75
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_71j4m")
+environment = ExtResource("2_rwgxs")
