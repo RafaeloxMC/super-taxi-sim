@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://8wv5dau7tb2h"]
 
 [ext_resource type="PackedScene" uid="uid://cgruhf0xq2sig" path="res://assets/models/taxi.gltf" id="1_i2df7"]
-[ext_resource type="Script" uid="uid://8r5je374hedj" path="res://scenes/taxi.gd" id="1_qfcln"]
+[ext_resource type="Script" uid="uid://8r5je374hedj" path="res://scripts/taxi.gd" id="1_qfcln"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qfcln"]
 size = Vector3(1.4013672, 2.0057983, 3.2008057)
