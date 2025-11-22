@@ -7,6 +7,8 @@ extends CharacterBody3D
 @export var steer_limit: float = 1.2
 @export var gravity: float = 20.0
 
+@onready var ingame_ui: Control = $Camera3D/IngameUI
+
 var current_speed: float = 0.0
 var steer_angle: float = 0.0
 
@@ -34,5 +36,7 @@ func _physics_process(delta: float) -> void:
 	var forward_direction: Vector3 = -transform.basis.z
 	velocity.x = forward_direction.x * current_speed
 	velocity.z = forward_direction.z * current_speed
+	
+	ingame_ui.speed = current_speed
 	
 	move_and_slide()

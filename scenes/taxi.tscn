@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://8wv5dau7tb2h"]
+[gd_scene load_steps=5 format=3 uid="uid://8wv5dau7tb2h"]
 
 [ext_resource type="PackedScene" uid="uid://cgruhf0xq2sig" path="res://assets/models/taxi.gltf" id="1_i2df7"]
 [ext_resource type="Script" uid="uid://8r5je374hedj" path="res://scripts/taxi.gd" id="1_qfcln"]
+[ext_resource type="PackedScene" uid="uid://b72tgd6dopu1q" path="res://scenes/ingame_ui.tscn" id="3_a5vla"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qfcln"]
 size = Vector3(1.4013672, 2.0057983, 3.2008057)
@@ -39,3 +40,5 @@ shape = SubResource("BoxShape3D_qfcln")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, 1.9517145e-08, -8.521633e-08, 0, 0.9747612, 0.22325012, 8.742278e-08, 0.22325012, -0.9747612, 0, 2.6748052, -3.9805045)
+
+[node name="IngameUI" parent="Camera3D" instance=ExtResource("3_a5vla")]
