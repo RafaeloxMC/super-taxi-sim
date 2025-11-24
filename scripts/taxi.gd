@@ -1,42 +1,44 @@
-extends CharacterBody3D
+extends RigidBody3D
+@onready var car_mesh = $"."
+@onready var body_mesh = $Car/Model
+@onready var ground_ray = $Car/RayCast3D
+@onready var fr: Node3D = $Car/Model/Wheels/fr
+@onready var fl: Node3D = $Car/Model/Wheels/fl
+var body_tilt = 35
+var sphere_offset = Vector3.DOWN
+var acceleration = 35.0
+var steering = 18.0
+var turn_speed = 4.0
+var turn_stop_limit = 0.75
+var speed_input = 0
+var turn_input = 0
+	
+func _physics_process(delta):
+	car_mesh.position = position + sphere_offset
+	if ground_ray.is_colliding():
+		apply_central_force(-car_mesh.global_transform.basis.z * speed_input)
+	
+func _process(delta):
+	if not ground_ray.is_colliding():
+		print("Ground is not colliding!")
+		return
+	speed_input = Input.get_axis("brake", "accelerate") * acceleration
+	turn_input = Input.get_axis("steer_right", "steer_left") * deg_to_rad(steering)
+	fr.rotation.y = turn_input
+	fl.rotation.y = turn_input
+	
+	if linear_velocity.length() > turn_stop_limit:
+		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, turn_input)
+		car_mesh.global_transform.basis = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta)
+		car_mesh.global_transform = car_mesh.global_transform.orthonormalized()
+		var t = -turn_input * linear_velocity.length() / body_tilt
+		body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 5.0 * delta)
+		if ground_ray.is_colliding():
+			var n = ground_ray.get_collision_normal()
+			var xform = align_with_y(car_mesh.global_transform, n)
+			car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10.0 * delta)
 
-@export var acceleration: float = 20.0
-@export var max_speed: float = 15.0
-@export var friction: float = 0.1
-@export var steer_speed: float = 8.0
-@export var steer_limit: float = 1.2
-@export var gravity: float = 20.0
-
-@onready var ingame_ui: Control = $Camera3D/IngameUI
-
-var current_speed: float = 0.0
-var steer_angle: float = 0.0
-
-func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-	
-	var input_forward: float = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	var input_turn: float = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	
-	var target_steer: float = input_turn
-	var speed_factor: float = abs(current_speed) / max_speed
-	var direction_factor: float = 1.0 if current_speed >= 0.0 else -0.7
-	target_steer *= clampf(speed_factor, 0.1, 1.0) * direction_factor
-	
-	steer_angle = lerp(steer_angle, target_steer * steer_limit, steer_speed * delta)
-	rotate_y(steer_angle * delta)
-	
-	var desired_speed: float = input_forward * max_speed
-	current_speed = move_toward(current_speed, desired_speed, acceleration * delta)
-	
-	if abs(input_forward) < 0.01:
-		current_speed = move_toward(current_speed, 0.0, friction * delta)
-	
-	var forward_direction: Vector3 = -transform.basis.z
-	velocity.x = forward_direction.x * current_speed
-	velocity.z = forward_direction.z * current_speed
-	
-	ingame_ui.speed = current_speed
-	
-	move_and_slide()
+func align_with_y(xform, new_y):
+	xform.basis.y = new_y
+	xform.basis.x = -xform.basis.z.cross(new_y)
+	return xform.orthonormalized()
