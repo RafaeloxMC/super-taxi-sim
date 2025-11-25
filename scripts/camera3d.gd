@@ -12,3 +12,4 @@ func _physics_process(delta):
 	global_transform = global_transform.interpolate_with(target_pos, lerp_speed * delta)
 	if not target.global_position != Vector3.UP:
 		look_at(target.global_position, Vector3.UP)
+		

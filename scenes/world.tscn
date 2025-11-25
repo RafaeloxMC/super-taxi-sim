@@ -18,7 +18,7 @@ use_collision = true
 size = Vector3(11.035828, 5.369995, 1.7154541)
 
 [node name="Taxi" parent="." instance=ExtResource("1_nnsk1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68463945, 1.0479698, -0.51555824)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68463945, 3.8051562, -0.51555824)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.245623, 0)
@@ -28,9 +28,9 @@ light_angular_distance = 32.75
 environment = ExtResource("2_rwgxs")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(-1, 1.9517145e-08, -8.521633e-08, 0, 0.9747612, 0.22325012, 8.742278e-08, 0.22325012, -0.9747612, -0.6734619, 2.6687412, -4.529764)
 current = true
 script = ExtResource("3_k0juu")
+offset = Vector3(0, 26.69, 45.3)
 target = NodePath("../Taxi/Car/Model")
 
 [node name="IngameUI" parent="Camera3D" instance=ExtResource("4_71j4m")]

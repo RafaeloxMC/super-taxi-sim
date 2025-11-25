@@ -1,12 +1,11 @@
 extends RigidBody3D
 
-var sphere_offset = Vector3(0.7, -0.4, 0.5) #Vector3.DOWN
+var sphere_offset = Vector3(0, +0.1, 0)
 var acceleration = 35.0
 var steering = 19.0
 var turn_speed = 4.0
 var turn_stop_limit = 0.75
 var body_tilt = 35
-
 var speed_input = 0
 var turn_input = 0
 
@@ -16,18 +15,20 @@ var turn_input = 0
 @onready var right_wheel = $Car/Model/Wheels/fr
 @onready var left_wheel = $Car/Model/Wheels/fl
 
-#func _ready():
-#	ground_ray.add_exception(self)
-	
+func _ready():
+	lock_rotation = true
+
 func _physics_process(delta):
-	car_mesh.position = position + sphere_offset
+	car_mesh.global_position = global_position + Vector3.UP * sphere_offset.y
+	
 	if ground_ray.is_colliding():
 		apply_central_force(-car_mesh.global_transform.basis.z * speed_input)
-	
+
 func _process(delta):
 	if not ground_ray.is_colliding():
 		return
-	speed_input = Input.get_axis("brake", "accelerate") * acceleration
+	
+	speed_input = Input.get_axis("accelerate", "brake") * acceleration
 	turn_input = Input.get_axis("steer_right", "steer_left") * deg_to_rad(steering)
 	right_wheel.rotation.y = turn_input
 	left_wheel.rotation.y = turn_input
@@ -36,8 +37,10 @@ func _process(delta):
 		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, turn_input)
 		car_mesh.global_transform.basis = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta)
 		car_mesh.global_transform = car_mesh.global_transform.orthonormalized()
+		
 		var t = -turn_input * linear_velocity.length() / body_tilt
 		body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 5.0 * delta)
+		
 		if ground_ray.is_colliding():
 			var n = ground_ray.get_collision_normal()
 			var xform = align_with_y(car_mesh.global_transform, n)
@@ -46,5 +49,4 @@ func _process(delta):
 func align_with_y(xform, new_y):
 	xform.basis.y = new_y
 	xform.basis.x = -xform.basis.z.cross(new_y)
-#	xform.basis = xform.basis.orthonormalized()
 	return xform.orthonormalized()
