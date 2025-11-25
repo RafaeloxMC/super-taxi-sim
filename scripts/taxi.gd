@@ -18,13 +18,13 @@ var turn_input = 0
 func _ready():
 	lock_rotation = true
 
-func _physics_process(delta):
+func _physics_process(_delta: float):
 	car_mesh.global_position = global_position + Vector3.UP * sphere_offset.y
 	
 	if ground_ray.is_colliding():
 		apply_central_force(-car_mesh.global_transform.basis.z * speed_input)
 
-func _process(delta):
+func _process(delta: float):
 	if not ground_ray.is_colliding():
 		return
 	
@@ -46,7 +46,7 @@ func _process(delta):
 			var xform = align_with_y(car_mesh.global_transform, n)
 			car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10.0 * delta)
 
-func align_with_y(xform, new_y):
+func align_with_y(xform: Transform3D, new_y: Vector3):
 	xform.basis.y = new_y
 	xform.basis.x = -xform.basis.z.cross(new_y)
 	return xform.orthonormalized()
