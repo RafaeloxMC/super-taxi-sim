@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://8wv5dau7tb2h"]
+[gd_scene load_steps=5 format=3 uid="uid://8wv5dau7tb2h"]
 
 [ext_resource type="PackedScene" uid="uid://cgruhf0xq2sig" path="res://assets/models/taxi.gltf" id="1_i2df7"]
 [ext_resource type="Script" uid="uid://8r5je374hedj" path="res://scripts/taxi.gd" id="1_qfcln"]
-[ext_resource type="PackedScene" uid="uid://b72tgd6dopu1q" path="res://scenes/ingame_ui.tscn" id="3_a5vla"]
 [ext_resource type="PackedScene" uid="uid://dpqgq5wsh7vw1" path="res://assets/models/taxi_wheels.gltf" id="4_vmegq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vmegq"]
@@ -11,6 +10,8 @@
 script = ExtResource("1_qfcln")
 
 [node name="Car" type="Node3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="Car"]
 
 [node name="Model" parent="Car" instance=ExtResource("1_i2df7")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.19850981, 0, 0)
@@ -51,15 +52,6 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.19951046, 0, 0.000190
 [node name="fl" parent="Car/Model/Wheels" instance=ExtResource("4_vmegq")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.4983988, -0.00044983625, 0.00019013882)
 
-[node name="RayCast3D" type="RayCast3D" parent="Car"]
-target_position = Vector3(0, -100, 0)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 1.9517145e-08, -8.521633e-08, 0, 0.9747612, 0.22325012, 8.742278e-08, 0.22325012, -0.9747612, -3.8146973e-06, 2.6687412, -4.529764)
-current = true
-
-[node name="IngameUI" parent="Camera3D" instance=ExtResource("3_a5vla")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 1.1343803, 0)
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 1.1355244, 0)
 shape = SubResource("SphereShape3D_vmegq")
