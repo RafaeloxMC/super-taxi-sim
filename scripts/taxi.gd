@@ -9,6 +9,8 @@ var body_tilt = 35
 var speed_input = 0
 var turn_input = 0
 
+var smoothed = 0
+
 @onready var car_mesh = $Car
 @onready var body_mesh = $Car/Model
 @onready var ground_ray = $Car/RayCast3D
@@ -30,8 +32,11 @@ func _process(delta: float):
 	
 	speed_input = Input.get_axis("accelerate", "brake") * acceleration
 	turn_input = Input.get_axis("steer_left", "steer_right") * deg_to_rad(steering) * (1 if speed_input > 0 else -1)
-	right_wheel.rotation.y = turn_input
-	left_wheel.rotation.y = turn_input
+	
+	smoothed = lerp(smoothed + 0.0, turn_input, 0.1)
+	
+	right_wheel.rotation.y = smoothed
+	left_wheel.rotation.y = smoothed
 	
 	if linear_velocity.length() > turn_stop_limit:
 		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, turn_input)
