@@ -1,21 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=8 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nnsk1"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="2_rwgxs"]
 [ext_resource type="Script" uid="uid://pvw6thtwhbap" path="res://scripts/camera3d.gd" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://b72tgd6dopu1q" path="res://scenes/ingame_ui.tscn" id="4_71j4m"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
+albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0juu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71j4m"]
+
 [node name="World" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="TemporaryMap" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="TemporaryMap"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.387756, 0, -31.26352)
 use_collision = true
 size = Vector3(183.21301, 1, 207.31793)
+material = SubResource("StandardMaterial3D_qfnet")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="CSGBox3D2" type="CSGBox3D" parent="TemporaryMap"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.285675, 2.1849976, -11.634551)
 use_collision = true
 size = Vector3(11.035828, 5.369995, 1.7154541)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.939304, 0.518219, 12.667656)
+use_collision = true
+size = Vector3(7.04834, 0.2255249, 82.730545)
+material = SubResource("StandardMaterial3D_k0juu")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.950684, 0.518219, -25.173492)
+use_collision = true
+size = Vector3(7.04834, 0.2255249, 82.730545)
+material = SubResource("StandardMaterial3D_71j4m")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 0.997805, -0.066221654, 0, 0.066221654, 0.997805, -91.42389, -0.051359847, -96.44063)
+use_collision = true
+size = Vector3(12.276367, 3.3826904, 37.637085)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.74066, 1.1913452, -121.73071)
+use_collision = true
+size = Vector3(71.64282, 3.3826904, 13.380768)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 0.99675083, -0.08054686, 0, 0.08054686, 0.99675083, -75.951706, -0.052787542, -99.723625)
+use_collision = true
+size = Vector3(12.276367, 3.3826904, 31.000488)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 0.99613833, -0.08779905, 0, 0.08779905, 0.99613833, -61.334587, -0.15405512, -99.771194)
+use_collision = true
+size = Vector3(12.276367, 3.3826904, 31.000488)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 0.9927992, -0.11979029, 0, 0.11979029, 0.9927992, -46.925507, -0.6501889, -99.842316)
+use_collision = true
+size = Vector3(12.276367, 3.3826904, 31.000488)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 0.9808057, -0.19498761, 0, 0.19498761, 0.9808057, -32.11312, -1.7709343, -100.16075)
+use_collision = true
+size = Vector3(12.276367, 3.3826904, 31.000488)
 
 [node name="Taxi" parent="." instance=ExtResource("1_nnsk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68463945, 3.8051562, -0.51555824)
