@@ -29,7 +29,7 @@ func _process(delta: float):
 		return
 	
 	speed_input = Input.get_axis("accelerate", "brake") * acceleration
-	turn_input = Input.get_axis("steer_right", "steer_left") * deg_to_rad(steering)
+	turn_input = Input.get_axis("steer_left", "steer_right") * deg_to_rad(steering) * (1 if speed_input > 0 else -1)
 	right_wheel.rotation.y = turn_input
 	left_wheel.rotation.y = turn_input
 	
