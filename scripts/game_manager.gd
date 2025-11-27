@@ -4,7 +4,7 @@ var taxi_group = "TAXI"
 
 var speed: float = 0
 
-signal radar_triggered()
+signal speed_trap_triggered()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

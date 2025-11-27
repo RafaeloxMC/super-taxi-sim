@@ -6,7 +6,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	color_rect.visible = false
-	GameManager.radar_triggered.connect(radar_triggered)
+	GameManager.speed_trap_triggered.connect(speed_trap_triggered)
 	pass # Replace with function body.
 
 
@@ -14,7 +14,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	speed_label.text = str(abs(roundi(GameManager.speed))) + " km/h"
 
-func radar_triggered():
+func speed_trap_triggered():
 	color_rect.visible = true
 	await get_tree().create_timer(0.05).timeout
 	color_rect.visible = false

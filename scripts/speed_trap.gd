@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group(GameManager.taxi_group):
 		if GameManager.speed > speed_limit:
-			GameManager.radar_triggered.emit()
+			GameManager.speed_trap_triggered.emit()
 			flash.light_energy = light_strength
 			await get_tree().create_timer(timeout).timeout
 			flash.light_energy = 0
