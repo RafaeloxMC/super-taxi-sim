@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-var sphere_offset = Vector3(0, +0.1, 0)
+var sphere_offset = Vector3(0, +0.0206, 0)
 var acceleration = 35.0
 var steering = 19.0
 var turn_speed = 4.0
