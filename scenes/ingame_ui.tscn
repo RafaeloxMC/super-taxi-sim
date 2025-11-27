@@ -28,3 +28,10 @@ theme = ExtResource("1_v3yap")
 theme_override_font_sizes/font_size = 24
 text = "0 km/h"
 horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.49019608)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 0.3355136, 0.26959568, 1)

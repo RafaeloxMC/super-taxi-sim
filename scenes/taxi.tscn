@@ -6,7 +6,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vmegq"]
 
-[node name="Taxi" type="RigidBody3D"]
+[node name="Taxi" type="RigidBody3D" groups=["TAXI"]]
 mass = 1.75
 script = ExtResource("1_qfcln")
 

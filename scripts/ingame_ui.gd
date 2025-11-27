@@ -1,12 +1,20 @@
 extends Control
 
 @onready var speed_label: Label = $Speed
+@onready var color_rect: ColorRect = $ColorRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	color_rect.visible = false
+	GameManager.radar_triggered.connect(radar_triggered)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	speed_label.text = str(abs(roundi(GameManager.speed))) + " km/h"
+
+func radar_triggered():
+	color_rect.visible = true
+	await get_tree().create_timer(0.05).timeout
+	color_rect.visible = false
