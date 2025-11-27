@@ -33,8 +33,26 @@ use_collision = true
 size = Vector3(7.04834, 0.2255249, 82.730545)
 material = SubResource("StandardMaterial3D_k0juu")
 
+[node name="CSGBox3D11" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.189423, 0.518219, 12.667656)
+use_collision = true
+size = Vector3(7.04834, 0.2255249, 82.730545)
+material = SubResource("StandardMaterial3D_k0juu")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.80884, 0.518219, 12.667656)
+use_collision = true
+size = Vector3(7.04834, 0.2255249, 82.730545)
+material = SubResource("StandardMaterial3D_k0juu")
+
 [node name="CSGBox3D4" type="CSGBox3D" parent="TemporaryMap"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.950684, 0.518219, -25.173492)
+use_collision = true
+size = Vector3(7.04834, 0.2255249, 82.730545)
+material = SubResource("StandardMaterial3D_71j4m")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -26.950684, 0.518219, 50.506184)
 use_collision = true
 size = Vector3(7.04834, 0.2255249, 82.730545)
 material = SubResource("StandardMaterial3D_71j4m")
@@ -48,6 +66,11 @@ size = Vector3(12.276367, 3.3826904, 37.637085)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.74066, 1.1913452, -121.73071)
 use_collision = true
 size = Vector3(71.64282, 3.3826904, 13.380768)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.383415, 12.549484, -130.92401)
+use_collision = true
+size = Vector3(183.18166, 26.098969, 4.999832)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="TemporaryMap"]
 transform = Transform3D(1, 0, 0, 0, 0.99675083, -0.08054686, 0, 0.08054686, 0.99675083, -75.951706, -0.052787542, -99.723625)
@@ -80,9 +103,10 @@ light_angular_distance = 32.75
 environment = ExtResource("2_rwgxs")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 9.123532, 0)
 current = true
 script = ExtResource("3_k0juu")
+lerp_speed = 8.0
 offset = Vector3(0, 26.69, -45.3)
 target = NodePath("../Taxi/Car/Model")
 
