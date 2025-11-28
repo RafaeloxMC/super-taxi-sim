@@ -11,11 +11,15 @@ var turn_input = 0
 
 var smoothed = 0
 
+var wheel_step = 0.01
+
 @onready var car_mesh = $Car
 @onready var body_mesh = $Car/Model
 @onready var ground_ray = $Car/RayCast3D
 @onready var right_wheel = $Car/Model/Wheels/fr
 @onready var left_wheel = $Car/Model/Wheels/fl
+@onready var right_wheelb = $Car/Model/Wheels/br
+@onready var left_wheelb = $Car/Model/Wheels/bl
 
 func _ready():
 	lock_rotation = true
@@ -30,6 +34,14 @@ func _process(delta: float):
 	var vel: Vector3 = self.linear_velocity
 	var speed_mps: float = vel.length()
 	GameManager.speed = speed_mps * 3.6
+	
+	var forward_velocity: float = -linear_velocity.dot(car_mesh.global_transform.basis.z)
+	var wheel_rotation_speed: float = forward_velocity * wheel_step * -1
+
+	left_wheel.rotation.x += wheel_rotation_speed
+	right_wheel.rotation.x += wheel_rotation_speed
+	left_wheelb.rotation.x += wheel_rotation_speed
+	right_wheelb.rotation.x += wheel_rotation_speed
 	
 	if not ground_ray.is_colliding():
 		return

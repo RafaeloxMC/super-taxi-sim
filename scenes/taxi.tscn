@@ -41,17 +41,29 @@ light_color = Color(1, 0.36778843, 0.3002166, 1)
 [node name="Wheels" type="Node3D" parent="Car/Model"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.9850981, 0, 0)
 
-[node name="br" parent="Car/Model/Wheels" instance=ExtResource("4_vmegq")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.6010971, 0, -0.70182025)
+[node name="br" type="Node3D" parent="Car/Model/Wheels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 0.2, -0.8)
 
-[node name="bl" parent="Car/Model/Wheels" instance=ExtResource("4_vmegq")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.6977912, -0.00020113587, -0.70182025)
+[node name="Wheel" parent="Car/Model/Wheels/br" instance=ExtResource("4_vmegq")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.049999952, -0.2, 0.100000024)
 
-[node name="fr" parent="Car/Model/Wheels" instance=ExtResource("4_vmegq")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.6010971, 0, 0.5981357)
+[node name="bl" type="Node3D" parent="Car/Model/Wheels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, 0.2, -0.8)
 
-[node name="fl" parent="Car/Model/Wheels" instance=ExtResource("4_vmegq")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.6977912, -0.00044983625, 0.5981357)
+[node name="Wheel" parent="Car/Model/Wheels/bl" instance=ExtResource("4_vmegq")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.050000012, -0.2, 0.100000024)
+
+[node name="fr" type="Node3D" parent="Car/Model/Wheels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 0.2, 0.5)
+
+[node name="Wheel" parent="Car/Model/Wheels/fr" instance=ExtResource("4_vmegq")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.049999952, -0.2, 0.100000024)
+
+[node name="fl" type="Node3D" parent="Car/Model/Wheels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, 0.2, 0.5)
+
+[node name="Wheel" parent="Car/Model/Wheels/fl" instance=ExtResource("4_vmegq")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.050000012, -0.2, 0.100000024)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 1.1355244, 0)
