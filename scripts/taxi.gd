@@ -1,6 +1,7 @@
 extends RigidBody3D
 
 var sphere_offset = Vector3(0, +0.0206, 0)
+var vmax = 150.0
 var acceleration = 35.0
 var steering = 19.0
 var turn_speed = 4.0
@@ -8,9 +9,7 @@ var turn_stop_limit = 0.75
 var body_tilt = 35
 var speed_input = 0
 var turn_input = 0
-
 var smoothed = 0
-
 var wheel_step = 0.01
 
 @onready var car_mesh = $Car
@@ -31,7 +30,7 @@ func _ready():
 func _physics_process(_delta: float):
 	car_mesh.global_position = global_position + Vector3.UP * sphere_offset.y
 	
-	if ground_ray.is_colliding():
+	if ground_ray.is_colliding() && self.linear_velocity.length() * 3.6 < vmax:
 		apply_central_force(-car_mesh.global_transform.basis.z * speed_input)
 
 func _process(delta: float):
