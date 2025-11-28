@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=11 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nnsk1"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="2_rwgxs"]
 [ext_resource type="Script" uid="uid://pvw6thtwhbap" path="res://scripts/camera3d.gd" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://b72tgd6dopu1q" path="res://scenes/ingame_ui.tscn" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://vlep5dj13ss2" path="res://scenes/speed_trap.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://471qwxjmrmmt" path="res://scenes/killzone.tscn" id="6_qfnet"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
 albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
@@ -12,6 +13,8 @@ albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0juu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71j4m"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i7141"]
 
 [node name="World" type="Node3D"]
 
@@ -114,3 +117,9 @@ target = NodePath("../Taxi/Car/Model")
 
 [node name="Radar Control" parent="." instance=ExtResource("5_71j4m")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -60.28485, 1.5, -20.643488)
+
+[node name="Killzone" parent="." instance=ExtResource("6_qfnet")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.7610574, 0)
+shape = SubResource("WorldBoundaryShape3D_i7141")

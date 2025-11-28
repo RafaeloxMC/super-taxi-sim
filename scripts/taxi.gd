@@ -21,8 +21,12 @@ var wheel_step = 0.01
 @onready var right_wheelb = $Car/Model/Wheels/br
 @onready var left_wheelb = $Car/Model/Wheels/bl
 
+var pos = Vector3.ZERO
+
 func _ready():
 	lock_rotation = true
+	pos = self.position
+	GameManager.death.connect(death)
 
 func _physics_process(_delta: float):
 	car_mesh.global_position = global_position + Vector3.UP * sphere_offset.y
@@ -71,3 +75,11 @@ func align_with_y(xform: Transform3D, new_y: Vector3):
 	xform.basis.y = new_y
 	xform.basis.x = -xform.basis.z.cross(new_y)
 	return xform.orthonormalized()
+
+func death() -> void:
+	left_wheel.rotation.x = 0
+	right_wheel.rotation.x = 0
+	left_wheelb.rotation.x = 0
+	right_wheelb.rotation.x = 0
+	self.position = pos
+	self.linear_velocity = Vector3.ZERO

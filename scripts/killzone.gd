@@ -1,11 +1,4 @@
-extends Node
-
-var taxi_group = "TAXI"
-
-var speed: float = 0
-
-signal speed_trap_triggered()
-signal death()
+extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,5 +6,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if body.is_in_group(GameManager.taxi_group):
+		GameManager.death.emit()
