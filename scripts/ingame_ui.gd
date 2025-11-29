@@ -4,12 +4,20 @@ extends Control
 @onready var money: Label = $Money
 @onready var color_rect: ColorRect = $ColorRect
 
+var money_changed = preload("res://scenes/money_changed.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	color_rect.visible = false
 	GameManager.speed_trap_triggered.connect(speed_trap_triggered)
+	GameManager.money_updated.connect(money_update)
 	pass # Replace with function body.
 
+func money_update(old: float, new: float) -> void:
+	var node = money_changed.instantiate()
+	money.add_sibling(node)
+	node.amount = new - old
+	node.tick()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
