@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -20,4 +20,4 @@ func _on_credits_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	SceneManager.call_scene("main_menu")
+	self.queue_free()
