@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://vlep5dj13ss2"]
+[gd_scene load_steps=6 format=3 uid="uid://vlep5dj13ss2"]
 
 [ext_resource type="Script" uid="uid://ckxnqcj2e3dok" path="res://scripts/speed_trap.gd" id="1_2bigu"]
+[ext_resource type="PackedScene" uid="uid://0kpakmny3d4e" path="res://assets/models/speed_trap.gltf" id="2_54uto"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47016"]
 albedo_color = Color(0.41675407, 8.4830447e-07, 2.1658838e-07, 1)
@@ -8,22 +9,36 @@ albedo_color = Color(0.41675407, 8.4830447e-07, 2.1658838e-07, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_07qxt"]
 size = Vector3(11.421875, 4.1884766, 52.624664)
 
-[node name="Speed Trap" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_54uto"]
+size = Vector3(1.199585, 3.2510986, 1.2078247)
+
+[node name="Speed Trap" type="StaticBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("1_2bigu")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5793457, 0)
+visible = false
 size = Vector3(1, 4.1586914, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0045084953, 3.2407947, 0.42529297)
+visible = false
 size = Vector3(0.73431396, 0.5218506, 0.15820313)
 material = SubResource("StandardMaterial3D_47016")
 metadata/_edit_group_ = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="CSGBox3D2"]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0.09817433)
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2109375, 1.5942383, 25.812332)
+shape = SubResource("BoxShape3D_07qxt")
+
+[node name="speed_trap" parent="." instance=ExtResource("2_54uto")]
+transform = Transform3D(-0.1, 0, 1.509958e-08, 0, 0.1, 0, -1.509958e-08, 0, -0.1, 0.0015596151, -0.49429226, 0.30376542)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="speed_trap"]
+transform = Transform3D(1, 0, 3.019916e-07, 0, 1, 0, -3.019916e-07, 0, 1, 0.94475263, 20.922256, -2.2421002)
 light_color = Color(1, 0.24524, 0.18784568, 1)
 light_energy = 0.0
 light_indirect_energy = 16.0
@@ -33,10 +48,8 @@ shadow_enabled = true
 spot_range = 115.0
 spot_angle = 24.0
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2109375, 1.5942383, 25.812332)
-shape = SubResource("BoxShape3D_07qxt")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09979248, 1.1255493, 0.10391235)
+shape = SubResource("BoxShape3D_54uto")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,7 +1,7 @@
-extends Node3D
+extends StaticBody3D
 
 @export var speed_limit: int = 50
-@onready var flash: SpotLight3D = $CSGBox3D2/SpotLight3D
+@onready var flash: SpotLight3D = $speed_trap/SpotLight3D
 
 var timeout: float = 0.05
 var light_strength: float = 16.0
