@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl5e7qunpuvdf"]
+
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_1a5rd"]
+[ext_resource type="Script" uid="uid://dyhe42c5qtbo5" path="res://scripts/company_creation.gd" id="1_nfo62"]
+
+[node name="Company Creation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nfo62")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = 23.0
+offset_right = 162.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1a5rd")
+theme_override_font_sizes/font_size = 32
+text = "Crazy Taxis Co."
+placeholder_text = "Name..."
+alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 399.0
+offset_right = 738.0
+offset_bottom = 443.0
+theme = ExtResource("1_1a5rd")
+text = "Create Company"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -201.0
+offset_right = 300.0
+offset_bottom = -147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1a5rd")
+theme_override_font_sizes/font_size = 48
+text = "Create your Taxi Company!"
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

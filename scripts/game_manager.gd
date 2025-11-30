@@ -2,6 +2,8 @@ extends Node
 
 var taxi_group = "TAXI"
 
+var company_name = "Crazy Taxis Co."
+
 var speed: float = 0
 var money: float = 0.0
 
