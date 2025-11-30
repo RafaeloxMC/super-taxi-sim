@@ -9,6 +9,7 @@ var speed_trap_fine_base = 5.0
 
 signal money_updated(before: float, new: float)
 signal speed_trap_triggered(speed: float, max_allowed: float)
+@warning_ignore("unused_signal")
 signal death()
 
 # Called when the node enters the scene tree for the first time.
@@ -27,6 +28,7 @@ func speed_trap_handler(_speed: float, max_allowed: float):
 	print("emitting with new: " + str(cash - (speed_trap_fine_base * (delta / 1.5))))
 	money_updated.emit(cash, cash - (speed_trap_fine_base * (delta / 1.5)))
 	
+@warning_ignore("unused_parameter")
 func money_update(before: float, new: float):
 	money = new
 	print("NEW MONEY UPDATE! $" + str(new))
