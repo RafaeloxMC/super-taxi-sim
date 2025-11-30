@@ -20,9 +20,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func speed_trap_handler(speed: float, max_allowed: float):
+func speed_trap_handler(_speed: float, max_allowed: float):
 	var delta = speed - max_allowed
-	money_updated.emit(money, money - (speed_trap_fine_base * (delta / 1.5)))
+	var cash = money
+	print("emitting with old: " + str(cash))
+	print("emitting with new: " + str(cash - (speed_trap_fine_base * (delta / 1.5))))
+	money_updated.emit(cash, cash - (speed_trap_fine_base * (delta / 1.5)))
 	
 func money_update(before: float, new: float):
 	money = new
