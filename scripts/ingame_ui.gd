@@ -23,6 +23,10 @@ func money_update(old: float, new: float) -> void:
 func _process(_delta: float) -> void:
 	speed_label.text = str(abs(roundi(GameManager.speed))) + " km/h"
 	money.text = "$" + str(roundf(GameManager.money * 100) / 100.0)
+	if GameManager.money >= 0:
+		money.add_theme_color_override("font_color", Color(10 * 1.0 / 255, 255 * 1.0 / 255, 10 * 1.0 / 255, 200 * 1.0 / 255))
+	else:
+		money.add_theme_color_override("font_color", Color(240 * 1.0 / 255, 10 * 1.0 / 255, 10 * 1.0 / 255, 200 * 1.0 / 255))
 
 func speed_trap_triggered(_speed: float, _max_allowed: float):
 	color_rect.visible = true
