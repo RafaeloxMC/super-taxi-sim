@@ -16,10 +16,7 @@ func _ready() -> void:
 func money_update(old: float, new: float) -> void:
 	var node = money_changed.instantiate()
 	money.add_sibling(node)
-	print("old: " + str(old))
-	print("new: " + str(new))
 	node.amount = new - old
-	print("node amount: " + str(node.amount))
 	node.tick()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
