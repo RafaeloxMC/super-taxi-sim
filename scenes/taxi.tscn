@@ -39,7 +39,7 @@ script = ExtResource("1_qfcln")
 [node name="RayCast3D" type="RayCast3D" parent="Car"]
 
 [node name="Model" parent="Car" instance=ExtResource("1_i2df7")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.19850981, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Car/Model"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -6.727935, 1.0279012, -15.84866)
@@ -69,7 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.002406, 6.997325, -16.0690
 light_color = Color(1, 0.36778843, 0.3002166, 1)
 
 [node name="Wheels" type="Node3D" parent="Car/Model"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.9850981, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
 [node name="br" type="Node3D" parent="Car/Model/Wheels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65, 0.2, -0.8)
