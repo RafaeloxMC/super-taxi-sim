@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl5e7qunpuvdf"]
 
-[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_1a5rd"]
-[ext_resource type="Script" uid="uid://dyhe42c5qtbo5" path="res://scripts/company_creation.gd" id="1_nfo62"]
+[ext_resource type="Script" uid="uid://dyhe42c5qtbo5" path="res://scripts/company_creation.gd" id="1_tepb5"]
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_vb8o8"]
 
 [node name="Company Creation" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_nfo62")
+script = ExtResource("1_tepb5")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 1
@@ -25,7 +25,7 @@ offset_right = 162.0
 offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_1a5rd")
+theme = ExtResource("2_vb8o8")
 theme_override_font_sizes/font_size = 32
 text = "Crazy Taxis Co."
 placeholder_text = "Name..."
@@ -37,7 +37,7 @@ offset_left = 433.0
 offset_top = 399.0
 offset_right = 738.0
 offset_bottom = 443.0
-theme = ExtResource("1_1a5rd")
+theme = ExtResource("2_vb8o8")
 text = "Create Company"
 
 [node name="Label" type="Label" parent="."]
@@ -53,7 +53,7 @@ offset_right = 300.0
 offset_bottom = -147.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_1a5rd")
+theme = ExtResource("2_vb8o8")
 theme_override_font_sizes/font_size = 48
 text = "Create your Taxi Company!"
 

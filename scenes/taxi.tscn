@@ -1,8 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://8wv5dau7tb2h"]
+[gd_scene load_steps=8 format=3 uid="uid://8wv5dau7tb2h"]
 
 [ext_resource type="PackedScene" uid="uid://cgruhf0xq2sig" path="res://assets/models/taxi.gltf" id="1_i2df7"]
 [ext_resource type="Script" uid="uid://8r5je374hedj" path="res://scripts/taxi.gd" id="1_qfcln"]
 [ext_resource type="PackedScene" uid="uid://dpqgq5wsh7vw1" path="res://assets/models/taxi_wheels.gltf" id="4_vmegq"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a5vla"]
+spread = 0.0
+gravity = Vector3(0, 4, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = -2.2351742e-06
+radial_accel_min = -32.04
+radial_accel_max = 42.109997
+turbulence_enabled = true
+turbulence_noise_strength = 0.5
+turbulence_noise_scale = 3.51
+turbulence_noise_speed = Vector3(0, 1, 0)
+turbulence_noise_speed_random = 0.0
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.0
+turbulence_initial_displacement_min = 1.490116e-06
+turbulence_initial_displacement_max = 1.0000015
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vmegq"]
+albedo_color = Color(0.47058824, 0.47058824, 0.47058824, 0.16078432)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t0xgd"]
+material = SubResource("StandardMaterial3D_vmegq")
+size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vmegq"]
 
@@ -16,6 +40,12 @@ script = ExtResource("1_qfcln")
 
 [node name="Model" parent="Car" instance=ExtResource("1_i2df7")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.19850981, 0, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Car/Model"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -6.727935, 1.0279012, -15.84866)
+lifetime = 0.36
+process_material = SubResource("ParticleProcessMaterial_a5vla")
+draw_pass_1 = SubResource("BoxMesh_t0xgd")
 
 [node name="Front Lights" type="Node3D" parent="Car/Model"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.9850981, 0, 0)
