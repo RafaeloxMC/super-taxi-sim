@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsrqoq3kjbuj7"]
+
+[ext_resource type="Script" uid="uid://rim3bc5teudd" path="res://scripts/transaction_history.gd" id="1_im1um"]
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_td37p"]
+
+[node name="Transaction History" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_im1um")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -493.0
+offset_top = -246.5
+offset_right = 493.0
+offset_bottom = 246.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18717614, 0.18717614, 0.18717614, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.0
+offset_top = 37.5
+offset_right = 228.0
+offset_bottom = 91.5
+grow_horizontal = 2
+theme = ExtResource("1_td37p")
+theme_override_font_sizes/font_size = 48
+text = "Transaction History"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -121.0
+offset_right = 254.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_td37p")
+text = "TRANSACTIONS HERE"

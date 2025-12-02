@@ -9,6 +9,8 @@ var money: float = 100.0
 
 var speed_trap_fine_base = 5.0
 
+var transactions: Array[int] = []
+
 signal money_updated(before: float, new: float)
 signal speed_trap_triggered(speed: float, max_allowed: float)
 @warning_ignore("unused_signal")
@@ -31,4 +33,5 @@ func speed_trap_handler(_speed: float, max_allowed: float):
 @warning_ignore("unused_parameter")
 func money_update(before: float, new: float):
 	money = new
+	transactions.append(new - before)
 	print("NEW MONEY UPDATE! $" + str(new))
