@@ -53,20 +53,24 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.9850981, 0, 0)
 [node name="Right" type="SpotLight3D" parent="Car/Model/Front Lights"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.54945457, 1.0487045, 1.499769)
 light_color = Color(1, 1, 0.3529412, 1)
+spot_range = 15.0
 
 [node name="Left" type="SpotLight3D" parent="Car/Model/Front Lights"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.54689085, 1.0487045, 1.499769)
 light_color = Color(1, 1, 0.3529412, 1)
+spot_range = 15.0
 
 [node name="Back Lights" type="Node3D" parent="Car/Model"]
 
 [node name="Left" type="SpotLight3D" parent="Car/Model/Back Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.001744, 6.997325, -16.069029)
 light_color = Color(1, 0.36778843, 0.3002166, 1)
+spot_range = 10.0
 
 [node name="Right" type="SpotLight3D" parent="Car/Model/Back Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.002406, 6.997325, -16.069029)
 light_color = Color(1, 0.36778843, 0.3002166, 1)
+spot_range = 10.0
 
 [node name="Wheels" type="Node3D" parent="Car/Model"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
