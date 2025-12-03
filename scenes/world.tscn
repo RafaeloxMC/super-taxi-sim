@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=13 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nnsk1"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="2_rwgxs"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://vlep5dj13ss2" path="res://scenes/speed_trap.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://471qwxjmrmmt" path="res://scenes/killzone.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://485hl1qoq5nu" path="res://scenes/car.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://drmx08ct1gjwk" path="res://scenes/character.tscn" id="8_4mrxx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
 albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
@@ -121,3 +122,6 @@ shape = SubResource("WorldBoundaryShape3D_i7141")
 
 [node name="Car" parent="." instance=ExtResource("7_i7141")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.229774, 10.057867, 11.458221)
+
+[node name="Character" parent="." instance=ExtResource("8_4mrxx")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 24.815407, 2, 26.649658)
