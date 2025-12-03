@@ -3,6 +3,7 @@ extends Control
 @onready var speed_label: Label = $Speed
 @onready var money: Label = $Money
 @onready var color_rect: ColorRect = $ColorRect
+@onready var fps: Label = $FPS
 
 var money_changed = preload("res://scenes/money_changed.tscn")
 
@@ -27,6 +28,7 @@ func _process(_delta: float) -> void:
 		money.add_theme_color_override("font_color", Color(10 * 1.0 / 255, 255 * 1.0 / 255, 10 * 1.0 / 255, 200 * 1.0 / 255))
 	else:
 		money.add_theme_color_override("font_color", Color(240 * 1.0 / 255, 10 * 1.0 / 255, 10 * 1.0 / 255, 200 * 1.0 / 255))
+	fps.text = str(roundi(Engine.get_frames_per_second())) + " FPS"
 
 func speed_trap_triggered(_speed: float, _max_allowed: float):
 	color_rect.visible = true
