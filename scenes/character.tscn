@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://drmx08ct1gjwk"]
+[gd_scene load_steps=4 format=3 uid="uid://drmx08ct1gjwk"]
 
 [ext_resource type="Script" uid="uid://cpqd3osptfdaw" path="res://scripts/character.gd" id="1_agfs1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dkjbp"]
 radius = 2.479401
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agfs1"]
+albedo_color = Color(0.9843137, 0.9843137, 0, 1)
+emission_enabled = true
+emission = Color(0.9842468, 0.984247, 6.853819e-05, 1)
 
 [node name="Character" type="Area3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
@@ -12,7 +17,14 @@ script = ExtResource("1_agfs1")
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.99975514, 0)
 shape = SubResource("SphereShape3D_dkjbp")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(2.5492086, 0, 0, 0, 1, 0, 0, 0, 2.5492086, 0, -1.0010034, 0)
+inner_radius = 0.9
+sides = 32
+material = SubResource("StandardMaterial3D_agfs1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
