@@ -9,7 +9,7 @@ var money: float = 100.0
 
 var speed_trap_fine_base = 5.0
 
-var transactions: Array[int] = []
+var transactions: Array[float] = []
 
 signal money_updated(before: float, new: float)
 signal speed_trap_triggered(speed: float, max_allowed: float)
