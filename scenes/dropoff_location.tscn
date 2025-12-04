@@ -11,6 +11,7 @@ emission_enabled = true
 emission = Color(0.9842468, 0.984247, 6.853819e-05, 1)
 
 [node name="DropoffLocation" type="Area3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 script = ExtResource("1_pcch4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
