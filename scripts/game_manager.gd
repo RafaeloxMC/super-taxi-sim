@@ -6,6 +6,7 @@ var company_name = "Crazy Taxis Co."
 
 var speed: float = 0
 var money: float = 100.0
+var taxi_base_price: float = 25.0
 
 var speed_trap_fine_base = 5.0
 
