@@ -128,4 +128,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.229774, 10.057867, 11.4582
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 24.815407, 2, 26.649658)
 
 [node name="DropoffLocation" parent="." instance=ExtResource("9_7r4gi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.389153, 0.54304636, 44.333885)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 46.988625, 0.56457436, 43.79013)
