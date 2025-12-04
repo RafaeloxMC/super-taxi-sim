@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://deptlkjmquk5d"]
+
+[ext_resource type="Script" uid="uid://x4uy846qkjv0" path="res://scripts/dropoff_location.gd" id="1_pcch4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_731yo"]
+radius = 2.479401
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_731yo"]
+albedo_color = Color(0.9843137, 0.9843137, 0, 1)
+emission_enabled = true
+emission = Color(0.9842468, 0.984247, 6.853819e-05, 1)
+
+[node name="DropoffLocation" type="Area3D"]
+script = ExtResource("1_pcch4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0001277104, 0)
+shape = SubResource("SphereShape3D_731yo")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="."]
+transform = Transform3D(2.5492086, 0, 0, 0, 1, 0, 0, 0, 2.5492086, 0, 0.00025300682, 0)
+inner_radius = 0.9
+sides = 32
+material = SubResource("StandardMaterial3D_731yo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
