@@ -11,7 +11,9 @@ var speed_trap_fine_base = 5.0
 
 var transactions: Array[float] = []
 
-var customer = ""
+var names: Array[String] = ["John", "Jane", "Walter", "Max", "Mary", "Marc", "Mike", "Patrick"]
+var surnames: Array[String] = ["Star", "White", "Meyers", "Speed", "Brown"]
+var customer: String = ""
 
 signal money_updated(before: float, new: float)
 signal speed_trap_triggered(speed: float, max_allowed: float)
@@ -37,3 +39,8 @@ func money_update(before: float, new: float):
 	money = new
 	transactions.append(new - before)
 	print("NEW MONEY UPDATE! $" + str(new))
+	
+func generate_random_name() -> String:
+	var first_name = names.pick_random()
+	var surname = surnames.pick_random()
+	return first_name + " " + surname

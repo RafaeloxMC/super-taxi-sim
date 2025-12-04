@@ -4,7 +4,8 @@ var taxi_in_area: bool = false
 
 func _process(_delta: float) -> void:
 	if taxi_in_area and GameManager.speed == 0:
-		GameManager.customer = "John Doe"
+		GameManager.customer = GameManager.generate_random_name()
+		print("New customer! " + str(GameManager.customer))
 		self.queue_free()
 
 func _on_body_entered(body: Node3D) -> void:
