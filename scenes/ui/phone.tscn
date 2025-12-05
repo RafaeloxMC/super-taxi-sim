@@ -1,0 +1,304 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc28loonn3ymj"]
+
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_srpgl"]
+
+[node name="Phone" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 441.0
+offset_right = 132.0
+offset_bottom = 640.0
+theme = ExtResource("1_srpgl")
+color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+
+[node name="Screen" type="ColorRect" parent="Frame"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = 11.0
+offset_right = 49.5
+offset_bottom = 172.5
+grow_horizontal = 2
+color = Color(0.288518, 0.28851798, 0.28851798, 1)
+
+[node name="Wallpaper" type="TextureRect" parent="Frame/Screen"]
+layout_mode = 0
+offset_right = 99.0
+offset_bottom = 162.0
+
+[node name="Infobar" type="Control" parent="Frame/Screen/Wallpaper"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Clock" type="Label" parent="Frame/Screen/Wallpaper/Infobar"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 30.0
+offset_bottom = 9.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "12:00"
+
+[node name="New Task" type="Label" parent="Frame/Screen/Wallpaper/Infobar"]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 69.0
+offset_bottom = 9.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "NEW TASK"
+horizontal_alignment = 1
+
+[node name="Battery" type="Label" parent="Frame/Screen/Wallpaper/Infobar"]
+layout_mode = 0
+offset_left = 69.0
+offset_right = 98.0
+offset_bottom = 9.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "84%"
+horizontal_alignment = 2
+
+[node name="AppRow" type="Control" parent="Frame/Screen/Wallpaper"]
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 96.0
+offset_bottom = 46.0
+
+[node name="Bank" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow"]
+layout_mode = 0
+offset_right = 27.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow/Bank"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Bank"
+horizontal_alignment = 1
+
+[node name="Taxi" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow"]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 60.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow/Taxi"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Taxi"
+horizontal_alignment = 1
+
+[node name="Boosts" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow"]
+layout_mode = 0
+offset_left = 66.0
+offset_right = 93.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow/Boosts"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Boosts"
+horizontal_alignment = 1
+
+[node name="AppRow2" type="Control" parent="Frame/Screen/Wallpaper"]
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 96.0
+offset_bottom = 83.0
+
+[node name="Bank" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow2"]
+layout_mode = 0
+offset_right = 27.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow2/Bank"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Clock"
+horizontal_alignment = 1
+
+[node name="Taxi" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow2"]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 60.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow2/Taxi"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Boosts" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow2"]
+layout_mode = 0
+offset_left = 66.0
+offset_right = 93.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow2/Boosts"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Config"
+horizontal_alignment = 1
+
+[node name="AppRow3" type="Control" parent="Frame/Screen/Wallpaper"]
+visible = false
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 84.0
+offset_right = 96.0
+offset_bottom = 120.0
+
+[node name="Bank" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow3"]
+layout_mode = 0
+offset_right = 27.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow3/Bank"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Bank"
+horizontal_alignment = 1
+
+[node name="Taxi" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow3"]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 60.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow3/Taxi"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Taxi"
+horizontal_alignment = 1
+
+[node name="Boosts" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow3"]
+layout_mode = 0
+offset_left = 66.0
+offset_right = 93.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow3/Boosts"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Boosts"
+horizontal_alignment = 1
+
+[node name="AppRow4" type="Control" parent="Frame/Screen/Wallpaper"]
+visible = false
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 123.0
+offset_right = 96.0
+offset_bottom = 159.0
+
+[node name="Bank" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow4"]
+layout_mode = 0
+offset_right = 27.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow4/Bank"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Bank"
+horizontal_alignment = 1
+
+[node name="Taxi" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow4"]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 60.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow4/Taxi"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Taxi"
+horizontal_alignment = 1
+
+[node name="Boosts" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow4"]
+layout_mode = 0
+offset_left = 66.0
+offset_right = 93.0
+offset_bottom = 27.0
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow4/Boosts"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_srpgl")
+theme_override_font_sizes/font_size = 8
+text = "Boosts"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Frame"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -23.0
+offset_right = 28.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "TamTung T4"
