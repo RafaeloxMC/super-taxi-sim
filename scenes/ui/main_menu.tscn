@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://d254w180al3fy" path="res://scripts/main_menu.gd" id="1_wu84c"]
-[ext_resource type="PackedScene" uid="uid://n0gdpr68s0ip" path="res://scenes/settings.tscn" id="2_8ln24"]
+[ext_resource type="PackedScene" uid="uid://n0gdpr68s0ip" path="res://scenes/ui/settings.tscn" id="2_8ln24"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="2_ekxnf"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="3_bqqt6"]
 

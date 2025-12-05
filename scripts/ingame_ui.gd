@@ -5,7 +5,7 @@ extends Control
 @onready var color_rect: ColorRect = $ColorRect
 @onready var fps: Label = $FPS
 
-var money_changed = preload("res://scenes/money_changed.tscn")
+var money_changed = preload("res://scenes/ui/money_changed.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
