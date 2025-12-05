@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://8wv5dau7tb2h"]
 
 [ext_resource type="PackedScene" uid="uid://cgruhf0xq2sig" path="res://assets/models/taxi.gltf" id="1_i2df7"]
-[ext_resource type="Script" uid="uid://8r5je374hedj" path="res://scripts/taxi.gd" id="1_qfcln"]
+[ext_resource type="Script" uid="uid://8r5je374hedj" path="res://scripts/player/taxi.gd" id="1_qfcln"]
 [ext_resource type="PackedScene" uid="uid://dpqgq5wsh7vw1" path="res://assets/models/taxi_wheels.gltf" id="4_vmegq"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a5vla"]

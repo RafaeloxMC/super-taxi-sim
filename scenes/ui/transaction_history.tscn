@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsrqoq3kjbuj7"]
 
-[ext_resource type="Script" uid="uid://rim3bc5teudd" path="res://scripts/transaction_history.gd" id="1_im1um"]
-[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_td37p"]
+[ext_resource type="Script" uid="uid://rim3bc5teudd" path="res://scripts/ui/transaction_history.gd" id="1_kg08i"]
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_a7shj"]
 
 [node name="Transaction History" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_im1um")
+script = ExtResource("1_kg08i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -37,7 +37,7 @@ offset_top = 37.5
 offset_right = 228.0
 offset_bottom = 91.5
 grow_horizontal = 2
-theme = ExtResource("1_td37p")
+theme = ExtResource("2_a7shj")
 theme_override_font_sizes/font_size = 48
 text = "Transaction History"
 
@@ -60,5 +60,5 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_td37p")
+theme = ExtResource("2_a7shj")
 text = "TRANSACTIONS HERE"

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nap83"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="2_00fvi"]
-[ext_resource type="Script" uid="uid://pvw6thtwhbap" path="res://scripts/camera3d.gd" id="3_5kusv"]
+[ext_resource type="Script" uid="uid://pvw6thtwhbap" path="res://scripts/ui/camera3d.gd" id="3_5kusv"]
 [ext_resource type="PackedScene" uid="uid://b72tgd6dopu1q" path="res://scenes/ui/ingame_ui.tscn" id="4_3obwu"]
 [ext_resource type="PackedScene" uid="uid://vlep5dj13ss2" path="res://scenes/speed_trap.tscn" id="5_mp5fl"]
 [ext_resource type="PackedScene" uid="uid://471qwxjmrmmt" path="res://scenes/killzone.tscn" id="6_p1kjr"]

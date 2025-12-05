@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl5e7qunpuvdf"]
 
-[ext_resource type="Script" uid="uid://dyhe42c5qtbo5" path="res://scripts/company_creation.gd" id="1_tepb5"]
+[ext_resource type="Script" uid="uid://dyhe42c5qtbo5" path="res://scripts/ui/company_creation.gd" id="1_tepb5"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_vb8o8"]
 
 [node name="Company Creation" type="Control"]

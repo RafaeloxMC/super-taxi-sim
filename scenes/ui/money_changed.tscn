@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhqy4vhyl4vc8"]
 
-[ext_resource type="Script" uid="uid://bsxv3sjf3giyh" path="res://scripts/money_changed.gd" id="1_qs3ak"]
+[ext_resource type="Script" uid="uid://bsxv3sjf3giyh" path="res://scripts/ui/money_changed.gd" id="1_qs3ak"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_0cc7e"]
 
 [sub_resource type="Animation" id="Animation_0cc7e"]
