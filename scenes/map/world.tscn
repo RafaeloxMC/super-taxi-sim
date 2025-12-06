@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=15 format=3 uid="uid://bm5tjvuqrtah6"]
 
+[ext_resource type="Script" uid="uid://bxjgm7rpn01t2" path="res://scripts/world/world.gd" id="1_00fvi"]
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nap83"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="2_00fvi"]
 [ext_resource type="Script" uid="uid://pvw6thtwhbap" path="res://scripts/ui/camera3d.gd" id="3_5kusv"]
@@ -19,7 +20,9 @@ albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i7141"]
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" node_paths=PackedStringArray("lighting_source")]
+script = ExtResource("1_00fvi")
+lighting_source = NodePath("DirectionalLight3D")
 
 [node name="TemporaryMap" type="Node3D" parent="."]
 
