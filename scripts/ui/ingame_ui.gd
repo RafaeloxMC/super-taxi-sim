@@ -6,6 +6,7 @@ extends Control
 @onready var fps: Label = $FPS
 
 var money_changed = preload("res://scenes/ui/money_changed.tscn")
+var phone = preload("res://scenes/ui/phone.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,6 +30,10 @@ func _process(_delta: float) -> void:
 	else:
 		money.add_theme_color_override("font_color", Color(240 * 1.0 / 255, 10 * 1.0 / 255, 10 * 1.0 / 255, 200 * 1.0 / 255))
 	fps.text = str(roundi(Engine.get_frames_per_second())) + " FPS"
+	
+	if Input.is_action_just_pressed("phone") && !self.has_node("Phone"):
+		var node = phone.instantiate()
+		self.add_child(node)
 
 func speed_trap_triggered(_speed: float, _max_allowed: float):
 	color_rect.visible = true
