@@ -20,9 +20,10 @@ albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i7141"]
 
-[node name="World" type="Node3D" node_paths=PackedStringArray("lighting_source")]
+[node name="World" type="Node3D" node_paths=PackedStringArray("lighting_source", "world_environment")]
 script = ExtResource("1_00fvi")
 lighting_source = NodePath("DirectionalLight3D")
+world_environment = NodePath("WorldEnvironment")
 
 [node name="TemporaryMap" type="Node3D" parent="."]
 
