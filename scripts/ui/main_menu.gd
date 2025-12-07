@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_play_pressed() -> void:
-	SceneManager.call_scene("world")
+	SceneManager.call_scene("create_company")
 
 func _on_settings_pressed() -> void:
 	var node = settings_packed.instantiate()

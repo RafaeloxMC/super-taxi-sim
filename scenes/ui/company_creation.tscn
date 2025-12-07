@@ -58,3 +58,4 @@ theme_override_font_sizes/font_size = 48
 text = "Create your Taxi Company!"
 
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
