@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=16 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="Script" uid="uid://bxjgm7rpn01t2" path="res://scripts/world/world.gd" id="1_00fvi"]
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nap83"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="2_00fvi"]
 [ext_resource type="Script" uid="uid://pvw6thtwhbap" path="res://scripts/ui/camera3d.gd" id="3_5kusv"]
 [ext_resource type="PackedScene" uid="uid://b72tgd6dopu1q" path="res://scenes/ui/ingame_ui.tscn" id="4_3obwu"]
-[ext_resource type="PackedScene" uid="uid://vlep5dj13ss2" path="res://scenes/speed_trap.tscn" id="5_mp5fl"]
+[ext_resource type="PackedScene" uid="uid://vlep5dj13ss2" path="res://scenes/map/speed_trap.tscn" id="5_mp5fl"]
 [ext_resource type="PackedScene" uid="uid://471qwxjmrmmt" path="res://scenes/killzone.tscn" id="6_p1kjr"]
 [ext_resource type="PackedScene" uid="uid://485hl1qoq5nu" path="res://scenes/car.tscn" id="7_il0qy"]
 [ext_resource type="PackedScene" uid="uid://drmx08ct1gjwk" path="res://scenes/character.tscn" id="8_haap5"]
 [ext_resource type="PackedScene" uid="uid://deptlkjmquk5d" path="res://scenes/dropoff_location.tscn" id="9_p7bq3"]
+[ext_resource type="PackedScene" uid="uid://cq6bggfebbami" path="res://scenes/map/street_lamp.tscn" id="11_5kusv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
 albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
@@ -106,6 +107,38 @@ light_angular_distance = 32.75
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_00fvi")
+
+[node name="Lamps" type="Node3D" parent="."]
+
+[node name="StreetLamp" parent="Lamps" instance=ExtResource("11_5kusv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.109619, 1.5152564, 45.89321)
+
+[node name="StreetLamp2" parent="Lamps" instance=ExtResource("11_5kusv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.833193, 1.5152564, 45.89321)
+
+[node name="StreetLamp3" parent="Lamps" instance=ExtResource("11_5kusv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.645296, 1.5152564, 45.89321)
+
+[node name="StreetLamp4" parent="Lamps" instance=ExtResource("11_5kusv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.07625, 1.5152564, 45.89321)
+
+[node name="StreetLamp5" parent="Lamps" instance=ExtResource("11_5kusv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.230316, 1.5152564, 45.89321)
+
+[node name="StreetLamp6" parent="Lamps" instance=ExtResource("11_5kusv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.109619, 1.5152564, -20.52594)
+
+[node name="StreetLamp7" parent="Lamps" instance=ExtResource("11_5kusv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.833193, 1.5152564, -20.52594)
+
+[node name="StreetLamp8" parent="Lamps" instance=ExtResource("11_5kusv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -25.645296, 1.5152564, -20.52594)
+
+[node name="StreetLamp9" parent="Lamps" instance=ExtResource("11_5kusv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -43.07625, 1.5152564, -20.52594)
+
+[node name="StreetLamp10" parent="Lamps" instance=ExtResource("11_5kusv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -58.256374, 1.5152564, -20.52594)
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 9.123532, 0)

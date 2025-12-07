@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cq6bggfebbami"]
+
+[node name="StreetLamp" type="Node3D"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5322266, 0)
+height = 11.064453
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.346344, 1.8272095)
+size = Vector3(1, 0.37512207, 4.654419)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CSGCylinder3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.21705246, 1.5971189)
+light_color = Color(1, 1, 0.25882354, 1)
+light_energy = 10.0
+light_indirect_energy = 10.0
+spot_range = 13.415728
+spot_angle = 37.57
