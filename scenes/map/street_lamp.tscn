@@ -4,6 +4,7 @@
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5322266, 0)
+use_collision = true
 height = 11.064453
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCylinder3D"]
