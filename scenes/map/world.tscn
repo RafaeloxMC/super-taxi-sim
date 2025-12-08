@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://deptlkjmquk5d" path="res://scenes/dropoff_location.tscn" id="9_p7bq3"]
 [ext_resource type="PackedScene" uid="uid://cq6bggfebbami" path="res://scenes/map/street_lamp.tscn" id="11_5kusv"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kusv"]
 albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0juu"]
@@ -26,13 +26,14 @@ script = ExtResource("1_00fvi")
 lighting_source = NodePath("DirectionalLight3D")
 world_environment = NodePath("WorldEnvironment")
 
-[node name="TemporaryMap" type="Node3D" parent="."]
+[node name="TemporaryMap" type="CSGCombiner3D" parent="."]
+use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="TemporaryMap"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.382294, 0, -31.26352)
 use_collision = true
 size = Vector3(360.7531, 1, 207.31793)
-material = SubResource("StandardMaterial3D_qfnet")
+material = SubResource("StandardMaterial3D_5kusv")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="TemporaryMap"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.285675, 2.1849976, -11.634551)
@@ -97,9 +98,6 @@ size = Vector3(12.276367, 3.3826904, 31.000488)
 transform = Transform3D(1, 0, 0, 0, 0.9808057, -0.19498761, 0, 0.19498761, 0.9808057, -32.11312, -1.7709343, -100.16075)
 use_collision = true
 size = Vector3(12.276367, 3.3826904, 31.000488)
-
-[node name="Taxi" parent="." instance=ExtResource("1_nap83")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68463945, 3.8051562, -0.51555824)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.245623, 0)
@@ -181,6 +179,9 @@ shape = SubResource("WorldBoundaryShape3D_i7141")
 
 [node name="Car" parent="." instance=ExtResource("7_il0qy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.229774, 10.057867, 11.458221)
+
+[node name="Taxi" parent="." instance=ExtResource("1_nap83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68463945, 3.8051562, -0.51555824)
 
 [node name="Character" parent="." instance=ExtResource("8_haap5")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 24.815407, 2, 26.649658)

@@ -53,12 +53,14 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -1.9850981, 0, 0)
 [node name="Right" type="SpotLight3D" parent="Car/Model/Front Lights"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.54945457, 1.0487045, 1.499769)
 light_color = Color(1, 1, 0.3529412, 1)
-spot_range = 15.0
+spot_range = 25.0
+spot_attenuation = 0.2
 
 [node name="Left" type="SpotLight3D" parent="Car/Model/Front Lights"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.54689085, 1.0487045, 1.499769)
 light_color = Color(1, 1, 0.3529412, 1)
-spot_range = 15.0
+spot_range = 25.0
+spot_attenuation = 0.2
 
 [node name="Back Lights" type="Node3D" parent="Car/Model"]
 
