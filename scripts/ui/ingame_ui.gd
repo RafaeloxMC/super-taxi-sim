@@ -24,6 +24,12 @@ func money_update(old: float, new: float) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	speed_label.text = str(abs(roundi(GameManager.speed))) + " km/h"
+	if GameManager.speed > GameManager.speed_limit:
+		var col = Color(0.965, 0.347, 0.347, 1.0)
+		col.s = clamp((GameManager.speed - GameManager.speed_limit) / 100 * 4, 0, 1)
+		speed_label.add_theme_color_override("font_color", col)
+	else:
+		speed_label.add_theme_color_override("font_color", Color(255, 255, 255))
 	money.text = "$" + str(roundf(GameManager.money * 100) / 100.0)
 	if GameManager.money >= 0:
 		money.add_theme_color_override("font_color", Color(10 * 1.0 / 255, 255 * 1.0 / 255, 10 * 1.0 / 255, 200 * 1.0 / 255))

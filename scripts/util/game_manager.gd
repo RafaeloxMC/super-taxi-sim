@@ -5,6 +5,7 @@ var taxi_group = "TAXI"
 var company_name = "Crazy Taxis Co."
 
 var speed: float = 0
+var speed_limit: float = 50.0
 var money: float = 100.0
 var taxi_base_price: float = 25.0
 
