@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl5e7qunpuvdf"]
+[gd_scene load_steps=6 format=3 uid="uid://dl5e7qunpuvdf"]
 
 [ext_resource type="Script" uid="uid://dyhe42c5qtbo5" path="res://scripts/ui/company_creation.gd" id="1_tepb5"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_vb8o8"]
+[ext_resource type="Script" uid="uid://c20sexkrk3e77" path="res://scripts/world/display_area.gd" id="3_2ocxq"]
+[ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="3_8k5c7"]
+[ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="4_c7htq"]
 
 [node name="Company Creation" type="Control"]
 layout_mode = 3
@@ -56,6 +59,29 @@ grow_vertical = 2
 theme = ExtResource("2_vb8o8")
 theme_override_font_sizes/font_size = 48
 text = "Create your Taxi Company!"
+
+[node name="3D Container" type="Node3D" parent="."]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="3D Container"]
+use_collision = true
+radius = 2.5283203
+height = 0.26965332
+sides = 24
+script = ExtResource("3_2ocxq")
+
+[node name="Taxi" parent="3D Container/CSGCylinder3D" instance=ExtResource("3_8k5c7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
+
+[node name="Camera3D" type="Camera3D" parent="3D Container"]
+transform = Transform3D(0.69691485, 0, 0.71715397, 0, 1, 0, -0.71715397, 0, 0.69691485, 1.0287051, 1.7222168, 4.9962425)
+current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="3D Container"]
+transform = Transform3D(0.10411176, -0.30720565, 0.945931, 1.2406024e-08, 0.9510997, 0.30888423, -0.99456567, -0.03215847, 0.09902066, 6.4733477, 4.9328713, 0.7615409)
+spot_range = 12.155
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="3D Container"]
+environment = ExtResource("4_c7htq")
 
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
