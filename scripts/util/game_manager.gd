@@ -9,7 +9,7 @@ var speed_limit: float = 50.0
 var money: float = 100.0
 var taxi_base_price: float = 25.0
 
-var time: float = 0
+var time: float = 33750
 var game_speed: float = 1
 var day_length: float = 90000.0
 var units_per_hour: float = day_length / 24.0
