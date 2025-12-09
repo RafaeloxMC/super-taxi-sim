@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm3rauw2fhcxt"]
+
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_wnl1u"]
+[ext_resource type="Script" uid="uid://rmuo0tn7tomj" path="res://scripts/ui/back_button.gd" id="2_twttt"]
+
+[node name="BackButton" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -876.0
+offset_bottom = -582.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wnl1u")
+text = "Back"
+script = ExtResource("2_twttt")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

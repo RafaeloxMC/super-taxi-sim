@@ -16,7 +16,7 @@ func _on_setting_1_pressed() -> void:
 
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	SceneManager.call_scene("credits")
 
 
 func _on_back_pressed() -> void:

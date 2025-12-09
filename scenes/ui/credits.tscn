@@ -1,0 +1,186 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsiy75genwa8o"]
+
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_oap8i"]
+[ext_resource type="PackedScene" uid="uid://dm3rauw2fhcxt" path="res://scenes/ui/back_button.tscn" id="2_jkvjv"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -235.0
+offset_right = 84.0
+offset_bottom = -181.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 48
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Code" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -133.0
+offset_right = 84.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 32
+text = "Code"
+horizontal_alignment = 1
+
+[node name="xvcf" type="Label" parent="Code"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -20.0
+offset_right = 84.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 24
+text = "xvcf"
+horizontal_alignment = 1
+
+[node name="Models" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -50.0
+offset_right = 84.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 32
+text = "Models"
+horizontal_alignment = 1
+
+[node name="xvcf" type="Label" parent="Models"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -20.0
+offset_right = 84.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 24
+text = "xvcf"
+horizontal_alignment = 1
+
+[node name="Music" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = 24.0
+offset_right = 84.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 32
+text = "Music"
+horizontal_alignment = 1
+
+[node name="xvcf" type="Label" parent="Music"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -20.0
+offset_right = 84.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 24
+text = "xvcf"
+horizontal_alignment = 1
+
+[node name="SFX" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = 101.0
+offset_right = 84.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 32
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="xvcf" type="Label" parent="SFX"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -20.0
+offset_right = 84.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_oap8i")
+theme_override_font_sizes/font_size = 24
+text = "xvcf"
+horizontal_alignment = 1
+
+[node name="BackButton" parent="." instance=ExtResource("2_jkvjv")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = -72.0
+grow_vertical = 0
