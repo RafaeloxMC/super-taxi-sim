@@ -28,7 +28,7 @@ material = SubResource("StandardMaterial3D_vmegq")
 size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cp117"]
-size = Vector3(1.3999329, 2.0008392, 3.199463)
+size = Vector3(1.3999329, 1.6999168, 3.199463)
 
 [node name="Car" type="RigidBody3D"]
 mass = 1.75
@@ -99,5 +99,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.65, 0.2, 0.5)
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.050000012, -0.2, 0.100000024)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000289917, 1.0005722, -0.00061035156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000289917, 0.850111, -0.00061035156)
 shape = SubResource("BoxShape3D_cp117")

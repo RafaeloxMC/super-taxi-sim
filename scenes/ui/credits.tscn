@@ -1,7 +1,159 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsiy75genwa8o"]
+[gd_scene load_steps=9 format=3 uid="uid://dsiy75genwa8o"]
 
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_oap8i"]
 [ext_resource type="PackedScene" uid="uid://dm3rauw2fhcxt" path="res://scenes/ui/back_button.tscn" id="2_jkvjv"]
+[ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="3_pqmjv"]
+[ext_resource type="PackedScene" uid="uid://485hl1qoq5nu" path="res://scenes/car.tscn" id="4_e5ls7"]
+
+[sub_resource type="Animation" id="Animation_e5ls7"]
+resource_name = "idle"
+length = 40.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1, 1, 1),
+"points": PackedFloat32Array(3.4029589, -0.25, 0, 0.25, 0, -3.403, -1.6666667, 1.1343265, 0, 0, -3.403, -1.6666667, 0, 0, 0, 3.403, -1.6666667, -1.1343335, 0, 0, 3.4029589, -1.6666667, 6.8744025e-06, 0, 0),
+"times": PackedFloat32Array(0, 10, 20, 30, 40)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1, 1, 1),
+"points": PackedFloat32Array(5.4813533, -0.25, 0, 0.25, 0, 5.481, -1.6666667, 5.888939e-05, 0, 0, 5.481, -1.6666667, 0, 0, 0, 5.481, -1.6666667, 0, 0, 0, 5.4813533, -1.6666667, -5.888939e-05, 0, 0),
+"times": PackedFloat32Array(0, 10, 20, 30, 40)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1, 1, 1),
+"points": PackedFloat32Array(5.0506687, -0.25, 0, 0.25, 0, 5.051, -1.6666667, -5.523364e-05, 0, 0, -5.051, -1.6666667, 1.6836668, 0, 0, -5.051, -1.6666667, 0, 0, 0, 5.0506687, -1.6666667, -1.6836115, 0, 0),
+"times": PackedFloat32Array(0, 10, 20, 30, 40)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1, 1, 1),
+"points": PackedFloat32Array(-0.43879324, -0.25, 0, 0.25, 0, -0.43807763, -1.6666667, -0.000119268894, 0, 0, -0.43807763, -1.6666667, 0, 1.6666667, 0, -0.43807763, -1.6666667, 5.9634447e-05, 1.6666667, -5.9634447e-05, -0.43807763, -1.6666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 10, 20, 30, 40)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1, 1, 1),
+"points": PackedFloat32Array(0.5837254, -0.25, 0, 0.25, 0, -0.58294, -1.6666667, 0.19444422, 0, 0, -2.1537364, -1.6666667, -0.2617994, 1.6666667, 0.2617994, -3.7245326, -1.6666667, -0.22812183, 1.6666667, 0.22812183, -5.699, -1.6666667, 0.26179942, 0, 0),
+"times": PackedFloat32Array(0, 10, 20, 30, 40)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1, 1, 1),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.6666667, 0, 0, 0, 0, -1.6666667, 0, 1.6666667, 0, 0, -1.6666667, 0, 1.6666667, 0, 0, -1.6666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 10, 20, 30, 40)
+}
+
+[sub_resource type="Animation" id="Animation_y0bee"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3.4029589, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5.4813533, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5.0506687, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.43879324, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.5837254, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gleon"]
+resource_name = "spin"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gleon"]
+_data = {
+&"RESET": SubResource("Animation_y0bee"),
+&"idle": SubResource("Animation_e5ls7"),
+&"spin": SubResource("Animation_gleon")
+}
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -184,3 +336,45 @@ offset_top = -128.0
 offset_right = 128.0
 offset_bottom = -72.0
 grow_vertical = 0
+
+[node name="3D Container" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="3D Container"]
+use_collision = true
+size = Vector3(10, 1, 5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="3D Container"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.245623, 0)
+light_angular_distance = 32.75
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="3D Container"]
+environment = ExtResource("3_pqmjv")
+
+[node name="Camera3D" type="Camera3D" parent="3D Container"]
+transform = Transform3D(0.83441514, -0.23414877, 0.49892437, 0, 0.90526503, 0.42484733, -0.5511362, -0.3544991, 0.755367, 3.4029589, 5.4813533, 5.0506687)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="3D Container/Camera3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_gleon")
+}
+autoplay = "idle"
+
+[node name="Taxis" type="Node3D" parent="3D Container"]
+
+[node name="Car" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50009906, 0)
+
+[node name="Car2" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6996543, 0.50009906, 0)
+
+[node name="Car3" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69971, 0.50009906, 0)
+
+[node name="Car4" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 2.2, 0)
+
+[node name="Car5" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 2.2, 0)
+
+[node name="Car6" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9105592, 0)
