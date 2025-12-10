@@ -1,6 +1,6 @@
 extends Control
 
-@onready var label: Label = $ColorRect/ScrollContainer/VBoxContainer/Label
+@onready var label: Label = $ScrollContainer/VBoxContainer/Label
 
 func _ready() -> void:
 	if GameManager.transactions.size() <= 0:

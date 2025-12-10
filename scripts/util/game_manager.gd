@@ -26,6 +26,7 @@ signal money_updated(before: float, new: float)
 signal speed_trap_triggered(speed: float, max_allowed: float)
 @warning_ignore("unused_signal")
 signal death()
+@warning_ignore("unused_signal")
 signal transition(dir: String)
 
 func _ready() -> void:
