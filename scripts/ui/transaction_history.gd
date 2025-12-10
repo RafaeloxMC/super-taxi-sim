@@ -7,4 +7,4 @@ func _ready() -> void:
 		label.text = "No transactions found"
 		return
 	for transaction in GameManager.transactions:
-		label.text += "$" + str(transaction) + "\n"
+		label.text += ("+" if transaction >= 0 else "-") + "$" + str(abs(int(transaction * 100) / 100.0)).pad_decimals(2) + "\n"
