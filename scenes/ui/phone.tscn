@@ -1,7 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc28loonn3ymj"]
+[gd_scene load_steps=8 format=3 uid="uid://dc28loonn3ymj"]
 
 [ext_resource type="Script" uid="uid://btg63sdxjpwm8" path="res://scripts/ui/phone.gd" id="1_m12kn"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_srpgl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m12kn"]
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="Animation" id="Animation_1o12m"]
 length = 0.001
@@ -111,14 +118,15 @@ grow_vertical = 2
 script = ExtResource("1_m12kn")
 apps = [NodePath("Frame/Screen/Wallpaper/AppRow/Bank"), NodePath("Frame/Screen/Wallpaper/AppRow/Taxi"), NodePath("Frame/Screen/Wallpaper/AppRow/Boosts"), NodePath("Frame/Screen/Wallpaper/AppRow2/Clock"), NodePath("Frame/Screen/Wallpaper/AppRow2/Music"), NodePath("Frame/Screen/Wallpaper/AppRow2/Config")]
 
-[node name="Frame" type="ColorRect" parent="."]
+[node name="Frame" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 441.0
 offset_right = 132.0
 offset_bottom = 640.00037
+pivot_offset = Vector2(60.5, 99.5)
 theme = ExtResource("1_srpgl")
-color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_m12kn")
 
 [node name="Screen" type="ColorRect" parent="Frame"]
 layout_mode = 1

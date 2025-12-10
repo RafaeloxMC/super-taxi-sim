@@ -1,0 +1,682 @@
+[gd_scene load_steps=7 format=3 uid="uid://dlt4hqese2ouf"]
+
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_tnjjc"]
+[ext_resource type="Script" uid="uid://deah5jo7rxv77" path="res://scripts/ui/apps/app_loader.gd" id="1_vb2md"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnjjc"]
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Animation" id="Animation_tnjjc"]
+resource_name = "slide"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(11, 441), Vector2(515.5, 224.49982)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Frame:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.5707964]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Frame:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(4.5, 4.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Frame/Screen/Wallpaper/AppRow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Frame/Screen/Wallpaper/AppRow2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Frame/Screen/Wallpaper/AppRow3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Frame/Screen/Wallpaper/AppRow4:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Frame/Screen/Wallpaper/AppRow:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Frame/Screen/Wallpaper/AppRow2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Frame/Screen/Wallpaper/AppRow3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Frame/Screen/Wallpaper/AppRow4:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Frame/Screen/Wallpaper/App Container:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Frame/Screen/Wallpaper/App Container:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vb2md"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(515.5, 224.49982)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Frame:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.5707964]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Frame:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.5, 4.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Frame/Screen/Wallpaper/AppRow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Frame/Screen/Wallpaper/AppRow2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Frame/Screen/Wallpaper/AppRow3:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Frame/Screen/Wallpaper/AppRow4:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Frame/Screen/Wallpaper/AppRow:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Frame/Screen/Wallpaper/AppRow2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Frame/Screen/Wallpaper/AppRow3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Frame/Screen/Wallpaper/AppRow4:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Frame/Screen/Wallpaper/App Container:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Frame/Screen/Wallpaper/App Container:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8gnd5"]
+_data = {
+&"RESET": SubResource("Animation_vb2md"),
+&"slide": SubResource("Animation_tnjjc")
+}
+
+[node name="AppLayout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vb2md")
+
+[node name="Frame" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -99.50018
+offset_right = 60.500244
+offset_bottom = 99.49957
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5707964
+scale = Vector2(4.5, 4.5)
+pivot_offset = Vector2(60.5, 99)
+theme = ExtResource("1_tnjjc")
+theme_override_styles/panel = SubResource("StyleBoxFlat_tnjjc")
+
+[node name="Screen" type="ColorRect" parent="Frame"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_top = 11.0
+offset_right = 49.5
+offset_bottom = 172.5
+grow_horizontal = 2
+color = Color(0.288518, 0.28851798, 0.28851798, 1)
+
+[node name="Wallpaper" type="TextureRect" parent="Frame/Screen"]
+layout_mode = 0
+offset_right = 99.0
+offset_bottom = 162.0
+
+[node name="Infobar" type="Control" parent="Frame/Screen/Wallpaper"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Clock" type="Label" parent="Frame/Screen/Wallpaper/Infobar"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 30.0
+offset_bottom = 9.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "12:00 PM"
+
+[node name="New Task" type="Label" parent="Frame/Screen/Wallpaper/Infobar"]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 69.0
+offset_bottom = 9.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "+1 TASK"
+horizontal_alignment = 1
+
+[node name="Battery" type="Label" parent="Frame/Screen/Wallpaper/Infobar"]
+layout_mode = 0
+offset_left = 69.0
+offset_right = 98.0
+offset_bottom = 9.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "84%"
+horizontal_alignment = 2
+
+[node name="AppRow" type="Control" parent="Frame/Screen/Wallpaper"]
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 96.0
+offset_bottom = 46.0
+
+[node name="Bank" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow"]
+layout_mode = 0
+offset_right = 27.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow/Bank"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Bank"
+horizontal_alignment = 1
+
+[node name="Taxi" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow"]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 60.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow/Taxi"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Taxi"
+horizontal_alignment = 1
+
+[node name="Boosts" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow"]
+layout_mode = 0
+offset_left = 66.0
+offset_right = 93.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow/Boosts"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Boosts"
+horizontal_alignment = 1
+
+[node name="AppRow2" type="Control" parent="Frame/Screen/Wallpaper"]
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 96.0
+offset_bottom = 83.0
+
+[node name="Clock" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow2"]
+layout_mode = 0
+offset_right = 27.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow2/Clock"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Clock"
+horizontal_alignment = 1
+
+[node name="Music" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow2"]
+layout_mode = 0
+offset_left = 33.0
+offset_right = 60.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow2/Music"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Config" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow2"]
+layout_mode = 0
+offset_left = 66.0
+offset_right = 93.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow2/Config"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Config"
+horizontal_alignment = 1
+
+[node name="AppRow3" type="Control" parent="Frame/Screen/Wallpaper"]
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 84.0
+offset_right = 96.0
+offset_bottom = 120.0
+
+[node name="Bank" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow3"]
+visible = false
+layout_mode = 0
+offset_right = 27.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow3/Bank"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Bank"
+horizontal_alignment = 1
+
+[node name="Taxi" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow3"]
+visible = false
+layout_mode = 0
+offset_left = 33.0
+offset_right = 60.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow3/Taxi"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Taxi"
+horizontal_alignment = 1
+
+[node name="Boosts" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow3"]
+visible = false
+layout_mode = 0
+offset_left = 66.0
+offset_right = 93.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow3/Boosts"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Boosts"
+horizontal_alignment = 1
+
+[node name="AppRow4" type="Control" parent="Frame/Screen/Wallpaper"]
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 123.0
+offset_right = 96.0
+offset_bottom = 159.0
+
+[node name="Bank" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow4"]
+visible = false
+layout_mode = 0
+offset_right = 27.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow4/Bank"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Bank"
+horizontal_alignment = 1
+
+[node name="Taxi" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow4"]
+visible = false
+layout_mode = 0
+offset_left = 33.0
+offset_right = 60.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow4/Taxi"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Taxi"
+horizontal_alignment = 1
+
+[node name="Boosts" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow4"]
+visible = false
+layout_mode = 0
+offset_left = 66.0
+offset_right = 93.0
+offset_bottom = 27.0
+pivot_offset = Vector2(13, 13)
+
+[node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow4/Boosts"]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 27.0
+offset_bottom = 36.0
+theme = ExtResource("1_tnjjc")
+theme_override_font_sizes/font_size = 8
+text = "Boosts"
+horizontal_alignment = 1
+
+[node name="App Container" type="ColorRect" parent="Frame/Screen/Wallpaper"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.883038
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.36862746, 0.36862746, 0.36862746, 1)
+
+[node name="Label" type="Label" parent="Frame"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -23.0
+offset_right = 28.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "TamTung T4"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8gnd5")
+}
+autoplay = "slide"
