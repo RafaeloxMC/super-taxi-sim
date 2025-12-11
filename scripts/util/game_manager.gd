@@ -69,6 +69,13 @@ func get_time_string(input_time: float) -> String:
 		hour_12 = 12
 	return "%02d:%02d %s" % [hour_12, minutes, period]
 	
+	
+func add_hours_to_current_time(hours_offset: int) -> String:
+	var buf = time
+	buf += hours_offset * units_per_hour
+	buf -= int(buf / day_length) * day_length
+	return get_time_string(buf)
+	
 func wrapped_distance(a: float, b: float) -> float:
 	var diff = abs(a - b)
 	if diff > day_length * 0.5:

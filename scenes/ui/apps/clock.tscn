@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://kbvnds0rl3l1" path="res://assets/sprites/clock_pointer_hours.png" id="4_bfhk7"]
 [ext_resource type="Texture2D" uid="uid://c8d3bjdhal8yw" path="res://assets/sprites/clock_pointer_minutes.png" id="5_syxkp"]
 
-[node name="Clock" type="ColorRect"]
+[node name="Clock" type="ColorRect" node_paths=PackedStringArray("tz_items")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -16,6 +16,20 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.18717614, 0.18717614, 0.18717614, 1)
 script = ExtResource("1_7yph8")
+tz_items = {
+-5: NodePath("Timezones/New York City"),
+0: NodePath("Timezones/London"),
+1: NodePath("Timezones/Berlin"),
+2: NodePath("Timezones/Athens"),
+9: NodePath("Timezones/Tokyo")
+}
+timezones = Dictionary[int, String]({
+-5: "NYC",
+0: "London",
+1: "Berlin",
+2: "Athens",
+9: "Tokyo"
+})
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -47,15 +61,15 @@ text = "Current time:"
 
 [node name="Time Display" type="Label" parent="Time"]
 layout_mode = 0
-offset_top = 8.0
+offset_top = 10.0
 offset_right = 52.0
-offset_bottom = 17.0
+offset_bottom = 19.0
 theme = ExtResource("2_h48et")
 theme_override_font_sizes/font_size = 8
 text = "00:00AM"
 
 [node name="ClockBG" type="Sprite2D" parent="Time"]
-position = Vector2(26, 45.000004)
+position = Vector2(26, 47.000004)
 scale = Vector2(0.796875, 0.796875)
 texture = ExtResource("3_4mxqw")
 
@@ -64,3 +78,69 @@ texture = ExtResource("4_bfhk7")
 
 [node name="Minutes" type="Sprite2D" parent="Time/ClockBG"]
 texture = ExtResource("5_syxkp")
+
+[node name="Timezones" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 84.0
+offset_top = 12.0
+offset_right = 148.0
+offset_bottom = 94.0
+
+[node name="Current Time" type="Label" parent="Timezones"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 9.0
+theme = ExtResource("2_h48et")
+theme_override_font_sizes/font_size = 8
+text = "Other timezones:"
+horizontal_alignment = 2
+
+[node name="New York City" type="Label" parent="Timezones"]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 64.0
+offset_bottom = 19.0
+theme = ExtResource("2_h48et")
+theme_override_font_sizes/font_size = 8
+text = "NYC: 12:00AM"
+horizontal_alignment = 2
+
+[node name="London" type="Label" parent="Timezones"]
+layout_mode = 0
+offset_top = 19.0
+offset_right = 64.0
+offset_bottom = 28.0
+theme = ExtResource("2_h48et")
+theme_override_font_sizes/font_size = 8
+text = "London: 12:00AM"
+horizontal_alignment = 2
+
+[node name="Berlin" type="Label" parent="Timezones"]
+layout_mode = 0
+offset_top = 28.0
+offset_right = 64.0
+offset_bottom = 37.0
+theme = ExtResource("2_h48et")
+theme_override_font_sizes/font_size = 8
+text = "Berlin: 12:00AM"
+horizontal_alignment = 2
+
+[node name="Athens" type="Label" parent="Timezones"]
+layout_mode = 0
+offset_top = 37.0
+offset_right = 64.0
+offset_bottom = 46.0
+theme = ExtResource("2_h48et")
+theme_override_font_sizes/font_size = 8
+text = "Athens: 12:00AM"
+horizontal_alignment = 2
+
+[node name="Tokyo" type="Label" parent="Timezones"]
+layout_mode = 0
+offset_top = 46.0
+offset_right = 64.0
+offset_bottom = 55.0
+theme = ExtResource("2_h48et")
+theme_override_font_sizes/font_size = 8
+text = "Tokyo: 12:00AM"
+horizontal_alignment = 2
