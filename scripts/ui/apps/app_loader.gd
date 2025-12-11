@@ -2,6 +2,7 @@ extends Control
 
 @onready var app_container: ColorRect = $"Frame/Screen/Wallpaper/App Container"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var clock: Label = $Frame/Screen/Wallpaper/Infobar/Clock
 
 @export var app: PackedScene
 
@@ -30,6 +31,8 @@ func _ready() -> void:
 	node.pivot_offset = target_size * 0.5
 	node.rotation_degrees = 90
 
+func _process(_delta: float) -> void:
+	clock.text = GameManager.get_time_string(GameManager.time)
 
 func close(phone: Control):
 	animation_player.play_backwards("slide")
