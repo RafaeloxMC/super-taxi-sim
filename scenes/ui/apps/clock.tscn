@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cogmr5bdq7rqe"]
+
+[ext_resource type="Script" uid="uid://dsy3onnekdauo" path="res://scripts/ui/apps/clock.gd" id="1_7yph8"]
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_h48et"]
+[ext_resource type="Texture2D" uid="uid://bdivgaioyvnef" path="res://assets/sprites/clock.png" id="3_4mxqw"]
+[ext_resource type="Texture2D" uid="uid://kbvnds0rl3l1" path="res://assets/sprites/clock_pointer_hours.png" id="4_bfhk7"]
+[ext_resource type="Texture2D" uid="uid://c8d3bjdhal8yw" path="res://assets/sprites/clock_pointer_minutes.png" id="5_syxkp"]
+
+[node name="Clock" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -998.883
+offset_bottom = -549.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18717614, 0.18717614, 0.18717614, 1)
+script = ExtResource("1_7yph8")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.5
+offset_right = 12.5
+offset_bottom = 12.0
+grow_horizontal = 2
+theme = ExtResource("2_h48et")
+theme_override_font_sizes/font_size = 10
+text = "Clock"
+
+[node name="Time" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 69.0
+offset_bottom = 94.0
+
+[node name="Current Time" type="Label" parent="Time"]
+layout_mode = 0
+offset_right = 52.0
+offset_bottom = 9.0
+theme = ExtResource("2_h48et")
+theme_override_font_sizes/font_size = 8
+text = "Current time:"
+
+[node name="Time Display" type="Label" parent="Time"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 52.0
+offset_bottom = 17.0
+theme = ExtResource("2_h48et")
+theme_override_font_sizes/font_size = 8
+text = "00:00AM"
+
+[node name="ClockBG" type="Sprite2D" parent="Time"]
+position = Vector2(26, 45.000004)
+scale = Vector2(0.796875, 0.796875)
+texture = ExtResource("3_4mxqw")
+
+[node name="Hours" type="Sprite2D" parent="Time/ClockBG"]
+texture = ExtResource("4_bfhk7")
+
+[node name="Minutes" type="Sprite2D" parent="Time/ClockBG"]
+texture = ExtResource("5_syxkp")
