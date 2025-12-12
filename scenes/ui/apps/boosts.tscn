@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceb3vbdoyhj2d"]
+
+[ext_resource type="Script" uid="uid://dqajlh3jgpwbn" path="res://scripts/ui/apps/boosts.gd" id="1_6unhu"]
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_q31a5"]
+
+[node name="Boosts" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -998.883
+offset_bottom = -549.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18717614, 0.18717614, 0.18717614, 1)
+script = ExtResource("1_6unhu")
+boosts = Dictionary[String, int]({
+"Bribe Cops": 400,
+"Coin Multiplier": 1000,
+"Speed Boost": 150
+})
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5585
+offset_right = 76.4415
+offset_bottom = 12.0
+grow_horizontal = 2
+theme = ExtResource("2_q31a5")
+theme_override_font_sizes/font_size = 10
+text = "Boosts"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5585
+offset_top = 10.0
+offset_right = 76.4415
+offset_bottom = 18.0
+grow_horizontal = 2
+theme = ExtResource("2_q31a5")
+theme_override_font_sizes/font_size = 6
+text = "Make taxi go brr"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5585
+offset_top = -26.5
+offset_right = 71.4415
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

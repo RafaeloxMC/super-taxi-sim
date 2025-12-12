@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dc28loonn3ymj"]
+[gd_scene load_steps=12 format=3 uid="uid://dc28loonn3ymj"]
 
 [ext_resource type="Script" uid="uid://btg63sdxjpwm8" path="res://scripts/ui/phone.gd" id="1_m12kn"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_srpgl"]
 [ext_resource type="PackedScene" uid="uid://bsrqoq3kjbuj7" path="res://scenes/ui/apps/transaction_history.tscn" id="2_1o12m"]
 [ext_resource type="PackedScene" uid="uid://daa5mw45xxvi8" path="res://scenes/ui/apps/taxi_app.tscn" id="3_35dvq"]
 [ext_resource type="PackedScene" uid="uid://cogmr5bdq7rqe" path="res://scenes/ui/apps/clock.tscn" id="4_7iixm"]
+[ext_resource type="PackedScene" uid="uid://ceb3vbdoyhj2d" path="res://scenes/ui/apps/boosts.tscn" id="5_2ixvb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m12kn"]
 bg_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
@@ -122,6 +123,7 @@ script = ExtResource("1_m12kn")
 apps = [NodePath("Frame/Screen/Wallpaper/AppRow/Bank"), NodePath("Frame/Screen/Wallpaper/AppRow/Taxi"), NodePath("Frame/Screen/Wallpaper/AppRow/Boosts"), NodePath("Frame/Screen/Wallpaper/AppRow2/Clock"), NodePath("Frame/Screen/Wallpaper/AppRow2/Music"), NodePath("Frame/Screen/Wallpaper/AppRow2/Config")]
 app_screens = Dictionary[String, PackedScene]({
 "Bank": ExtResource("2_1o12m"),
+"Boosts": ExtResource("5_2ixvb"),
 "Clock": ExtResource("4_7iixm"),
 "Taxi": ExtResource("3_35dvq")
 })
