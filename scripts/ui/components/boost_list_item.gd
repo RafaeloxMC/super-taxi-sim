@@ -10,6 +10,14 @@ var price: int = 0
 func _ready() -> void:
 	label.text = boost
 	button.text = "$" + str(price)
+	if GameManager.boosts.has(boost):
+		button.disabled = true
+		button.text = "SOLD"
 
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	if GameManager.money < price:
+		return
+	GameManager.money_updated.emit(GameManager.money, GameManager.money - price)
+	GameManager.boosts.append(boost)
+	button.disabled = true
+	button.text = "SOLD"

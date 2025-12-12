@@ -1,22 +1,28 @@
 extends Node
 
+# INTERNAL
+
 var taxi_group = "TAXI"
 
 var company_name = "Crazy Taxis Co."
 
+# Base values
 var speed: float = 0
 var speed_limit: float = 50.0
 var money: float = 100.0
 var taxi_base_price: float = 25.0
+var speed_trap_fine_base = 5.0
+var transactions: Array[float] = []
+
+# Boosts system
+var boosts: Array[String] = []
+
+# Time system
 
 var time: float = 33750
 var game_speed: float = 1
 var day_length: float = 90000.0
 var units_per_hour: float = day_length / 24.0
-
-var speed_trap_fine_base = 5.0
-
-var transactions: Array[float] = []
 
 var names: Array[String] = ["John", "Jane", "Walter", "Max", "Mary", "Marc", "Mike", "Patrick"]
 var surnames: Array[String] = ["Star", "White", "Meyers", "Speed", "Brown"]
