@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjkknmm2vk7wt"]
+
+[ext_resource type="Script" uid="uid://c2i4gnr5nsk18" path="res://scripts/world/speed_sign.gd" id="1_63gpp"]
+[ext_resource type="PackedScene" uid="uid://cojjsoxniuko" path="res://assets/models/speed_sign.gltf" id="2_ma4p5"]
+[ext_resource type="FontFile" uid="uid://b0lry1hnj42jh" path="res://assets/fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="3_wwfcj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7c77"]
+size = Vector3(164.56781, 53.847412, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j8h2s"]
+size = Vector3(2.520691, 32.188354, 1.9971924)
+
+[node name="SpeedSign" type="Area3D"]
+script = ExtResource("1_63gpp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.783905, 26.423706, 0)
+shape = SubResource("BoxShape3D_x7c77")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Model" parent="StaticBody3D" instance=ExtResource("2_ma4p5")]
+
+[node name="SpeedLimit" type="Label3D" parent="StaticBody3D/Model"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.2874465, 25.84297, -1.0625114)
+modulate = Color(0.15294118, 0.4862745, 0.6862745, 1)
+text = "40"
+font = ExtResource("3_wwfcj")
+font_size = 1536
+outline_size = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014129639, 15.594177, -0.024841309)
+shape = SubResource("BoxShape3D_j8h2s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
