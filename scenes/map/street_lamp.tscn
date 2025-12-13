@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://btqr5bbym8hgn" path="res://assets/models/street_lamp.gltf" id="2_uli3y"]
 
 [node name="StreetLamp" type="Node3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 script = ExtResource("1_i31hr")
 
 [node name="Model" parent="." instance=ExtResource("2_uli3y")]
