@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=17 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="Script" uid="uid://bxjgm7rpn01t2" path="res://scripts/world/world.gd" id="1_00fvi"]
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nap83"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://drmx08ct1gjwk" path="res://scenes/character.tscn" id="8_haap5"]
 [ext_resource type="PackedScene" uid="uid://deptlkjmquk5d" path="res://scenes/dropoff_location.tscn" id="9_p7bq3"]
 [ext_resource type="PackedScene" uid="uid://cq6bggfebbami" path="res://scenes/map/street_lamp.tscn" id="11_5kusv"]
+[ext_resource type="PackedScene" uid="uid://cjkknmm2vk7wt" path="res://scenes/map/speed_sign.tscn" id="12_3obwu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kusv"]
 albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
@@ -188,3 +189,10 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 46.988625, 0.56457436, 
 
 [node name="Taxi" parent="." instance=ExtResource("1_nap83")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68463945, 3.8051562, -0.51555824)
+
+[node name="SpeedSign" parent="." instance=ExtResource("12_3obwu")]
+transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-08, 0, -0.15, 22.797974, 0.5, 17.893564)
+
+[node name="SpeedSign2" parent="." instance=ExtResource("12_3obwu")]
+transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.5567085e-09, -27.595606, 0.5, -29.836758)
+speed_limit = 80
