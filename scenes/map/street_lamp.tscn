@@ -11,10 +11,10 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 script = ExtResource("1_i31hr")
 
 [node name="Model" parent="." instance=ExtResource("2_uli3y")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 1.6108518)
+transform = Transform3D(-8.742278e-09, 0, 0.20000002, 0, 0.20000002, 0, -0.20000002, 0, -8.742278e-09, 0, 0, -1.9624891)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Model"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 27.906687, 2.2922297)
+transform = Transform3D(6.666666, 0, -8.4703295e-22, 0, -2.9140926e-07, 6.666666, 0, -6.666666, -2.9140926e-07, -22.435162, 51.982338, -9.80672e-07)
 light_color = Color(1, 1, 0.25882354, 1)
 light_energy = 10.0
 light_indirect_energy = 10.0
@@ -22,5 +22,5 @@ spot_range = 13.415728
 spot_angle = 37.57
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00036621094, 5.598816, 0.010787964)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00036621094, 5.598816, -1.9618413)
 shape = SubResource("BoxShape3D_uli3y")
