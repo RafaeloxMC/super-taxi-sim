@@ -193,7 +193,7 @@ target = NodePath("../Taxi/Car/Model")
 [node name="IngameUI" parent="Camera3D" instance=ExtResource("4_3obwu")]
 
 [node name="Radar Control" parent="." instance=ExtResource("5_mp5fl")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -60.28485, 1.5, -20.643488)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -62.972477, 1.5, -20.643488)
 
 [node name="Killzone" parent="." instance=ExtResource("6_p1kjr")]
 
@@ -214,8 +214,8 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 46.988625, 0.56457436, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68463945, 3.8051562, -0.51555824)
 
 [node name="SpeedSign" parent="." instance=ExtResource("12_3obwu")]
-transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-08, 0, -0.15, 22.797974, 0.5, 17.893564)
+transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-08, 0, -0.15, 23.364017, 0.5, 17.893564)
 
 [node name="SpeedSign2" parent="." instance=ExtResource("12_3obwu")]
-transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.5567085e-09, -27.595606, 0.5, -29.836758)
+transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.5567085e-09, -27.595606, 0.5, -50.83197)
 speed_limit = 80
