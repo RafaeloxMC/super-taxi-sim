@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq6bggfebbami"]
+[gd_scene load_steps=4 format=3 uid="uid://cq6bggfebbami"]
 
 [ext_resource type="Script" uid="uid://c0hwvlxv6jabj" path="res://scripts/world/street_lamp.gd" id="1_i31hr"]
 [ext_resource type="PackedScene" uid="uid://btqr5bbym8hgn" path="res://assets/models/street_lamp.gltf" id="2_uli3y"]
 
-[node name="StreetLamp" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_uli3y"]
+size = Vector3(0.79907227, 11.195435, 0.80081177)
+
+[node name="StreetLamp" type="StaticBody3D"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 script = ExtResource("1_i31hr")
 
@@ -17,3 +20,7 @@ light_energy = 10.0
 light_indirect_energy = 10.0
 spot_range = 13.415728
 spot_angle = 37.57
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00036621094, 5.598816, 0.010787964)
+shape = SubResource("BoxShape3D_uli3y")
