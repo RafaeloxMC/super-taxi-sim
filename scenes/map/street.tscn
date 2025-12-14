@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://drvmdqgo2qr2s"]
+
+[ext_resource type="PackedScene" uid="uid://2sd62dy0u4f6" path="res://assets/models/street.gltf" id="1_qghrd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qghrd"]
+size = Vector3(7.9990234, 0.25006104, 8.000244)
+
+[node name="Street" type="StaticBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_qghrd")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00048828125, 0.12496948, -0.00012207031)
+shape = SubResource("BoxShape3D_qghrd")

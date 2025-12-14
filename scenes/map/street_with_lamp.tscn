@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxgamf8626q2l"]
+
+[ext_resource type="PackedScene" uid="uid://drvmdqgo2qr2s" path="res://scenes/map/street.tscn" id="1_802nv"]
+
+[node name="StreetWithLamp" type="Node3D"]
+
+[node name="Street" parent="." instance=ExtResource("1_802nv")]
+
+[node name="Street2" parent="." instance=ExtResource("1_802nv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0, 8.000165)
+
+[node name="Street3" parent="." instance=ExtResource("1_802nv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="Street4" parent="." instance=ExtResource("1_802nv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
