@@ -46,7 +46,7 @@ process_material = SubResource("ParticleProcessMaterial_a5vla")
 draw_pass_1 = SubResource("BoxMesh_t0xgd")
 
 [node name="Front Lights" type="Node3D" parent="Car/Model"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -2.9850981, 0, 4)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.985, 0, 4)
 
 [node name="Right" type="SpotLight3D" parent="Car/Model/Front Lights"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.54945457, 1.0487045, 1.499769)
@@ -61,7 +61,7 @@ spot_range = 25.0
 spot_attenuation = 0.2
 
 [node name="Back Lights" type="Node3D" parent="Car/Model"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 6)
 
 [node name="Left" type="SpotLight3D" parent="Car/Model/Back Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.001744, 6.997325, -16.069029)
