@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://b0lry1hnj42jh" path="res://assets/fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="3_wwfcj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x7c77"]
-size = Vector3(164.56781, 53.847412, 1)
+size = Vector3(164.56781, 53.847412, 0.029876709)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j8h2s"]
 size = Vector3(2.520691, 32.188354, 1.9971924)
@@ -13,8 +13,14 @@ size = Vector3(2.520691, 32.188354, 1.9971924)
 [node name="SpeedSign" type="Area3D"]
 script = ExtResource("1_63gpp")
 
+[node name="DirectionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DirectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.784, 26.424, -0.9798212)
+shape = SubResource("BoxShape3D_x7c77")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.783905, 26.423706, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.784, 26.424, 1.968277)
 shape = SubResource("BoxShape3D_x7c77")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
