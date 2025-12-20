@@ -1,13 +1,13 @@
 extends Area3D
 
-var taxi: bool
+var taxi_body: Node3D
 
 func _process(_delta: float) -> void:
-	var isDropoffReady: bool = false
+	var is_dropoff_ready: bool = false
 	if GameManager.customer != "":
-		isDropoffReady = true
-	self.visible = isDropoffReady
-	if taxi && GameManager.speed <= 0:
+		is_dropoff_ready = true
+	self.visible = is_dropoff_ready
+	if is_dropoff_ready && taxi_body && self.overlaps_body(taxi_body) && GameManager.speed <= 0:
 		GameManager.customer = ""
 		var driven_km = 1
 		# driven_km is a placeholder atm
@@ -16,8 +16,4 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group(GameManager.taxi_group) && GameManager.customer != "":
-		taxi = true
-
-func _on_body_exited(body: Node3D) -> void:
-	if body.is_in_group(GameManager.taxi_group):
-		taxi = false
+		taxi_body = body

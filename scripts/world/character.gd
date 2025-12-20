@@ -1,18 +1,13 @@
 extends Area3D
 
-var taxi_in_area: bool = false
+var taxi_body: Node3D
 
 func _process(_delta: float) -> void:
-	if taxi_in_area and GameManager.speed == 0:
+	if self.overlaps_body(taxi_body) and GameManager.speed == 0:
 		GameManager.customer = GameManager.generate_random_name()
 		print("New customer! " + str(GameManager.customer))
 		self.queue_free()
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group(GameManager.taxi_group):
-		taxi_in_area = true
-
-
-func _on_body_exited(body: Node3D) -> void:
-	if body.is_in_group(GameManager.taxi_group):
-		taxi_in_area = true
+		taxi_body = body
