@@ -33,6 +33,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [global_group]
 
 TAXI=""
+NPC="Group for all NPC cars"
 
 [input]
 
