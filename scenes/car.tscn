@@ -32,6 +32,9 @@ size = Vector3(1.3999329, 1.6999168, 3.199463)
 
 [node name="Car" type="RigidBody3D"]
 mass = 1.75
+gravity_scale = 2.5
+linear_damp = 0.6
+angular_damp = 2.5
 
 [node name="Part" type="Node3D" parent="."]
 
