@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbj734fl4lxj3"]
+
+[ext_resource type="Script" uid="uid://qlbs6et3bgou" path="res://scripts/ui/pause.gd" id="1_k23cl"]
+[ext_resource type="PackedScene" uid="uid://n0gdpr68s0ip" path="res://scenes/ui/settings.tscn" id="2_5834a"]
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_qgos8"]
+
+[node name="PauseMenu" type="Control"]
+visible = false
+z_index = 128
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k23cl")
+settings_packed = ExtResource("2_5834a")
+
+[node name="UI Container" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Background" type="ColorRect" parent="UI Container"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.23529412)
+
+[node name="Title" type="Label" parent="UI Container"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 160.0
+offset_right = 392.0
+offset_bottom = 214.0
+theme = ExtResource("2_qgos8")
+theme_override_font_sizes/font_size = 48
+text = "Super Taxi Sim"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="UI Container"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 216.0
+offset_right = 392.0
+offset_bottom = 270.0
+theme = ExtResource("2_qgos8")
+theme_override_font_sizes/font_size = 24
+text = "Game Paused"
+horizontal_alignment = 1
+
+[node name="Buttons" type="Control" parent="UI Container"]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = 360.0
+offset_right = 369.0
+offset_bottom = 560.0
+
+[node name="Resume" type="Button" parent="UI Container/Buttons"]
+layout_mode = 0
+offset_right = 289.0
+offset_bottom = 60.0
+theme = ExtResource("2_qgos8")
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="UI Container/Buttons"]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 289.0
+offset_bottom = 130.0
+theme = ExtResource("2_qgos8")
+text = "Settings"
+
+[node name="TitleScreen" type="Button" parent="UI Container/Buttons"]
+layout_mode = 0
+offset_top = 140.0
+offset_right = 289.0
+offset_bottom = 200.0
+theme = ExtResource("2_qgos8")
+text = "Title Screen"
+
+[connection signal="pressed" from="UI Container/Buttons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="UI Container/Buttons/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="UI Container/Buttons/TitleScreen" to="." method="_on_title_screen_pressed"]

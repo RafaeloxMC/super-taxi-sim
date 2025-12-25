@@ -12,13 +12,13 @@ var turn_input = 0
 var smoothed = 0
 var wheel_step = 0.01
 
-@onready var car_mesh = $Car
-@onready var body_mesh = $Car/Model
-@onready var ground_ray = $Car/RayCast3D
-@onready var right_wheel = $Car/Model/Wheels/fr
-@onready var left_wheel = $Car/Model/Wheels/fl
-@onready var right_wheelb = $Car/Model/Wheels/br
-@onready var left_wheelb = $Car/Model/Wheels/bl
+@onready var car_mesh: Node3D = $Car
+@onready var body_mesh: Node3D = $Car/Model
+@onready var ground_ray: RayCast3D = $Car/RayCast3D
+@onready var right_wheel: Node3D = $Car/Model/Wheels/fr
+@onready var left_wheel: Node3D = $Car/Model/Wheels/fl
+@onready var right_wheelb: Node3D = $Car/Model/Wheels/br
+@onready var left_wheelb: Node3D = $Car/Model/Wheels/bl
 
 var pos = Vector3.ZERO
 
@@ -26,15 +26,23 @@ func _ready():
 	lock_rotation = true
 	pos = self.position
 	GameManager.death.connect(death)
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 
-func _physics_process(_delta: float):
-	car_mesh.global_position = global_position + Vector3.UP * sphere_offset.y
-	
-	if ground_ray.is_colliding() && self.linear_velocity.length() * 3.6 < vmax:
-		apply_central_force(-car_mesh.global_transform.basis.z * speed_input)
+func _physics_process(delta: float):
+	if global_position.is_finite() && delta != 0:
+		var gpos = global_position + Vector3.UP * sphere_offset.y
+		car_mesh.global_position = gpos
+		
+		if ground_ray.is_colliding() && self.linear_velocity.length() * 3.6 < vmax:
+			var force = -car_mesh.global_transform.basis.z * speed_input
+			apply_central_force(force)
 
 func _process(delta: float):
+	if Engine.time_scale == 0 || delta == 0:
+		return
 	var vel: Vector3 = self.linear_velocity
+	if not vel.is_finite():
+		return
 	var speed_mps: float = vel.length()
 	GameManager.speed = speed_mps * 3.6
 	
@@ -58,9 +66,11 @@ func _process(delta: float):
 	left_wheel.rotation.y = smoothed
 	
 	if linear_velocity.length() > turn_stop_limit:
-		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, turn_input)
-		car_mesh.global_transform.basis = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta)
-		car_mesh.global_transform = car_mesh.global_transform.orthonormalized()
+		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, turn_input).orthonormalized()
+		var slerped = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta).orthonormalized()
+		car_mesh.global_transform.basis = slerped
+		var ortho = car_mesh.global_transform.orthonormalized()
+		car_mesh.global_transform = ortho
 		
 		var t = -turn_input * linear_velocity.length() / body_tilt
 		body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 5.0 * delta)
@@ -68,7 +78,7 @@ func _process(delta: float):
 		if ground_ray.is_colliding():
 			var n = ground_ray.get_collision_normal()
 			var xform = align_with_y(car_mesh.global_transform, n)
-			car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10.0 * delta)
+			car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10.0 * delta).orthonormalized()
 
 func align_with_y(xform: Transform3D, new_y: Vector3):
 	xform.basis.y = new_y

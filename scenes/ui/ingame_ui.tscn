@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b72tgd6dopu1q"]
+[gd_scene load_steps=4 format=3 uid="uid://b72tgd6dopu1q"]
 
 [ext_resource type="Script" uid="uid://ctwtf1vd1ijgf" path="res://scripts/ui/ingame_ui.gd" id="1_031h6"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_v3yap"]
+[ext_resource type="PackedScene" uid="uid://bbj734fl4lxj3" path="res://scenes/ui/pause.tscn" id="3_sl7ef"]
 
 [node name="IngameUI" type="Control"]
 layout_mode = 3
@@ -52,6 +53,9 @@ theme = ExtResource("1_v3yap")
 theme_override_font_sizes/font_size = 24
 text = "0 km/h"
 horizontal_alignment = 2
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_sl7ef")]
+layout_mode = 1
 
 [node name="FPS" type="Label" parent="."]
 layout_mode = 1
