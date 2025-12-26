@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://csyk8ot10f2on"]
+
+[ext_resource type="PackedScene" uid="uid://ba27qug3gu04q" path="res://assets/models/crossing.gltf" id="1_xkhtm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qghrd"]
+size = Vector3(20, 0.25, 8)
+
+[node name="Street" type="StaticBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_xkhtm")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00048828125, 0.12496948, -0.00012207031)
+shape = SubResource("BoxShape3D_qghrd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.00048828125, 0.12496948, -0.00012207031)
+shape = SubResource("BoxShape3D_qghrd")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=18 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="Script" uid="uid://bxjgm7rpn01t2" path="res://scripts/world/world.gd" id="1_00fvi"]
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nap83"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cq6bggfebbami" path="res://scenes/map/street_lamp.tscn" id="11_5kusv"]
 [ext_resource type="PackedScene" uid="uid://cjkknmm2vk7wt" path="res://scenes/map/speed_sign.tscn" id="12_3obwu"]
 [ext_resource type="PackedScene" uid="uid://bxgamf8626q2l" path="res://scenes/map/street_with_lamp.tscn" id="13_mp5fl"]
+[ext_resource type="PackedScene" uid="uid://bxgp3kvw1iiqi" path="res://scenes/map/house_wall.tscn" id="14_p1kjr"]
+[ext_resource type="PackedScene" uid="uid://csyk8ot10f2on" path="res://scenes/map/crossing.tscn" id="15_il0qy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kusv"]
 albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
@@ -219,3 +221,9 @@ transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-0
 [node name="SpeedSign2" parent="." instance=ExtResource("12_3obwu")]
 transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.5567085e-09, -27.595606, 0.5, -50.83197)
 speed_limit = 80
+
+[node name="House" parent="." instance=ExtResource("14_p1kjr")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 27.227303, 0.5, -23.599686)
+
+[node name="Street" parent="." instance=ExtResource("15_il0qy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.5, -73)
