@@ -1,11 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://csyk8ot10f2on"]
+[gd_scene load_steps=4 format=3 uid="uid://csyk8ot10f2on"]
 
 [ext_resource type="PackedScene" uid="uid://ba27qug3gu04q" path="res://assets/models/crossing.gltf" id="1_xkhtm"]
+[ext_resource type="PackedScene" uid="uid://vmh4c2typ7p5" path="res://assets/models/sidewalk_crossing.gltf" id="2_2gjqv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qghrd"]
 size = Vector3(20, 0.25, 8)
 
-[node name="Street" type="StaticBody3D"]
+[node name="Crossing" type="StaticBody3D"]
 
 [node name="Model" parent="." instance=ExtResource("1_xkhtm")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -17,3 +18,15 @@ shape = SubResource("BoxShape3D_qghrd")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.00048828125, 0.12496948, -0.00012207031)
 shape = SubResource("BoxShape3D_qghrd")
+
+[node name="sidewalk_crossing" parent="." instance=ExtResource("2_2gjqv")]
+transform = Transform3D(0.25, 0, 0, 0, 0.5, 0, 0, 0, 0.25, 8, 0, -8)
+
+[node name="sidewalk_crossing2" parent="." instance=ExtResource("2_2gjqv")]
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.5, 0, 0.25, 0, -1.0927847e-08, 8, 0, 8)
+
+[node name="sidewalk_crossing3" parent="." instance=ExtResource("2_2gjqv")]
+transform = Transform3D(-0.25, 0, 2.1855694e-08, 0, 0.5, 0, -2.1855694e-08, 0, -0.25, -8, 0, 8)
+
+[node name="sidewalk_crossing4" parent="." instance=ExtResource("2_2gjqv")]
+transform = Transform3D(3.278354e-08, 0, 0.25, 0, 0.5, 0, -0.25, 0, 3.278354e-08, -8, 0, -8)
