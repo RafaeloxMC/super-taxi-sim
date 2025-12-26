@@ -126,7 +126,7 @@ speed_limit = 80
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, 27.227303, 0.5, -23.599686)
 
 [node name="Street" parent="." instance=ExtResource("14_il0qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, 43)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, 43)
 
 [node name="Crossing" parent="." instance=ExtResource("15_il0qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, 29)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, 29)
