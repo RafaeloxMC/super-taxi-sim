@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=18 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="Script" uid="uid://bxjgm7rpn01t2" path="res://scripts/world/world.gd" id="1_00fvi"]
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nap83"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="2_00fvi"]
 [ext_resource type="Script" uid="uid://pvw6thtwhbap" path="res://scripts/ui/camera3d.gd" id="3_5kusv"]
 [ext_resource type="PackedScene" uid="uid://b72tgd6dopu1q" path="res://scenes/ui/ingame_ui.tscn" id="4_3obwu"]
+[ext_resource type="PackedScene" uid="uid://b3y3baqt5y32s" path="res://scenes/map/corner.tscn" id="4_il0qy"]
 [ext_resource type="PackedScene" uid="uid://vlep5dj13ss2" path="res://scenes/map/speed_trap.tscn" id="5_mp5fl"]
 [ext_resource type="PackedScene" uid="uid://471qwxjmrmmt" path="res://scenes/killzone.tscn" id="6_p1kjr"]
 [ext_resource type="PackedScene" uid="uid://485hl1qoq5nu" path="res://scenes/car.tscn" id="7_il0qy"]
@@ -158,8 +159,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 0.5, 29)
 [node name="Crossing2" parent="TemporaryMap/Streets" instance=ExtResource("15_il0qy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, -39)
 
-[node name="Crossing3" parent="TemporaryMap/Streets" instance=ExtResource("15_il0qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 0.5, -39)
+[node name="Corner" parent="TemporaryMap/Streets" instance=ExtResource("4_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -73, 0.5, -39)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.245623, 0)

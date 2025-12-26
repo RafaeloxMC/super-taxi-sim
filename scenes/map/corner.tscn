@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3y3baqt5y32s"]
+
+[ext_resource type="PackedScene" uid="uid://cgoth2mfbfspb" path="res://assets/models/corner.gltf" id="1_l3oxx"]
+[ext_resource type="PackedScene" uid="uid://bae1nihx1vbtr" path="res://scenes/map/sidewalk_corner.tscn" id="2_l3oxx"]
+[ext_resource type="PackedScene" uid="uid://dkalmsefwm8p6" path="res://scenes/map/sidewalk_crossing.tscn" id="3_yr8xq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qvmnk"]
+size = Vector3(8, 0.25, 14)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l3oxx"]
+size = Vector3(6, 0.25, 8)
+
+[node name="Corner" type="StaticBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_l3oxx")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 3)
+shape = SubResource("BoxShape3D_qvmnk")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.125, 0)
+shape = SubResource("BoxShape3D_l3oxx")
+
+[node name="SidewalkCorner" parent="." instance=ExtResource("2_l3oxx")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -6, 0, 6)
+
+[node name="SidewalkCrossing" parent="." instance=ExtResource("3_yr8xq")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 2, 0, -1.509958e-07, 0, -1, -8, 0, 8)
