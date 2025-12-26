@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://culj5kk3y0jqu"]
+
+[ext_resource type="PackedScene" uid="uid://mvkegaeg1soy" path="res://assets/models/sidewalk.gltf" id="1_3dvla"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3dvla"]
+size = Vector3(4, 0.25, 8)
+
+[node name="Sidewalk" type="StaticBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_3dvla")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.125, 0)
+shape = SubResource("BoxShape3D_3dvla")
