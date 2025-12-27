@@ -12,7 +12,7 @@ var turn_input = 0
 var smoothed = 0
 var wheel_step = 0.01
 
-var boost_duration: float = 5.0
+var boost_duration: float = 15.0
 var boosted: bool = false
 var boost_velocity_multiplier: float = 1.5
 
@@ -31,6 +31,7 @@ func _ready():
 	lock_rotation = true
 	pos = self.position
 	GameManager.death.connect(death)
+	GameManager.taxi_trigger_boost.connect(trigger_boost)
 	process_mode = Node.PROCESS_MODE_PAUSABLE
 	boost.visible = boosted
 
@@ -100,7 +101,10 @@ func death() -> void:
 	self.linear_velocity = Vector3.ZERO
 
 func trigger_boost() -> void:
+	print("Triggering Taxi Speed Boost")
+	boosted = true
 	boost.show()
 	await get_tree().create_timer(boost_duration).timeout
 	boost.hide()
+	boosted = false
 	pass

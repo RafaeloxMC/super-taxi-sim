@@ -17,7 +17,7 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	if GameManager.money < price:
 		return
-	GameManager.money_updated.emit(GameManager.money, GameManager.money - price)
-	GameManager.boosts.append(boost)
+	GameManager.money_updated.emit(GameManager.money, GameManager.money - price, "Bought boost")
+	GameManager.boost_bought.emit(boost)
 	button.disabled = true
 	button.text = "SOLD"

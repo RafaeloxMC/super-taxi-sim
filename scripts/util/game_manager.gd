@@ -35,9 +35,13 @@ signal death()
 @warning_ignore("unused_signal")
 signal transition(dir: String)
 
+signal boost_bought(boost: String)
+signal taxi_trigger_boost()
+
 func _ready() -> void:
 	speed_trap_triggered.connect(speed_trap_handler)
 	money_updated.connect(money_update)
+	boost_bought.connect(boost_bought_handler)
 	
 func _process(delta: float) -> void:
 	increment_time(delta)
@@ -46,6 +50,12 @@ func speed_trap_handler(_speed: float, max_allowed: float):
 	var delta = speed - max_allowed
 	var cash = money
 	money_updated.emit(cash, cash - (speed_trap_fine_base * (delta / 1.5)), "Speeding Fine")
+	
+func boost_bought_handler(boost: String) -> void:
+	boosts.append(boost)
+	print("Boost bought: " + boost)
+	if boost == "Speed Boost":
+		taxi_trigger_boost.emit()
 	
 @warning_ignore("unused_parameter")
 func money_update(before: float, new: float, reason: String):
