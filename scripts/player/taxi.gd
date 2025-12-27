@@ -12,6 +12,10 @@ var turn_input = 0
 var smoothed = 0
 var wheel_step = 0.01
 
+var boost_duration: float = 5.0
+var boosted: bool = false
+var boost_velocity_multiplier: float = 1.5
+
 @onready var car_mesh: Node3D = $Car
 @onready var body_mesh: Node3D = $Car/Model
 @onready var ground_ray: RayCast3D = $Car/RayCast3D
@@ -19,6 +23,7 @@ var wheel_step = 0.01
 @onready var left_wheel: Node3D = $Car/Model/Wheels/fl
 @onready var right_wheelb: Node3D = $Car/Model/Wheels/br
 @onready var left_wheelb: Node3D = $Car/Model/Wheels/bl
+@onready var boost: Node3D = $Car/Model/Boost
 
 var pos = Vector3.ZERO
 
@@ -27,13 +32,14 @@ func _ready():
 	pos = self.position
 	GameManager.death.connect(death)
 	process_mode = Node.PROCESS_MODE_PAUSABLE
+	boost.visible = boosted
 
 func _physics_process(delta: float):
 	if global_position.is_finite() && delta != 0:
 		var gpos = global_position + Vector3.UP * sphere_offset.y
 		car_mesh.global_position = gpos
 		
-		if ground_ray.is_colliding() && self.linear_velocity.length() * 3.6 < vmax:
+		if ground_ray.is_colliding() && self.linear_velocity.length() * 3.6 < (vmax * (boost_velocity_multiplier if boosted else 1.0)):
 			var force = -car_mesh.global_transform.basis.z * speed_input
 			apply_central_force(force)
 
@@ -57,7 +63,7 @@ func _process(delta: float):
 	if not ground_ray.is_colliding():
 		return
 	
-	speed_input = Input.get_axis("accelerate", "brake") * acceleration
+	speed_input = Input.get_axis("accelerate", "brake") * acceleration * (boost_velocity_multiplier if boosted else 1.0)
 	turn_input = Input.get_axis("steer_left", "steer_right") * deg_to_rad(steering) * (1 if speed_input > 0 else -1)
 	
 	smoothed = lerp(smoothed + 0.0, turn_input, 0.1)
@@ -92,3 +98,9 @@ func death() -> void:
 	right_wheelb.rotation.x = 0
 	self.position = pos
 	self.linear_velocity = Vector3.ZERO
+
+func trigger_boost() -> void:
+	boost.show()
+	await get_tree().create_timer(boost_duration).timeout
+	boost.hide()
+	pass
