@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0nd43w1evd1l"]
+
+[ext_resource type="PackedScene" uid="uid://bwwe3uyrek8lt" path="res://assets/models/sidewalk_tcrossing.gltf" id="1_r3hp1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3hp1"]
+size = Vector3(4, 0.25, 20)
+
+[node name="SidewalkTCrossing" type="StaticBody3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_r3hp1")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.125, -6)
+shape = SubResource("BoxShape3D_r3hp1")

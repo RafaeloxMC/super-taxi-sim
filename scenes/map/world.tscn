@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=19 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="Script" uid="uid://bxjgm7rpn01t2" path="res://scripts/world/world.gd" id="1_00fvi"]
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nap83"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://drvmdqgo2qr2s" path="res://scenes/map/street.tscn" id="14_il0qy"]
 [ext_resource type="PackedScene" uid="uid://bxgp3kvw1iiqi" path="res://scenes/map/house_wall.tscn" id="14_p1kjr"]
 [ext_resource type="PackedScene" uid="uid://csyk8ot10f2on" path="res://scenes/map/crossing.tscn" id="15_il0qy"]
+[ext_resource type="PackedScene" uid="uid://b5ll3p0pd5tmt" path="res://scenes/map/t_crossing.tscn" id="16_haap5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kusv"]
 albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
@@ -79,7 +80,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, 43)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, 51)
 
 [node name="Street3" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, 59)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 0.5, 43)
+
+[node name="Street88" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 0.5, 51)
 
 [node name="Street4" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, 15)
@@ -123,6 +127,87 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 0.5, 15)
 [node name="Street10" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 0.5, -39)
 
+[node name="Street27" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0.5, -39)
+
+[node name="Street28" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0.5, -39)
+
+[node name="Street29" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17, 0.5, -39)
+
+[node name="Street30" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25, 0.5, -39)
+
+[node name="Street31" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33, 0.5, -39)
+
+[node name="Street32" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 41, 0.5, -39)
+
+[node name="Street33" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 49, 0.5, -39)
+
+[node name="Street34" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 57, 0.5, -39)
+
+[node name="Street38" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 85, 0.5, -39)
+
+[node name="Street39" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 93, 0.5, -39)
+
+[node name="Street40" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 101, 0.5, -39)
+
+[node name="Street41" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 109, 0.5, -39)
+
+[node name="Street42" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 117, 0.5, -39)
+
+[node name="Street43" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 125, 0.5, -39)
+
+[node name="Street44" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 133, 0.5, -39)
+
+[node name="Street45" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 141, 0.5, -39)
+
+[node name="Street46" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 149, 0.5, -39)
+
+[node name="Street47" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 157, 0.5, -39)
+
+[node name="Street48" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 165, 0.5, -39)
+
+[node name="Street49" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 173, 0.5, -39)
+
+[node name="Street50" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 181, 0.5, -39)
+
+[node name="Street51" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 189, 0.5, -39)
+
+[node name="Street52" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 197, 0.5, -39)
+
+[node name="Street53" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 205, 0.5, -39)
+
+[node name="Street54" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 213, 0.5, -39)
+
+[node name="Street55" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 221, 0.5, -39)
+
+[node name="Street56" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 229, 0.5, -39)
+
 [node name="Street22" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27, 0.5, 29)
 
@@ -159,8 +244,119 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 0.5, 29)
 [node name="Crossing2" parent="TemporaryMap/Streets" instance=ExtResource("15_il0qy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, -39)
 
+[node name="Crossing3" parent="TemporaryMap/Streets" instance=ExtResource("15_il0qy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 0.5, -39)
+
+[node name="Street35" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0.5, 65)
+
+[node name="Street36" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0.5, 65)
+
+[node name="Street37" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17, 0.5, 65)
+
+[node name="Street57" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25, 0.5, 65)
+
+[node name="Street58" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33, 0.5, 65)
+
+[node name="Street59" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 41, 0.5, 65)
+
+[node name="Street60" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 49, 0.5, 65)
+
+[node name="Street80" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 0.5, 29)
+
+[node name="Street81" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0.5, 29)
+
+[node name="Street82" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17, 0.5, 29)
+
+[node name="Street83" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25, 0.5, 29)
+
+[node name="Street84" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 33, 0.5, 29)
+
+[node name="Street85" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 41, 0.5, 29)
+
+[node name="Street86" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 49, 0.5, 29)
+
+[node name="Street87" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 57, 0.5, 29)
+
+[node name="Street61" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 57, 0.5, 65)
+
+[node name="Street62" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 85, 0.5, 65)
+
+[node name="Street63" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 93, 0.5, 65)
+
+[node name="Street64" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 101, 0.5, 65)
+
+[node name="Street65" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 109, 0.5, 65)
+
+[node name="Street66" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 117, 0.5, 65)
+
+[node name="Street67" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 125, 0.5, 65)
+
+[node name="Street68" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 133, 0.5, 65)
+
+[node name="Street69" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 141, 0.5, 65)
+
+[node name="Street70" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 149, 0.5, 65)
+
+[node name="Street71" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 157, 0.5, 65)
+
+[node name="Street72" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 165, 0.5, 65)
+
+[node name="Street73" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 173, 0.5, 65)
+
+[node name="Street74" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 181, 0.5, 65)
+
+[node name="Street75" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 189, 0.5, 65)
+
+[node name="Street76" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 197, 0.5, 65)
+
+[node name="Street77" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 205, 0.5, 65)
+
+[node name="Street78" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 213, 0.5, 65)
+
+[node name="Street79" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 221, 0.5, 65)
+
+[node name="Crossing6" parent="TemporaryMap/Streets" instance=ExtResource("15_il0qy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 0.5, 29)
+
 [node name="Corner" parent="TemporaryMap/Streets" instance=ExtResource("4_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -73, 0.5, -39)
+
+[node name="Corner2" parent="TemporaryMap/Streets" instance=ExtResource("4_il0qy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13, 0.5, 65)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.245623, 0)
@@ -202,20 +398,17 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 46.988625, 0.56457436, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68463945, 3.8051562, -0.51555824)
 
 [node name="SpeedSign" parent="." instance=ExtResource("12_3obwu")]
-transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-08, 0, -0.15, 23.364017, 0.5, 17.893564)
+transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-08, 0, -0.15, -4.6359825, 0.5, 17.893564)
 
 [node name="SpeedSign2" parent="." instance=ExtResource("12_3obwu")]
-transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.5567085e-09, -27.595606, 0.5, -50.83197)
+transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.5567085e-09, -27.595606, 0.5, -47.83197)
 speed_limit = 80
 
 [node name="House" parent="." instance=ExtResource("14_p1kjr")]
-transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.7726974, 0.5, -26.599686)
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.773, 0.5, -27.4)
 
 [node name="House2" parent="." instance=ExtResource("14_p1kjr")]
-transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.7726974, 0.5, -19.599686)
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.773, 0.5, -20.2)
 
-[node name="House3" parent="." instance=ExtResource("14_p1kjr")]
-transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.7726974, 0.5, -12.599686)
-
-[node name="House4" parent="." instance=ExtResource("14_p1kjr")]
-transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.7726974, 0.5, -5.5996857)
+[node name="TCrossing" parent="." instance=ExtResource("16_haap5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 71, 0.5, 65)

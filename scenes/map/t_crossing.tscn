@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5ll3p0pd5tmt"]
+
+[ext_resource type="PackedScene" uid="uid://b0fmnlkt2dij0" path="res://assets/models/tcrossing.gltf" id="1_bn4tf"]
+[ext_resource type="PackedScene" uid="uid://d0nd43w1evd1l" path="res://scenes/map/sidewalk_t_crossing.tscn" id="2_a3ejj"]
+[ext_resource type="PackedScene" uid="uid://dkalmsefwm8p6" path="res://scenes/map/sidewalk_crossing.tscn" id="3_ux1mq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ux1mq"]
+size = Vector3(8, 0.25, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bmiah"]
+size = Vector3(8, 0.25, 6)
+
+[node name="TCrossing" type="StaticBody3D"]
+
+[node name="tcrossing" parent="." instance=ExtResource("1_bn4tf")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="SidewalkTCrossing" parent="." instance=ExtResource("2_a3ejj")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 8, 0, 6)
+
+[node name="SidewalkCrossing" parent="." instance=ExtResource("3_ux1mq")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 2, 0, -1.509958e-07, 0, -1, -8, 0, 8)
+
+[node name="SidewalkCrossing2" parent="." instance=ExtResource("3_ux1mq")]
+transform = Transform3D(1.9470718e-07, 0, 1, 0, 2, 0, -1, 0, 1.9470718e-07, -8, 0, -8)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+shape = SubResource("BoxShape3D_ux1mq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7, 0.125, -3.059797e-07)
+shape = SubResource("BoxShape3D_bmiah")
