@@ -12,7 +12,7 @@ var speed_limit: float = 50.0
 var money: float = 100.0
 var taxi_base_price: float = 25.0
 var speed_trap_fine_base = 5.0
-var transactions: Array[float] = []
+var transactions: Array[Transaction] = []
 
 # Boosts system
 var boosts: Array[String] = []
@@ -28,7 +28,7 @@ var names: Array[String] = ["John", "Jane", "Walter", "Max", "Mary", "Marc", "Mi
 var surnames: Array[String] = ["Star", "White", "Meyers", "Speed", "Brown"]
 var customer: String = ""
 
-signal money_updated(before: float, new: float)
+signal money_updated(before: float, new: float, reason: String)
 signal speed_trap_triggered(speed: float, max_allowed: float)
 @warning_ignore("unused_signal")
 signal death()
@@ -45,12 +45,15 @@ func _process(delta: float) -> void:
 func speed_trap_handler(_speed: float, max_allowed: float):
 	var delta = speed - max_allowed
 	var cash = money
-	money_updated.emit(cash, cash - (speed_trap_fine_base * (delta / 1.5)))
+	money_updated.emit(cash, cash - (speed_trap_fine_base * (delta / 1.5)), "Speeding Fine")
 	
 @warning_ignore("unused_parameter")
-func money_update(before: float, new: float):
+func money_update(before: float, new: float, reason: String):
 	money = new
-	transactions.append(new - before)
+	var transaction: Transaction = Transaction.new()
+	transaction.amount = new - before
+	transaction.reason = reason
+	transactions.append(transaction)
 	print("NEW MONEY UPDATE! $" + str(new))
 	
 func generate_random_name() -> String:

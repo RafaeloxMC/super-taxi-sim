@@ -14,14 +14,17 @@ func _ready() -> void:
 	label.queue_free()
 	for transaction in GameManager.transactions:
 		var new_transaction = Label.new()
-		var amount_positive = (true if transaction >= 0 else false)
+		var amount_positive = (true if transaction.amount >= 0 else false)
 		if amount_positive:
 			new_transaction.add_theme_color_override("font_color", Color(10 * 1.0 / 255, 255 * 1.0 / 255, 10 * 1.0 / 255, 200 * 1.0 / 255))
 		else:
 			new_transaction.add_theme_color_override("font_color", Color(240 * 1.0 / 255, 10 * 1.0 / 255, 10 * 1.0 / 255, 200 * 1.0 / 255))
-		new_transaction.text = ("+" if amount_positive else "-") + "$" + str(abs(int(transaction * 100) / 100.0)).pad_decimals(2)
+		new_transaction.text = ("+" if amount_positive else "-") + "$" + str(abs(int(transaction.amount * 100) / 100.0)).pad_decimals(2)
 		new_transaction.add_theme_font_size_override("font_size", 10)
 		new_transaction.position.y = i * self.size.y + i * gap
+		
+		new_transaction.text = new_transaction.text + ": " + transaction.reason
+		
 		transaction_labels.push_back(new_transaction)
 		v_box_container.add_child(new_transaction)
 		i += 1

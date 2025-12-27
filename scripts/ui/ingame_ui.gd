@@ -15,7 +15,7 @@ func _ready() -> void:
 	GameManager.money_updated.connect(money_update)
 	pass # Replace with function body.
 
-func money_update(old: float, new: float) -> void:
+func money_update(old: float, new: float, _reason: String) -> void:
 	var node = money_changed.instantiate()
 	money.add_sibling(node)
 	node.amount = new - old
