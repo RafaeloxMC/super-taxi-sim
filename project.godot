@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SceneManager="*res://scenes/util/scene_manager.tscn"
 GameManager="*res://scripts/util/game_manager.gd"
 MusicManager="*res://scenes/audio/MusicManager.tscn"
+CustomerManager="*res://scenes/util/customer_manager.tscn"
 
 [display]
 
@@ -34,6 +35,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 TAXI=""
 NPC="Group for all NPC cars"
+ROADS="Group for roads container"
 
 [input]
 

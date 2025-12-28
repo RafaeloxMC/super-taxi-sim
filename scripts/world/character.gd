@@ -6,6 +6,7 @@ func _process(_delta: float) -> void:
 	if taxi_body && self.overlaps_body(taxi_body) and GameManager.speed == 0:
 		GameManager.customer = GameManager.generate_random_name()
 		print("New customer! " + str(GameManager.customer))
+		CustomerManager.spawn_dropoff(GameManager.customer)
 		self.queue_free()
 
 func _on_body_entered(body: Node3D) -> void:

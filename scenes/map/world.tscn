@@ -71,7 +71,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9808057, -0.19498761, 0, 0.19498761, 0.980
 use_collision = true
 size = Vector3(12.276367, 3.3826904, 31.000488)
 
-[node name="Streets" type="Node3D" parent="TemporaryMap"]
+[node name="Streets" type="Node3D" parent="TemporaryMap" groups=["ROADS"]]
 
 [node name="Street" parent="TemporaryMap/Streets" instance=ExtResource("14_il0qy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.5, 43)

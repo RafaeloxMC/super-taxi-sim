@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1vm6kqelp23n"]
+
+[ext_resource type="Script" uid="uid://drb0m3vktnefx" path="res://scripts/util/customer_manager.gd" id="1_rhchj"]
+[ext_resource type="PackedScene" uid="uid://drmx08ct1gjwk" path="res://scenes/character.tscn" id="2_g8k1m"]
+[ext_resource type="PackedScene" uid="uid://deptlkjmquk5d" path="res://scenes/dropoff_location.tscn" id="3_dxycc"]
+
+[node name="CustomerManager" type="Node"]
+script = ExtResource("1_rhchj")
+roads_parent_group = "ROADS"
+pickup_character = ExtResource("2_g8k1m")
+dropoff_location = ExtResource("3_dxycc")
