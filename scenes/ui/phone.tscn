@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc28loonn3ymj"]
+[gd_scene load_steps=13 format=3 uid="uid://dc28loonn3ymj"]
 
 [ext_resource type="Script" uid="uid://btg63sdxjpwm8" path="res://scripts/ui/phone.gd" id="1_m12kn"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_srpgl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://daa5mw45xxvi8" path="res://scenes/ui/apps/taxi_app.tscn" id="3_35dvq"]
 [ext_resource type="PackedScene" uid="uid://cogmr5bdq7rqe" path="res://scenes/ui/apps/clock.tscn" id="4_7iixm"]
 [ext_resource type="PackedScene" uid="uid://ceb3vbdoyhj2d" path="res://scenes/ui/apps/boosts.tscn" id="5_2ixvb"]
+[ext_resource type="PackedScene" uid="uid://daryd4r83xejs" path="res://scenes/ui/apps/music.tscn" id="6_j0bv6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m12kn"]
 bg_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
@@ -125,6 +126,7 @@ app_screens = Dictionary[String, PackedScene]({
 "Bank": ExtResource("2_1o12m"),
 "Boosts": ExtResource("5_2ixvb"),
 "Clock": ExtResource("4_7iixm"),
+"Music": ExtResource("6_j0bv6"),
 "Taxi": ExtResource("3_35dvq")
 })
 

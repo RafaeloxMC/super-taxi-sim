@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://daryd4r83xejs"]
 
-[ext_resource type="Script" uid="uid://rim3bc5teudd" path="res://scripts/ui/transaction_history.gd" id="1_f3m0t"]
+[ext_resource type="Script" uid="uid://x4hyv10tae7m" path="res://scripts/ui/apps/music.gd" id="1_f3m0t"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_2rqo8"]
 
-[node name="Transaction History" type="ColorRect"]
+[node name="Music" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -46,9 +46,8 @@ offset_bottom = 37.0
 [node name="SongName" type="Label" parent="SongDisplay"]
 layout_mode = 0
 offset_left = 41.0
-offset_top = 2.0
 offset_right = 143.0
-offset_bottom = 16.0
+offset_bottom = 14.0
 theme = ExtResource("2_2rqo8")
 theme_override_font_sizes/font_size = 12
 text = "Song Name"
@@ -56,9 +55,9 @@ text = "Song Name"
 [node name="SongArtist" type="Label" parent="SongDisplay"]
 layout_mode = 0
 offset_left = 41.0
-offset_top = 15.0
+offset_top = 14.0
 offset_right = 143.0
-offset_bottom = 24.0
+offset_bottom = 23.0
 theme = ExtResource("2_2rqo8")
 theme_override_font_sizes/font_size = 8
 text = "Artist"
@@ -77,9 +76,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -34.5
+offset_left = -40.5
 offset_top = -8.5
-offset_right = -14.5
+offset_right = -20.5
 offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -94,10 +93,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -8.0
-offset_right = 10.0
-offset_bottom = 8.0
+offset_left = -16.0
+offset_top = -8.5
+offset_right = 16.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_2rqo8")
@@ -111,12 +110,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 15.5
+offset_left = 21.5
 offset_top = -8.5
-offset_right = 35.5
+offset_right = 41.5
 offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_2rqo8")
 theme_override_font_sizes/font_size = 8
 text = ">>"
+
+[connection signal="pressed" from="SongDisplay/SongControls/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="SongDisplay/SongControls/PlayPause" to="." method="_on_play_pause_pressed"]
+[connection signal="pressed" from="SongDisplay/SongControls/Next" to="." method="_on_next_pressed"]
