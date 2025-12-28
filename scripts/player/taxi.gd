@@ -85,7 +85,7 @@ func _process(delta: float):
 		if ground_ray.is_colliding():
 			var n = ground_ray.get_collision_normal()
 			var xform = align_with_y(car_mesh.global_transform, n)
-			car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10.0 * delta).orthonormalized()
+			car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10.0 * delta)
 
 func align_with_y(xform: Transform3D, new_y: Vector3):
 	xform.basis.y = new_y
