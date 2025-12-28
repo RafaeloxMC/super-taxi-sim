@@ -1,0 +1,122 @@
+[gd_scene load_steps=3 format=3 uid="uid://daryd4r83xejs"]
+
+[ext_resource type="Script" uid="uid://rim3bc5teudd" path="res://scripts/ui/transaction_history.gd" id="1_f3m0t"]
+[ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_2rqo8"]
+
+[node name="Transaction History" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -998.883
+offset_bottom = -549.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18717614, 0.18717614, 0.18717614, 1)
+script = ExtResource("1_f3m0t")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5585
+offset_top = 3.0
+offset_right = 76.4415
+offset_bottom = 17.0
+grow_horizontal = 2
+theme = ExtResource("2_2rqo8")
+theme_override_font_sizes/font_size = 10
+text = "Music"
+horizontal_alignment = 1
+
+[node name="SongDisplay" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 18.0
+offset_right = 149.0
+offset_bottom = 57.0
+
+[node name="ColorRect" type="ColorRect" parent="SongDisplay"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 36.0
+offset_bottom = 37.0
+
+[node name="SongName" type="Label" parent="SongDisplay"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 2.0
+offset_right = 143.0
+offset_bottom = 16.0
+theme = ExtResource("2_2rqo8")
+theme_override_font_sizes/font_size = 12
+text = "Song Name"
+
+[node name="SongArtist" type="Label" parent="SongDisplay"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 15.0
+offset_right = 143.0
+offset_bottom = 24.0
+theme = ExtResource("2_2rqo8")
+theme_override_font_sizes/font_size = 8
+text = "Artist"
+
+[node name="SongControls" type="Control" parent="SongDisplay"]
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 145.0
+offset_bottom = 39.0
+
+[node name="Previous" type="Button" parent="SongDisplay/SongControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -8.5
+offset_right = -14.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2rqo8")
+theme_override_font_sizes/font_size = 8
+text = "<<"
+
+[node name="PlayPause" type="Button" parent="SongDisplay/SongControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2rqo8")
+theme_override_font_sizes/font_size = 8
+text = "Play"
+
+[node name="Next" type="Button" parent="SongDisplay/SongControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 15.5
+offset_top = -8.5
+offset_right = 35.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2rqo8")
+theme_override_font_sizes/font_size = 8
+text = ">>"
