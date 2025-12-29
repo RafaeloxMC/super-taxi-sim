@@ -73,11 +73,10 @@ func _process(delta: float):
 	left_wheel.rotation.y = smoothed
 	
 	if linear_velocity.length() > turn_stop_limit:
-		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, turn_input).orthonormalized()
+		var axis = car_mesh.global_transform.basis.y.normalized()
+		var new_basis = car_mesh.global_transform.basis.rotated(axis, turn_input)
 		var slerped = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta).orthonormalized()
 		car_mesh.global_transform.basis = slerped
-		var ortho = car_mesh.global_transform.orthonormalized()
-		car_mesh.global_transform = ortho
 		
 		var t = -turn_input * linear_velocity.length() / body_tilt
 		body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 5.0 * delta)
@@ -87,10 +86,19 @@ func _process(delta: float):
 			var xform = align_with_y(car_mesh.global_transform, n)
 			car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10.0 * delta)
 
-func align_with_y(xform: Transform3D, new_y: Vector3):
-	xform.basis.y = new_y
-	xform.basis.x = -xform.basis.z.cross(new_y)
-	return xform.orthonormalized()
+func align_with_y(xform: Transform3D, new_y: Vector3) -> Transform3D:
+	var y = new_y.normalized()
+	
+	var z = xform.basis.z
+	if abs(z.dot(y)) > 0.99:
+		z = xform.basis.x
+	
+	z = z.normalized()
+	var x = y.cross(z).normalized()
+	z = x.cross(y).normalized()
+	
+	xform.basis = Basis(x, y, z)
+	return xform
 
 func death() -> void:
 	left_wheel.rotation.x = 0
