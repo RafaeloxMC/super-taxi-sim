@@ -4,6 +4,9 @@ extends Node
 @export var pickup_character: PackedScene
 @export var dropoff_location: PackedScene
 
+var current_customer_pickup_location: Vector3
+var current_customer_dropoff_location: Vector3
+
 func spawn_customer() -> void:
 	var road = pick_random_road()
 	var pickup_char = pickup_character.instantiate() as Node3D
@@ -20,6 +23,7 @@ func spawn_dropoff(customer: String) -> void:
 	dropoff_loc.position.y = 0.5
 	dropoff_loc.position.x = 6 if randi_range(0, 1) == 1 else -6
 	road.add_child(dropoff_loc)
+	self.current_customer_dropoff_location = dropoff_loc.global_position
 	pass
 
 func pick_random_road() -> Node3D:
