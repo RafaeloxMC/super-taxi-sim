@@ -17,4 +17,3 @@ func _ready() -> void:
 	CustomerManager.spawn_customer()
 	CustomerManager.spawn_customer()
 	CustomerManager.spawn_customer()
-	

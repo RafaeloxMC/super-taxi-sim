@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://deptlkjmquk5d"]
+[gd_scene load_steps=5 format=3 uid="uid://deptlkjmquk5d"]
 
 [ext_resource type="Script" uid="uid://x4uy846qkjv0" path="res://scripts/world/dropoff_location.gd" id="1_pcch4"]
+[ext_resource type="FontFile" uid="uid://b0lry1hnj42jh" path="res://assets/fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="2_vsi7p"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_731yo"]
 radius = 2.479401
@@ -23,6 +24,17 @@ transform = Transform3D(2.5492086, 0, 0, 0, 1, 0, 0, 0, 2.5492086, 0, 0.00025300
 inner_radius = 0.9
 sides = 32
 material = SubResource("StandardMaterial3D_731yo")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-2.7975289e-06, -64, -2.7975289e-06, 0, -2.7975289e-06, 64, -64, 2.7975289e-06, 1.2228387e-13, 0, 98.25, 0)
+layers = 2
+offset = Vector2(5, 30)
+modulate = Color(1, 1, 0, 1)
+text = "."
+font = ExtResource("2_vsi7p")
+font_size = 128
+outline_size = 0
+autowrap_trim_flags = 0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://daa5mw45xxvi8"]
+[gd_scene load_steps=4 format=3 uid="uid://daa5mw45xxvi8"]
 
 [ext_resource type="Script" uid="uid://dohofcrx0hwbe" path="res://scripts/ui/apps/taxi_app.gd" id="1_ejs14"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_bk2rn"]
+
+[sub_resource type="World3D" id="World3D_2j2i3"]
 
 [node name="Taxi App" type="ColorRect"]
 anchors_preset = 15
@@ -67,3 +69,25 @@ offset_bottom = 16.0
 theme = ExtResource("2_bk2rn")
 theme_override_font_sizes/font_size = 6
 text = "John Doe"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 33.0
+offset_right = 580.0
+offset_bottom = 281.0
+scale = Vector2(0.125, 0.125)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+world_3d = SubResource("World3D_2j2i3")
+handle_input_locally = false
+gui_disable_input = true
+oversampling = false
+oversampling_override = 16.0
+size = Vector2i(1152, 496)
+size_2d_override = Vector2i(144, 62)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+projection = 1
+size = 250.0
