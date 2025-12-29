@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 	if GameManager.customer != "" && GameManager.customer == customer:
 		is_dropoff_ready = true
 	self.visible = is_dropoff_ready
-	if is_dropoff_ready && taxi_body && self.overlaps_body(taxi_body) && GameManager.speed <= 0:
+	if is_dropoff_ready && taxi_body && self.overlaps_body(taxi_body) && round(GameManager.speed) == 0:
 		var driven_km = 1
 		# driven_km is a placeholder atm
 		GameManager.money_updated.emit(GameManager.money, GameManager.money + (GameManager.taxi_base_price * driven_km), "Customer " + GameManager.customer)

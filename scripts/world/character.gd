@@ -3,7 +3,7 @@ extends Area3D
 var taxi_body: Node3D
 
 func _process(_delta: float) -> void:
-	if taxi_body && self.overlaps_body(taxi_body) and GameManager.speed == 0:
+	if taxi_body && self.overlaps_body(taxi_body) and round(GameManager.speed) == 0 && GameManager.customer == "":
 		GameManager.customer = GameManager.generate_random_name()
 		print("New customer! " + str(GameManager.customer))
 		CustomerManager.spawn_dropoff(GameManager.customer)

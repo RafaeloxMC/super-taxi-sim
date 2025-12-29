@@ -28,5 +28,11 @@ func pick_random_road() -> Node3D:
 		print("Could not spawn customer: Roads Parent not found!")
 		return
 	var children = roads_container.get_children()
+	for child in children:
+		if child.has_node("Character"):
+			children.erase(child)
+	if children.size() == 0:
+		print("No empty roads left, returning null.")
+		return null
 	var child = children[randi_range(0, children.size() - 1)]
 	return child

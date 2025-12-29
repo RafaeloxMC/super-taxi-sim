@@ -88,7 +88,7 @@ visible = false
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Car/Model/Boost"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.51123, 1.3046747, -15.630941)
 amount = 24
-lifetime = 0.09999999999999999
+lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_vmegq")
 draw_pass_1 = SubResource("BoxMesh_rjbuy")
 
