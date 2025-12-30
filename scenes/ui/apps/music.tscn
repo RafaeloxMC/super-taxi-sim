@@ -39,13 +39,12 @@ offset_bottom = 57.0
 
 [node name="Cover" type="TextureRect" parent="SongDisplay"]
 layout_mode = 0
-offset_left = 3.0
+offset_left = 1.0
 offset_top = 2.0
-offset_right = 8195.0
-offset_bottom = 8194.0
-scale = Vector2(0.004, 0.004)
+offset_right = 37.0
+offset_bottom = 38.0
 texture = ExtResource("3_2rqo8")
-expand_mode = 2
+expand_mode = 1
 
 [node name="SongName" type="Label" parent="SongDisplay"]
 layout_mode = 0
@@ -70,8 +69,9 @@ text = "Artist"
 anchors_preset = 0
 offset_left = 40.0
 offset_top = 24.0
-offset_right = 145.0
-offset_bottom = 39.0
+offset_right = 163.52942
+offset_bottom = 41.647057
+scale = Vector2(0.85, 0.85)
 
 [node name="Previous" type="Button" parent="SongDisplay/SongControls"]
 layout_mode = 1
