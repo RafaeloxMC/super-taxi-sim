@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmnja6y1kvjfo"]
+[gd_scene load_steps=6 format=3 uid="uid://dmnja6y1kvjfo"]
 
 [ext_resource type="AudioStream" uid="uid://c0nekrnjahiu4" path="res://assets/music/SuperTaxiSimTheme.wav" id="1_6kfwh"]
 [ext_resource type="Script" uid="uid://ce0pyierl33ng" path="res://scripts/audio/music_manager.gd" id="1_mvwer"]
 [ext_resource type="Script" uid="uid://bw17wkguuwtqg" path="res://scripts/types/song.gd" id="2_ufibd"]
+[ext_resource type="Texture2D" uid="uid://c51rvol68o8er" path="res://assets/music/covers/super-taxi-sim-theme-song.png" id="4_cdgwq"]
 
 [sub_resource type="Resource" id="Resource_cdgwq"]
 script = ExtResource("2_ufibd")
 name = "Super Taxi Sim"
 artist = "xvcf"
 audio_stream = ExtResource("1_6kfwh")
+cover = ExtResource("4_cdgwq")
 metadata/_custom_type_script = "uid://bw17wkguuwtqg"
 
 [node name="MusicManager" type="Node"]
