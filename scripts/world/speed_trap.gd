@@ -18,7 +18,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if !triggered and taxi and area_3d.overlaps_body(taxi):
-		if GameManager.speed > GameManager.speed_limit + (GameManager.speed * 0.05):
+		if GameManager.speed > (GameManager.speed_limit * (1.1 if GameManager.boosts.has("Bribe Cops") else 1.0)) + (GameManager.speed * 0.05):
 			triggered = true
 			GameManager.speed_trap_triggered.emit(GameManager.speed, float(GameManager.speed_limit))
 			flash.light_energy = light_strength

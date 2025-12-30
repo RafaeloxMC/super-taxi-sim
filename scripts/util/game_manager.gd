@@ -49,6 +49,8 @@ func _process(delta: float) -> void:
 func speed_trap_handler(_speed: float, max_allowed: float):
 	var delta = speed - max_allowed
 	var cash = money
+	if boosts.has("Bribe Cops"):
+		speed_trap_fine_base = 2.5
 	money_updated.emit(cash, cash - (speed_trap_fine_base * (delta / 1.5)), "Speeding Fine")
 	
 func boost_bought_handler(boost: String) -> void:
