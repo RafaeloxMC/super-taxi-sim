@@ -19,6 +19,7 @@ var boosts: Array[String] = []
 
 # Time system
 
+var day: int = 1
 var time: float = 33750
 var game_speed: float = 1
 var day_length: float = 90000.0
@@ -77,6 +78,7 @@ func increment_time(delta: float, time_speed: float = 60.0):
 	time += delta * time_speed * game_speed
 	if time >= day_length:
 		time -= day_length
+		day += 1
 	
 func get_time_string(input_time: float) -> String:
 	var units_per_minute = units_per_hour / 60.0

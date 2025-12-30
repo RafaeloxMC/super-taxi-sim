@@ -2,6 +2,7 @@ extends Control
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var clock: Label = $Frame/Screen/Wallpaper/Infobar/Clock
+@onready var day: Label = $Frame/Screen/Wallpaper/Infobar/Day
 
 @export var app_handler: PackedScene = preload("res://scenes/ui/apps/app_layout.tscn")
 @export var apps: Array[Control] = []
@@ -24,6 +25,7 @@ func _process(_delta: float) -> void:
 		else:
 			animation_player.play("put")
 	clock.text = GameManager.get_time_string(GameManager.time)
+	day.text = "DAY " + str(GameManager.day)
 
 func on_entered(app: Control):
 	app.scale = Vector2(1.1, 1.1)
