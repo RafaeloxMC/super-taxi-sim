@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dc28loonn3ymj"]
+[gd_scene load_steps=19 format=3 uid="uid://dc28loonn3ymj"]
 
 [ext_resource type="Script" uid="uid://btg63sdxjpwm8" path="res://scripts/ui/phone.gd" id="1_m12kn"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_srpgl"]
@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cogmr5bdq7rqe" path="res://scenes/ui/apps/clock.tscn" id="4_7iixm"]
 [ext_resource type="PackedScene" uid="uid://ceb3vbdoyhj2d" path="res://scenes/ui/apps/boosts.tscn" id="5_2ixvb"]
 [ext_resource type="PackedScene" uid="uid://daryd4r83xejs" path="res://scenes/ui/apps/music.tscn" id="6_j0bv6"]
+[ext_resource type="Texture2D" uid="uid://d1jv3c8d7rg8c" path="res://assets/sprites/apps/bank.png" id="8_nbvtu"]
+[ext_resource type="Texture2D" uid="uid://crlvchthjb1kf" path="res://assets/sprites/apps/taxi.png" id="9_822hv"]
+[ext_resource type="Texture2D" uid="uid://cqrh3ofh5mr5o" path="res://assets/sprites/apps/boosts.png" id="10_3lahc"]
+[ext_resource type="Texture2D" uid="uid://bgui2c7posqrt" path="res://assets/sprites/apps/clock.png" id="11_5apvs"]
+[ext_resource type="Texture2D" uid="uid://dhtxvumaq1e5m" path="res://assets/sprites/apps/music.png" id="12_nxhb8"]
+[ext_resource type="Texture2D" uid="uid://be0rbbyvarjss" path="res://assets/sprites/apps/config.png" id="13_q6umx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m12kn"]
 bg_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
@@ -201,11 +207,13 @@ offset_top = 10.0
 offset_right = 96.0
 offset_bottom = 46.0
 
-[node name="Bank" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow"]
+[node name="Bank" type="TextureRect" parent="Frame/Screen/Wallpaper/AppRow"]
 layout_mode = 0
 offset_right = 27.0
 offset_bottom = 27.0
 pivot_offset = Vector2(13, 13)
+texture = ExtResource("8_nbvtu")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow/Bank"]
 layout_mode = 0
@@ -217,12 +225,14 @@ theme_override_font_sizes/font_size = 8
 text = "Bank"
 horizontal_alignment = 1
 
-[node name="Taxi" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow"]
+[node name="Taxi" type="TextureRect" parent="Frame/Screen/Wallpaper/AppRow"]
 layout_mode = 0
 offset_left = 33.0
 offset_right = 60.0
 offset_bottom = 27.0
 pivot_offset = Vector2(13, 13)
+texture = ExtResource("9_822hv")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow/Taxi"]
 layout_mode = 0
@@ -234,12 +244,14 @@ theme_override_font_sizes/font_size = 8
 text = "Taxi"
 horizontal_alignment = 1
 
-[node name="Boosts" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow"]
+[node name="Boosts" type="TextureRect" parent="Frame/Screen/Wallpaper/AppRow"]
 layout_mode = 0
 offset_left = 66.0
 offset_right = 93.0
 offset_bottom = 27.0
 pivot_offset = Vector2(13, 13)
+texture = ExtResource("10_3lahc")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow/Boosts"]
 layout_mode = 0
@@ -258,11 +270,13 @@ offset_top = 47.0
 offset_right = 96.0
 offset_bottom = 83.0
 
-[node name="Clock" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow2"]
+[node name="Clock" type="TextureRect" parent="Frame/Screen/Wallpaper/AppRow2"]
 layout_mode = 0
 offset_right = 27.0
 offset_bottom = 27.0
 pivot_offset = Vector2(13, 13)
+texture = ExtResource("11_5apvs")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow2/Clock"]
 layout_mode = 0
@@ -274,12 +288,14 @@ theme_override_font_sizes/font_size = 8
 text = "Clock"
 horizontal_alignment = 1
 
-[node name="Music" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow2"]
+[node name="Music" type="TextureRect" parent="Frame/Screen/Wallpaper/AppRow2"]
 layout_mode = 0
 offset_left = 33.0
 offset_right = 60.0
 offset_bottom = 27.0
 pivot_offset = Vector2(13, 13)
+texture = ExtResource("12_nxhb8")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow2/Music"]
 layout_mode = 0
@@ -291,12 +307,14 @@ theme_override_font_sizes/font_size = 8
 text = "Music"
 horizontal_alignment = 1
 
-[node name="Config" type="ColorRect" parent="Frame/Screen/Wallpaper/AppRow2"]
+[node name="Config" type="TextureRect" parent="Frame/Screen/Wallpaper/AppRow2"]
 layout_mode = 0
 offset_left = 66.0
 offset_right = 93.0
 offset_bottom = 27.0
 pivot_offset = Vector2(13, 13)
+texture = ExtResource("13_q6umx")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="Frame/Screen/Wallpaper/AppRow2/Config"]
 layout_mode = 0
