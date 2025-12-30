@@ -24,8 +24,8 @@ var game_speed: float = 1
 var day_length: float = 90000.0
 var units_per_hour: float = day_length / 24.0
 
-var names: Array[String] = ["John", "Jane", "Walter", "Max", "Mary", "Marc", "Mike", "Patrick"]
-var surnames: Array[String] = ["Star", "White", "Meyers", "Speed", "Brown"]
+var names: Array[String] = ["John", "Jane", "Walter", "Max", "Mary", "Marc", "Mike", "Patrick", "Isaac", "Zach", "Yuno", "Elon", "Yi Long", "Donald", "Bill", "John", "Bruno", "Jack", "Lester", "Olivia", "Ava", "Liam", "Zara", "Francesco"]
+var surnames: Array[String] = ["Star", "White", "Meyers", "Speed", "Brown", "Miller", "Latta", "Ma", "Trumpet", "Yates", "Pork", "Saturn", "Sparrow", "Crest", "Clinton", "Bush", "Parker", "Bennet", "Harrison", "Sullivan", "Drake"]
 var customer: String = ""
 
 signal money_updated(before: float, new: float, reason: String)
