@@ -888,6 +888,33 @@ transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08
 [node name="ParkingLot" parent="TemporaryMap" instance=ExtResource("15_haap5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97, 0.5, 63)
 
+[node name="TaxiParking" type="Node3D" parent="TemporaryMap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="Car" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 67)
+
+[node name="Car2" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 59)
+
+[node name="Car3" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 55)
+
+[node name="Car4" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 51)
+
+[node name="Car5" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 43)
+
+[node name="Car6" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 79)
+
+[node name="Car7" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -88, 1, 75)
+
+[node name="Car8" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -88, 1, 55)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.245623, 0)
 light_angular_distance = 32.75
