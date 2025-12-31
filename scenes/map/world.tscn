@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=21 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="Script" uid="uid://bxjgm7rpn01t2" path="res://scripts/world/world.gd" id="1_00fvi"]
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nap83"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b3y3baqt5y32s" path="res://scenes/map/corner.tscn" id="4_il0qy"]
 [ext_resource type="PackedScene" uid="uid://vlep5dj13ss2" path="res://scenes/map/speed_trap.tscn" id="5_mp5fl"]
 [ext_resource type="PackedScene" uid="uid://471qwxjmrmmt" path="res://scenes/killzone.tscn" id="6_p1kjr"]
+[ext_resource type="PackedScene" uid="uid://cq6bggfebbami" path="res://scenes/map/street_lamp.tscn" id="7_haap5"]
 [ext_resource type="PackedScene" uid="uid://485hl1qoq5nu" path="res://scenes/car.tscn" id="7_il0qy"]
 [ext_resource type="PackedScene" uid="uid://cjkknmm2vk7wt" path="res://scenes/map/speed_sign.tscn" id="12_3obwu"]
 [ext_resource type="PackedScene" uid="uid://drvmdqgo2qr2s" path="res://scenes/map/street.tscn" id="14_il0qy"]
@@ -18,6 +19,12 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kusv"]
 albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_il0qy"]
+size = Vector3(8, 4.1884766, 22)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_haap5"]
+size = Vector3(8, 4.1884766, 17)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i7141"]
 
@@ -921,75 +928,2100 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 0.5, 29)
 [node name="Crossing7" parent="TemporaryMap/Corners" instance=ExtResource("15_il0qy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155, 0.5, 29)
 
-[node name="Radar Control" parent="TemporaryMap" instance=ExtResource("5_mp5fl")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -62.972477, 1.5, -20.643488)
+[node name="Houses" type="Node3D" parent="TemporaryMap"]
 
-[node name="SpeedSign" parent="TemporaryMap" instance=ExtResource("12_3obwu")]
-transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-08, 0, -0.15, -6.636, 1, 17.894)
-
-[node name="SpeedSign2" parent="TemporaryMap" instance=ExtResource("12_3obwu")]
-transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.5567085e-09, -27.596, 1, -44.832)
-speed_limit = 80
-
-[node name="SpeedSign3" parent="TemporaryMap" instance=ExtResource("12_3obwu")]
-transform = Transform3D(-0.15, 0, 1.3113417e-08, 0, 0.14999999, 0, -1.3113417e-08, 0, -0.15, -90.596, 1, 89.168)
-speed_limit = 10
-
-[node name="SpeedSign4" parent="TemporaryMap" instance=ExtResource("12_3obwu")]
-transform = Transform3D(0.15, 0, -2.6226834e-08, 0, 0.14999999, 0, 2.6226834e-08, 0, 0.15, -102.596, 1, 91.168)
-speed_limit = 50
-
-[node name="House" parent="TemporaryMap" instance=ExtResource("14_p1kjr")]
+[node name="House" parent="TemporaryMap/Houses" instance=ExtResource("14_p1kjr")]
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.773, 0.5, -27.4)
 
-[node name="House2" parent="TemporaryMap" instance=ExtResource("14_p1kjr")]
+[node name="House2" parent="TemporaryMap/Houses" instance=ExtResource("14_p1kjr")]
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.773, 0.5, -20.2)
 
-[node name="House3" parent="TemporaryMap" instance=ExtResource("14_p1kjr")]
+[node name="House3" parent="TemporaryMap/Houses" instance=ExtResource("14_p1kjr")]
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.773, 0.5, -13)
 
-[node name="House4" parent="TemporaryMap" instance=ExtResource("14_p1kjr")]
+[node name="House4" parent="TemporaryMap/Houses" instance=ExtResource("14_p1kjr")]
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.773, 0.5, -5.8)
 
-[node name="House5" parent="TemporaryMap" instance=ExtResource("14_p1kjr")]
+[node name="House5" parent="TemporaryMap/Houses" instance=ExtResource("14_p1kjr")]
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.773, 0.5, 1.4)
 
-[node name="House6" parent="TemporaryMap" instance=ExtResource("14_p1kjr")]
+[node name="House6" parent="TemporaryMap/Houses" instance=ExtResource("14_p1kjr")]
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.773, 0.5, 8.6)
 
-[node name="House7" parent="TemporaryMap" instance=ExtResource("14_p1kjr")]
+[node name="House7" parent="TemporaryMap/Houses" instance=ExtResource("14_p1kjr")]
 transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -3.773, 0.5, 15.8)
 
 [node name="Lamps" type="Node3D" parent="TemporaryMap"]
 
+[node name="Pair" type="Node3D" parent="TemporaryMap/Lamps"]
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair2" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair2" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair2" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair3" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair3" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair3" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair195" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair195" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair195" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair196" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair196" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair196" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair197" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair197" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair197" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair198" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair198" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair198" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair4" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair4" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair4" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair5" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair5" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair5" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair200" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair200" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair6" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair6" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair6" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair7" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair7" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair7" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair8" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair8" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair8" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair9" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair9" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair9" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair10" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair10" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair10" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair11" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair11" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair11" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair120" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair120" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair120" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair121" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair121" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair121" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair122" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair122" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair122" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair123" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair123" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair123" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair124" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair124" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair124" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair125" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair125" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair125" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair219" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair219" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair219" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair222" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair222" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair126" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -96)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair126" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair126" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair225" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -96)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair225" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair127" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, -96)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair127" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair127" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair128" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, -96)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair128" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair128" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair129" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 0, -96)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair129" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair129" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair130" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, -96)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair130" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair130" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair131" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, -96)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair131" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair131" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair226" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, 0, -96)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair226" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair226" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair230" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 42, 0, -112)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair230" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair231" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-5.9604645e-08, 0, -1, 0, 1, 0, 1, 0, -5.9604645e-08, 100, 0, -44)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair231" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair227" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104, 0, -96)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair227" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair132" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair132" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair132" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair133" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair133" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair133" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair134" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair134" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair134" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair135" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair135" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair135" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair136" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair136" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair136" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair137" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair137" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair137" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair220" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair220" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair220" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair221" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair221" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair138" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair138" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair138" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair139" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair139" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair139" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair140" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair140" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair140" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair141" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair141" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair141" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair142" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair142" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair142" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair143" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 248, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair143" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair143" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair214" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair214" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair214" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair215" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair215" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair215" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair216" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 272, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair216" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair217" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 280, 0, -68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair217" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair144" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 292, 0, -32)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair144" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair144" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair145" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304, 0, -32)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair145" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair145" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair146" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304, 0, -32)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair146" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair146" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair147" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 316, 0, -32)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair147" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair147" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair148" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 328, 0, -32)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair148" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair148" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair149" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 340, 0, -32)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair149" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair149" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair211" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 348, 0, -32)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair211" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair211" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair150" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair150" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair150" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair228" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair228" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair151" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair151" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair151" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair152" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair152" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair152" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair153" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair153" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair153" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair154" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair154" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair154" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair155" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair155" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair155" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair156" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair156" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair156" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair157" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair157" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair157" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair158" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair158" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair158" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair159" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair159" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair159" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair160" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair160" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair160" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair161" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair161" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair161" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair162" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair162" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair162" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair163" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 248, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair163" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair163" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair164" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 248, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair164" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair164" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair165" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair165" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair165" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair166" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 272, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair166" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair166" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair167" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair167" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair167" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair168" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 296, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair168" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair168" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair169" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair169" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair169" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair170" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair170" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair170" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair171" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair171" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair171" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair172" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 332, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair172" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair172" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair173" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 344, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair173" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair173" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair212" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 352, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair212" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair213" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360, 0, -116)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair213" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair174" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 296, 0, 60)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair174" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair174" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair180" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284, 0, 60)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair180" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair175" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308, 0, 60)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair175" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair175" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair176" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308, 0, 60)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair176" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair176" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair177" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 320, 0, 60)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair177" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair177" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair178" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 332, 0, 60)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair178" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair178" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair179" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 344, 0, 60)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair179" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair179" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair208" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356, 0, 60)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair208" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair12" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair12" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair12" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair13" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair13" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair13" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair14" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair14" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair14" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair15" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair15" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair15" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair16" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair16" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair16" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair17" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair17" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair17" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair18" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair18" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair18" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair19" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair19" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair19" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair229" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236, 0, 0)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair229" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair105" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair105" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair105" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair232" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236, 0, 60)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair232" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair106" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236, 0, 80)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair106" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair106" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair107" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 236, 0, 92)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair107" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair107" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair20" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224, 0, 44)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair20" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair20" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair233" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236, 0, 44)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair233" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair21" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 212, 0, 44)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair21" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair21" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair22" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, 44)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair22" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair22" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair23" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair23" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair23" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair24" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair24" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair24" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair25" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair25" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair25" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair26" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair26" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair26" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair27" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair27" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair27" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair68" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair68" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair68" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair69" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair69" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair69" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair70" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair70" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair70" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair71" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair71" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair71" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair72" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair72" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair72" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair73" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair73" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair73" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair74" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair74" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair74" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair75" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair75" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair75" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair76" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair76" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair76" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair77" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair77" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair77" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair78" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair78" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair78" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair79" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair79" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair79" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair80" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair80" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair80" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair81" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair81" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair81" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair82" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair82" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair82" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair116" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair116" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair116" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair117" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair117" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair117" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair83" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair83" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair83" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair84" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair84" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair84" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair85" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair85" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair85" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair86" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 88)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair86" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair87" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair87" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair87" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair206" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 88)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair206" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair88" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 88)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair88" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair89" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180, 0, 88)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair89" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair90" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair90" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair90" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair91" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair91" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair91" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair92" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair92" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair92" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair93" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 252, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair93" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair93" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair98" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 264, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair98" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair98" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair207" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 276, 0, 88)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair207" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair94" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair94" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair94" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair95" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair95" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair95" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair96" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 216, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair96" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair96" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair97" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 204, 0, 88)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair97" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair97" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair28" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair28" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair28" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair66" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 36)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair66" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair67" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair67" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair67" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair29" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair29" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair29" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair30" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair30" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair30" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair119" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 36)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair119" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair119" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair202" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 36)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair202" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair31" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -44, 0, 42)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair31" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair31" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair32" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -44, 0, 30)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair32" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair32" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair33" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -44, 0, 18)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair33" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair33" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair34" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -44, 0, 6)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair34" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair34" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair199" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -44, 0, -6)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair199" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair35" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, 42)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair35" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair35" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair36" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, 30)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair36" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair36" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair37" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, 18)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair37" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair37" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair38" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, 6)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair38" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair38" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair223" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, -24)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair223" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair223" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair224" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, -36)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair224" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair39" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 42)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair39" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair39" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair40" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 30)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair40" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair40" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair41" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 18)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair41" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair41" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair42" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 6)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair42" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair42" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair108" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, 70)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair108" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair108" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair109" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16, 0, 82)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair109" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair109" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair110" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -44, 0, 70)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair110" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair110" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair111" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -44, 0, 82)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair111" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair111" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair112" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -88, 0, 70)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair112" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair112" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair201" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -88, 0, 58)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair201" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair113" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -88, 0, 82)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair113" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair113" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair114" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -88, 0, 94)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair114" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair114" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair115" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -88, 0, 106)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair115" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair115" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair118" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -88, 0, 118)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair118" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair118" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair99" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 110)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair99" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair99" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair100" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 98)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair100" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair103" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 134)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair103" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair103" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair203" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 72, 0, 134)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair203" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair203" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair204" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 72, 0, 146)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair204" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair205" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 72, 0, 122)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair205" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair104" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 122)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair104" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair104" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair101" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 86)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair101" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair101" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair102" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 0, 74)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair102" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair102" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair43" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 42)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair43" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair43" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair44" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 30)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair44" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair44" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair45" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 18)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair45" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair45" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair46" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 6)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair46" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair46" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair47" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 42)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair47" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair47" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair48" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 30)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair48" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair49" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 18)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair49" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair49" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair50" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 6)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair50" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair50" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair218" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, -2)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair218" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair218" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair51" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 90)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair51" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair51" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair52" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 78)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair52" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair52" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair53" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 66)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair53" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair53" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair54" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 54)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair54" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair54" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair181" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 90)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair181" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair181" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair185" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 102)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair185" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair185" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair209" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 110)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair209" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair209" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair210" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 118)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair210" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair186" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 42)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair186" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair186" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair187" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 10)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair187" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair187" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair188" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, -2)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair188" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair188" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair189" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, -14)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair189" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair189" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair190" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, -26)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair190" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair190" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair191" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, -38)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair191" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair191" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair192" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, -50)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair192" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair192" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair193" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 22)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair193" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair194" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 32)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair194" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="Pair182" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 78)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair182" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair182" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair183" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 66)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair183" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair183" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair184" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 360, 0, 54)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair184" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair184" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair55" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 138)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair55" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair55" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair56" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 126)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair56" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair56" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair57" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 114)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair57" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair58" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 276, 0, 102)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair58" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair58" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair59" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 138)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair59" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair59" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair60" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 126)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair60" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair60" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair61" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 114)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair61" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair61" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair62" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 102)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair62" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair63" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 92)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair63" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair63" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair64" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 80)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair64" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair64" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Pair65" type="Node3D" parent="TemporaryMap/Lamps"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 184, 0, 68)
+
+[node name="StreetLamp" parent="TemporaryMap/Lamps/Pair65" instance=ExtResource("7_haap5")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -29, 1, 23)
+
+[node name="StreetLamp2" parent="TemporaryMap/Lamps/Pair65" instance=ExtResource("7_haap5")]
+transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0.75, -29, 1, 35)
+
+[node name="Speed Signs" type="Node3D" parent="TemporaryMap"]
+
+[node name="SpeedSign" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-08, 0, -0.15, -6.636, 1, 17.894)
+
+[node name="SpeedSign2" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.5567085e-09, -27.596, 1, -44.832)
+speed_limit = 80
+
+[node name="SpeedSign3" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(-0.15, 0, 1.3113417e-08, 0, 0.14999999, 0, -1.3113417e-08, 0, -0.15, -90.596, 1, 91.168)
+speed_limit = 10
+
+[node name="SpeedSign5" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(1.9670125e-08, 0, 0.15, 0, 0.14999999, 0, -0.15, 0, 1.9670125e-08, 163.40399, 1, 34.168)
+speed_limit = 30
+
+[node name="SpeedSign6" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(-6.556708e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.556708e-09, 161.40399, 1, 67.168)
+speed_limit = 50
+
+[node name="SpeedSign4" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(0.15, 0, -2.6226834e-08, 0, 0.14999999, 0, 2.6226834e-08, 0, 0.15, -102.596, 1, 91.168)
+speed_limit = 50
+
+[node name="Speed Traps" type="Node3D" parent="TemporaryMap"]
+
+[node name="Speed Trap" parent="TemporaryMap/Speed Traps" instance=ExtResource("5_mp5fl")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -62.972477, 1.5, -20.643488)
+
+[node name="CollisionShape3D" parent="TemporaryMap/Speed Traps/Speed Trap/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.963377, 1.5942383, 7.008133)
+shape = SubResource("BoxShape3D_il0qy")
+
+[node name="speed_trap" parent="TemporaryMap/Speed Traps/Speed Trap" index="1"]
+transform = Transform3D(-0.1, 0, 1.509958e-08, 0, 0.1, 0, -1.509958e-08, 0, -0.1, -1.8985806, -0.5018673, -4.1962347)
+
+[node name="CollisionShape3D" parent="TemporaryMap/Speed Traps/Speed Trap" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.098, -4.396)
+
+[node name="Speed Trap2" parent="TemporaryMap/Speed Traps" instance=ExtResource("5_mp5fl")]
+transform = Transform3D(-2, 0, -1.7881393e-07, 0, 2, 0, 1.7881393e-07, 0, -2, 201.02753, 1.5, 63.356514)
+
+[node name="CollisionShape3D" parent="TemporaryMap/Speed Traps/Speed Trap2/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5048828, 1.5942383, 10.008133)
+shape = SubResource("BoxShape3D_haap5")
+
+[node name="speed_trap" parent="TemporaryMap/Speed Traps/Speed Trap2" index="1"]
+transform = Transform3D(-0.1, 0, 1.509958e-08, 0, 0.1, 0, -1.509958e-08, 0, -0.1, 0.10142517, -0.5018673, 1.3037663)
+
+[node name="CollisionShape3D" parent="TemporaryMap/Speed Traps/Speed Trap2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.866455e-05, 1.0982904, 1.1039124)
+
 [node name="ParkingLot" parent="TemporaryMap" instance=ExtResource("15_haap5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97, 0.5, 63)
 
-[node name="TaxiParking" type="Node3D" parent="TemporaryMap"]
+[node name="Taxi Parking" type="Node3D" parent="TemporaryMap"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 
-[node name="Car" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+[node name="Car" parent="TemporaryMap/Taxi Parking" instance=ExtResource("7_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 67)
 
-[node name="Car2" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+[node name="Car2" parent="TemporaryMap/Taxi Parking" instance=ExtResource("7_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 59)
 
-[node name="Car3" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+[node name="Car3" parent="TemporaryMap/Taxi Parking" instance=ExtResource("7_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 55)
 
-[node name="Car4" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+[node name="Car4" parent="TemporaryMap/Taxi Parking" instance=ExtResource("7_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 51)
 
-[node name="Car5" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+[node name="Car5" parent="TemporaryMap/Taxi Parking" instance=ExtResource("7_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 43)
 
-[node name="Car6" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+[node name="Car6" parent="TemporaryMap/Taxi Parking" instance=ExtResource("7_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -106, 1, 79)
 
-[node name="Car7" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+[node name="Car7" parent="TemporaryMap/Taxi Parking" instance=ExtResource("7_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -88, 1, 75)
 
-[node name="Car8" parent="TemporaryMap/TaxiParking" instance=ExtResource("7_il0qy")]
+[node name="Car8" parent="TemporaryMap/Taxi Parking" instance=ExtResource("7_il0qy")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -88, 1, 55)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -1020,3 +3052,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.229774, 10.057867, 11.4582
 
 [node name="Taxi" parent="." instance=ExtResource("1_nap83")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.68464, 3.8051562, 55.484444)
+
+[editable path="TemporaryMap/Speed Traps/Speed Trap"]
+[editable path="TemporaryMap/Speed Traps/Speed Trap2"]
