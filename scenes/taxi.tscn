@@ -167,9 +167,9 @@ shape = SubResource("SphereShape3D_vmegq")
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(-2.7975289e-06, -64, -2.7975289e-06, 0, -2.7975289e-06, 64, -64, 2.7975289e-06, 1.2228387e-13, 0, 98.25, 0)
 layers = 2
-offset = Vector2(5, 30)
+offset = Vector2(5, 15)
 modulate = Color(1, 1, 0, 1)
-text = "*"
+text = "o"
 font = ExtResource("4_t0xgd")
 font_size = 128
 outline_size = 0
