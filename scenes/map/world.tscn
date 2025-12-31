@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bm5tjvuqrtah6"]
+[gd_scene load_steps=22 format=3 uid="uid://bm5tjvuqrtah6"]
 
 [ext_resource type="Script" uid="uid://bxjgm7rpn01t2" path="res://scripts/world/world.gd" id="1_00fvi"]
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_nap83"]
@@ -19,6 +19,9 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kusv"]
 albedo_color = Color(0.33660772, 0.33660758, 0.3366076, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_haap5"]
+albedo_color = Color(0.66, 0.48796, 0.43559998, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_il0qy"]
 size = Vector3(8, 4.1884766, 22)
@@ -1025,6 +1028,11 @@ transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1
 
 [node name="House32" parent="TemporaryMap/Houses" instance=ExtResource("14_p1kjr")]
 transform = Transform3D(-1.5, 0, -1.3113416e-07, 0, 1.5, 0, 1.3113416e-07, 0, -1.5, -0.7729988, 0.5, -30.199995)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="TemporaryMap/Houses"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.020294, 14.447454, -5.4423523)
+size = Vector3(64.87164, 1, 50.16754)
+material = SubResource("StandardMaterial3D_haap5")
 
 [node name="Lamps" type="Node3D" parent="TemporaryMap"]
 
