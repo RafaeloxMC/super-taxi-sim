@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://8wv5dau7tb2h"]
+[gd_scene load_steps=16 format=3 uid="uid://8wv5dau7tb2h"]
 
 [ext_resource type="PackedScene" uid="uid://cgruhf0xq2sig" path="res://assets/models/taxi.gltf" id="1_i2df7"]
 [ext_resource type="Script" uid="uid://8r5je374hedj" path="res://scripts/player/taxi.gd" id="1_qfcln"]
+[ext_resource type="FontFile" uid="uid://b0lry1hnj42jh" path="res://assets/fonts/Nosutaru-dotMPlusH-10-Regular.ttf" id="4_t0xgd"]
 [ext_resource type="PackedScene" uid="uid://dpqgq5wsh7vw1" path="res://assets/models/taxi_wheels.gltf" id="4_vmegq"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a5vla"]
@@ -162,3 +163,14 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.050000012, -0.2, 0.10
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 1.1355244, 0)
 shape = SubResource("SphereShape3D_vmegq")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-2.7975289e-06, -64, -2.7975289e-06, 0, -2.7975289e-06, 64, -64, 2.7975289e-06, 1.2228387e-13, 0, 98.25, 0)
+layers = 2
+offset = Vector2(5, 30)
+modulate = Color(1, 1, 0, 1)
+text = "*"
+font = ExtResource("4_t0xgd")
+font_size = 128
+outline_size = 0
+autowrap_trim_flags = 0
