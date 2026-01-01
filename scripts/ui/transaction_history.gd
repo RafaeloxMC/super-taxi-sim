@@ -20,7 +20,7 @@ func _ready() -> void:
 		else:
 			new_transaction.add_theme_color_override("font_color", Color(240 * 1.0 / 255, 10 * 1.0 / 255, 10 * 1.0 / 255, 200 * 1.0 / 255))
 		new_transaction.text = ("+" if amount_positive else "-") + "$" + str(abs(int(transaction.amount * 100) / 100.0)).pad_decimals(2)
-		new_transaction.add_theme_font_size_override("font_size", 10)
+		new_transaction.add_theme_font_size_override("font_size", 8)
 		new_transaction.position.y = i * self.size.y + i * gap
 		
 		new_transaction.text = new_transaction.text + ": " + transaction.reason
