@@ -29,6 +29,8 @@ var names: Array[String] = ["John", "Jane", "Walter", "Max", "Mary", "Marc", "Mi
 var surnames: Array[String] = ["Star", "White", "Meyers", "Speed", "Brown", "Miller", "Latta", "Ma", "Trumpet", "Yates", "Pork", "Saturn", "Sparrow", "Crest", "Clinton", "Bush", "Parker", "Bennet", "Harrison", "Sullivan", "Drake"]
 var customer: String = ""
 
+var time_for_customer_bonus: float = 0.0
+
 signal money_updated(before: float, new: float, reason: String)
 signal speed_trap_triggered(speed: float, max_allowed: float)
 @warning_ignore("unused_signal")

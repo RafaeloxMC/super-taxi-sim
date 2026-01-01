@@ -27,6 +27,7 @@ func spawn_dropoff(customer: String) -> void:
 	dropoff_loc.position.x = 6 if randi_range(0, 1) == 1 else -6
 	road.add_child(dropoff_loc)
 	self.current_customer_dropoff_location = dropoff_loc.global_position
+	GameManager.time_for_customer_bonus = Time.get_unix_time_from_system() + (self.current_customer_dropoff_location - self.current_customer_pickup_location).length() / 8
 
 func pick_random_road() -> Node3D:
 	var roads_container = get_tree().get_first_node_in_group(roads_parent_group)

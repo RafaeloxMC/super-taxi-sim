@@ -12,3 +12,12 @@ func _ready() -> void:
 	camera_3d.current = true
 	camera_3d.position = Vector3(75, 150, 15)
 	camera_3d.rotation_degrees = Vector3(-90, 0, 0)
+
+func _process(_delta: float) -> void:
+	var text = GameManager.customer if GameManager.customer != "" else "None"
+	if GameManager.customer != "":
+		if GameManager.time_for_customer_bonus - Time.get_unix_time_from_system() <= 0:
+			text += " - Bonus expired"
+		else:
+			text += " - " + str(roundi((GameManager.time_for_customer_bonus - Time.get_unix_time_from_system()) * 100) / 100.0) + "s left for bonus"
+	cname.text = text

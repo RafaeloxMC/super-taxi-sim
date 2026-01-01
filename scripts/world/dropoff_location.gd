@@ -18,8 +18,8 @@ func _process(_delta: float) -> void:
 		to.y = 0
 		var distance = abs(to - from)
 		var driven_km = distance.length() / 1000
-		# driven_km is a placeholder atm
-		GameManager.money_updated.emit(GameManager.money, GameManager.money + (GameManager.taxi_base_price * driven_km), "Customer " + GameManager.customer)
+		var bonus = randf_range(0.5, 5) if GameManager.time_for_customer_bonus - Time.get_unix_time_from_system() > 0.0 else 0.0
+		GameManager.money_updated.emit(GameManager.money, GameManager.money + (GameManager.taxi_base_price * driven_km) + (bonus), "Customer " + GameManager.customer)
 		GameManager.customer = ""
 		CustomerManager.spawn_customer()
 		self.queue_free()
