@@ -3027,10 +3027,39 @@ transform = Transform3D(-0.75, 0, -6.556708e-08, 0, 0.75, 0, 6.556708e-08, 0, -0
 [node name="Speed Signs" type="Node3D" parent="TemporaryMap"]
 
 [node name="SpeedSign" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
-transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-08, 0, -0.15, -6.636, 1, 17.894)
+transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-08, 0, -0.15, -7.636, 1, 23.894)
+
+[node name="SpeedSign9" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.15, -18.636, 1, 23.894)
+speed_limit = 50
+
+[node name="SpeedSign10" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(-0.15, 0, -1.3113417e-08, 0, 0.14999999, 0, 1.3113417e-08, 0, -0.15, -67.636, 1, 23.894)
+
+[node name="SpeedSign11" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(0.15, 0, 0, 0, 0.14999999, 0, 0, 0, 0.15, -78.636, 1, 23.894)
+speed_limit = 50
 
 [node name="SpeedSign2" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
-transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.5567085e-09, -27.596, 1, -44.832)
+transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.5567085e-09, -7.5960007, 1, -43.832)
+
+[node name="SpeedSign12" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(1.9670125e-08, 0, 0.15, 0, 0.14999999, 0, -0.15, 0, 1.9670125e-08, -7.5960007, 1, -33.832)
+speed_limit = 50
+
+[node name="SpeedSign13" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(1.9670125e-08, 0, 0.15, 0, 0.14999999, 0, -0.15, 0, 1.9670125e-08, -0.5960007, 1, -61.832)
+speed_limit = 80
+
+[node name="SpeedSign14" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(-6.556708e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.556708e-09, -0.5960007, 1, -71.832)
+
+[node name="SpeedSign15" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(-6.5567094e-09, 0, 0.15, 0, 0.14999999, 0, -0.15, 0, -6.5567094e-09, 310.404, 1, -81.832)
+speed_limit = 50
+
+[node name="SpeedSign16" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(1.9670127e-08, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, 1.9670127e-08, 310.404, 1, -91.832)
 speed_limit = 80
 
 [node name="SpeedSign3" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
@@ -3041,9 +3070,17 @@ speed_limit = 10
 transform = Transform3D(1.9670125e-08, 0, 0.15, 0, 0.14999999, 0, -0.15, 0, 1.9670125e-08, 163.40399, 1, 34.168)
 speed_limit = 30
 
-[node name="SpeedSign6" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
-transform = Transform3D(-6.556708e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.556708e-09, 161.40399, 1, 67.168)
+[node name="SpeedSign7" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(-3.2783543e-08, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -3.2783543e-08, 163.40399, 1, 24.168)
 speed_limit = 50
+
+[node name="SpeedSign6" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(-6.556708e-09, 0, -0.15, 0, 0.14999999, 0, 0.15, 0, -6.556708e-09, 161.40399, 1, 68.168)
+speed_limit = 50
+
+[node name="SpeedSign8" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
+transform = Transform3D(-6.556709e-09, 0, 0.15, 0, 0.14999999, 0, -0.15, 0, -6.556709e-09, 161.40399, 1, 78.168)
+speed_limit = 30
 
 [node name="SpeedSign4" parent="TemporaryMap/Speed Signs" instance=ExtResource("12_3obwu")]
 transform = Transform3D(0.15, 0, -2.6226834e-08, 0, 0.14999999, 0, 2.6226834e-08, 0, 0.15, -102.596, 1, 91.168)
