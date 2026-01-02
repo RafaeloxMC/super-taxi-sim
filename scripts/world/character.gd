@@ -8,6 +8,7 @@ func _process(_delta: float) -> void:
 		print("New customer! " + str(GameManager.customer))
 		CustomerManager.spawn_dropoff(GameManager.customer)
 		CustomerManager.current_customer_pickup_location = self.global_position
+		CustomerManager.customer_picked_up.emit(GameManager.customer, self.global_position)
 		self.queue_free()
 
 func _on_body_entered(body: Node3D) -> void:

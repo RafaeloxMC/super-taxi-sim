@@ -7,6 +7,9 @@ extends Node
 var current_customer_pickup_location: Vector3
 var current_customer_dropoff_location: Vector3
 
+signal customer_picked_up(name: String, location: Vector3)
+signal customer_dropped_off(name: String, location: Vector3)
+
 func spawn_customer() -> void:
 	var road = pick_random_road()
 	if road == null:
