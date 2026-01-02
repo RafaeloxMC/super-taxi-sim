@@ -8,7 +8,7 @@ size = Vector3(4.800232, 9.588379, 0.26904297)
 [node name="House" type="StaticBody3D"]
 
 [node name="Wall" parent="." instance=ExtResource("1_3b2lw")]
-transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0002746582, 4.7944336, 0.36547852)
