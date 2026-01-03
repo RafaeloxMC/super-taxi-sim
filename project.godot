@@ -21,6 +21,7 @@ SceneManager="*res://scenes/util/scene_manager.tscn"
 MusicManager="*res://scenes/audio/MusicManager.tscn"
 CustomerManager="*res://scenes/util/customer_manager.tscn"
 GameManager="*res://scenes/util/game_manager.tscn"
+DialogManager="*res://scenes/util/dialog_manager.tscn"
 
 [display]
 
