@@ -26,7 +26,7 @@ sides = 32
 material = SubResource("StandardMaterial3D_731yo")
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-2.7975289e-06, -64, -2.7975289e-06, 0, -2.7975289e-06, 64, -64, 2.7975289e-06, 1.2228387e-13, 0, 98.25, 0)
+transform = Transform3D(-2.7975289e-06, -64, -2.7975289e-06, 0, -2.7975289e-06, 64, -64, 2.7975289e-06, 1.2228387e-13, 0, 20, 0)
 layers = 2
 offset = Vector2(5, 30)
 modulate = Color(1, 1, 0, 1)
