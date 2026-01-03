@@ -75,7 +75,7 @@ func _process(delta: float):
 	if linear_velocity.length() > turn_stop_limit:
 		var axis = car_mesh.global_transform.basis.y.normalized()
 		var new_basis = car_mesh.global_transform.basis.rotated(axis, turn_input)
-		var slerped = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta).orthonormalized()
+		var slerped = car_mesh.global_transform.basis.orthonormalized().slerp(new_basis, turn_speed * delta).orthonormalized()
 		car_mesh.global_transform.basis = slerped
 		
 		var t = -turn_input * linear_velocity.length() / body_tilt
@@ -84,7 +84,7 @@ func _process(delta: float):
 		if ground_ray.is_colliding():
 			var n = ground_ray.get_collision_normal()
 			var xform = align_with_y(car_mesh.global_transform, n)
-			car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10.0 * delta)
+			car_mesh.global_transform = car_mesh.global_transform.orthonormalized().interpolate_with(xform, 10.0 * delta)
 
 func align_with_y(xform: Transform3D, new_y: Vector3) -> Transform3D:
 	var y = new_y.normalized()
