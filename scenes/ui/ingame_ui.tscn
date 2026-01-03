@@ -73,3 +73,52 @@ theme = ExtResource("1_v3yap")
 theme_override_font_sizes/font_size = 24
 text = "120 FPS"
 horizontal_alignment = 2
+
+[node name="DialogBox" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -143.0
+offset_right = 228.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(228, 67.5)
+
+[node name="ProgressBar" type="ColorRect" parent="DialogBox"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 453.0
+offset_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="DialogBox"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 132.0
+offset_bottom = 132.0
+
+[node name="Author" type="Label" parent="DialogBox"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 1.0
+offset_right = 455.0
+offset_bottom = 24.0
+theme = ExtResource("1_v3yap")
+text = "John Doe"
+vertical_alignment = 1
+
+[node name="Content" type="Label" parent="DialogBox"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 24.0
+offset_right = 455.0
+offset_bottom = 129.0
+theme = ExtResource("1_v3yap")
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
+autowrap_mode = 3
