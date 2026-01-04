@@ -5,7 +5,7 @@ extends Control
 @onready var color_rect: ColorRect = $ColorRect
 @onready var fps: Label = $FPS
 @onready var dialog_box: Panel = $DialogBox
-@onready var texture_rect: TextureRect = $DialogBox/TextureRect
+@onready var animated_sprite_2d: AnimatedSprite2D = $DialogBox/AnimatedSprite2D
 @onready var dialog_author: Label = $DialogBox/Author
 @onready var dialog_content: Label = $DialogBox/Content
 @onready var progress_bar: ColorRect = $DialogBox/ProgressBar
@@ -60,6 +60,11 @@ func queue_dialog(author: String, content: String) -> void:
 	self.dialog_author.text = author
 	self.dialog_content.text = content
 	self.dialog_box.show()
+	if DialogManager.contacts.has(author):
+		animated_sprite_2d.sprite_frames = DialogManager.contacts.get(author)
+		animated_sprite_2d.play("default")
+	else:
+		print(author + " not found in contacts")
 	dialog_timeout(content.length() * 0.075)
 	
 func dialog_timeout(time: float) -> void:

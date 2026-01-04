@@ -1,5 +1,6 @@
 extends Node
 
+@export var contacts: Dictionary[String, SpriteFrames] = {}
 
 signal dialog_called(author: String, content: String)
 

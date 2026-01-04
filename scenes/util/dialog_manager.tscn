@@ -1,6 +1,86 @@
-[gd_scene load_steps=2 format=3 uid="uid://clocbmi24wub0"]
+[gd_scene load_steps=12 format=3 uid="uid://clocbmi24wub0"]
 
 [ext_resource type="Script" uid="uid://ce3rft5j23nk" path="res://scripts/util/dialog_manager.gd" id="1_g4eut"]
+[ext_resource type="Texture2D" uid="uid://d280dcfx5uqqy" path="res://assets/sprites/shiba.png" id="2_edrgq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2q08"]
+atlas = ExtResource("2_edrgq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg6ww"]
+atlas = ExtResource("2_edrgq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x077e"]
+atlas = ExtResource("2_edrgq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26q0p"]
+atlas = ExtResource("2_edrgq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf8kp"]
+atlas = ExtResource("2_edrgq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r03g"]
+atlas = ExtResource("2_edrgq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_implr"]
+atlas = ExtResource("2_edrgq")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qouwq"]
+atlas = ExtResource("2_edrgq")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ycoe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2q08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg6ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x077e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26q0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf8kp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg6ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x077e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26q0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf8kp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r03g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_implr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qouwq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="DialogManager" type="Node"]
 script = ExtResource("1_g4eut")
+contacts = Dictionary[String, SpriteFrames]({
+"Shiba": SubResource("SpriteFrames_0ycoe")
+})

@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://b72tgd6dopu1q"]
+[gd_scene load_steps=7 format=3 uid="uid://b72tgd6dopu1q"]
 
 [ext_resource type="Script" uid="uid://ctwtf1vd1ijgf" path="res://scripts/ui/ingame_ui.gd" id="1_031h6"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_v3yap"]
 [ext_resource type="PackedScene" uid="uid://bbj734fl4lxj3" path="res://scenes/ui/pause.tscn" id="3_sl7ef"]
+[ext_resource type="Texture2D" uid="uid://d280dcfx5uqqy" path="res://assets/sprites/shiba.png" id="4_sj4bp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m46uy"]
+atlas = ExtResource("4_sj4bp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxec5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m46uy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="IngameUI" type="Control"]
 layout_mode = 3
@@ -75,7 +91,6 @@ text = "120 FPS"
 horizontal_alignment = 2
 
 [node name="DialogBox" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -96,12 +111,11 @@ offset_left = 3.0
 offset_right = 453.0
 offset_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="DialogBox"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 132.0
-offset_bottom = 132.0
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DialogBox"]
+position = Vector2(68, 67)
+scale = Vector2(4.0625, 4.0625)
+sprite_frames = SubResource("SpriteFrames_lxec5")
+autoplay = "default"
 
 [node name="Author" type="Label" parent="DialogBox"]
 layout_mode = 0
