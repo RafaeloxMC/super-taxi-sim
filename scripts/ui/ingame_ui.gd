@@ -12,7 +12,9 @@ extends Control
 
 var initial_dialog_progress_bar_width: float = 0.0
 
-var dialog_queue: Array[String] = []
+var dialog_queue: Array[Dialog] = []
+var current_dialog: Dialog = null
+var dialog_running: bool = false
 
 var money_changed = preload("res://scenes/ui/money_changed.tscn")
 var phone = preload("res://scenes/ui/phone.tscn")
@@ -49,29 +51,54 @@ func _process(_delta: float) -> void:
 		var node = phone.instantiate()
 		self.add_child(node)
 
+	if not dialog_running:
+		tick_dialog()
+	
 func speed_trap_triggered(_speed: float, _max_allowed: float):
 	color_rect.visible = true
 	await get_tree().create_timer(0.05).timeout
 	color_rect.visible = false
 
 func queue_dialog(author: String, content: String) -> void:
-	## todo: implement queue functionality
-	self.progress_bar.size.x = initial_dialog_progress_bar_width
-	self.dialog_author.text = author
-	self.dialog_content.text = content
-	self.dialog_box.show()
-	if DialogManager.contacts.has(author):
-		animated_sprite_2d.sprite_frames = DialogManager.contacts.get(author)
+	var dialog = Dialog.new()
+	dialog.author = author
+	dialog.content = content
+	dialog_queue.push_back(dialog)
+	
+func tick_dialog() -> void:
+	if dialog_queue.is_empty():
+		return
+
+	current_dialog = dialog_queue[0]
+	dialog_running = true
+	
+	dialog_author.text = current_dialog.author
+	dialog_content.text = current_dialog.content
+	progress_bar.size.x = initial_dialog_progress_bar_width
+	dialog_box.show()
+	
+	if DialogManager.contacts.has(current_dialog.author):
+		animated_sprite_2d.sprite_frames = DialogManager.contacts[current_dialog.author]
 		animated_sprite_2d.play("default")
 	else:
-		print(author + " not found in contacts")
-	dialog_timeout(content.length() * 0.075)
+		animated_sprite_2d.stop()
+		
+	var time: float = current_dialog.content.length() * 0.075
+	dialog_timeout(time)
 	
 func dialog_timeout(time: float) -> void:
-	var step_size = 0.01
-	var steps = time / step_size
+	var step_size: float = 0.01
+	var steps: int = int(time / step_size)
+	
 	for i in range(steps):
 		await get_tree().create_timer(step_size).timeout
-		self.progress_bar.size.x = (initial_dialog_progress_bar_width / steps) * (steps - i)
-	self.dialog_box.hide()
-	
+		
+		if current_dialog != dialog_queue[0]:
+			return
+			
+		progress_bar.size.x = lerp(initial_dialog_progress_bar_width, 0.0, float(i + 1) / steps)
+		
+	dialog_box.hide()
+	dialog_queue.pop_front()
+	current_dialog = null
+	dialog_running = false
