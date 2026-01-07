@@ -15,6 +15,7 @@ var initial_dialog_progress_bar_width: float = 0.0
 var dialog_queue: Array[Dialog] = []
 var current_dialog: Dialog = null
 var dialog_running: bool = false
+var dialog_timeout_paused: bool = false
 
 var money_changed = preload("res://scenes/ui/money_changed.tscn")
 var phone = preload("res://scenes/ui/phone.tscn")
@@ -88,17 +89,26 @@ func tick_dialog() -> void:
 	
 func dialog_timeout(time: float) -> void:
 	var step_size: float = 0.01
-	var steps: int = int(time / step_size)
-	
-	for i in range(steps):
+	var elapsed: float = 0.0
+
+	while elapsed < time:
 		await get_tree().create_timer(step_size).timeout
-		
 		if current_dialog != dialog_queue[0]:
 			return
-			
-		progress_bar.size.x = lerp(initial_dialog_progress_bar_width, 0.0, float(i + 1) / steps)
+		if dialog_timeout_paused:
+			continue
 		
+		elapsed += step_size
+		
+		var t: float = elapsed / time
+		progress_bar.size.x = lerp(initial_dialog_progress_bar_width, 0.0, t)
 	dialog_box.hide()
 	dialog_queue.pop_front()
 	current_dialog = null
 	dialog_running = false
+
+func _on_dialog_box_mouse_entered() -> void:
+	dialog_timeout_paused = true
+
+func _on_dialog_box_mouse_exited() -> void:
+	dialog_timeout_paused = false

@@ -136,3 +136,6 @@ offset_bottom = 129.0
 theme = ExtResource("1_v3yap")
 text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
 autowrap_mode = 3
+
+[connection signal="mouse_entered" from="DialogBox" to="." method="_on_dialog_box_mouse_entered"]
+[connection signal="mouse_exited" from="DialogBox" to="." method="_on_dialog_box_mouse_exited"]
