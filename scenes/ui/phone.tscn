@@ -126,6 +126,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_m12kn")
 apps = [NodePath("Frame/Screen/Wallpaper/AppRow/Bank"), NodePath("Frame/Screen/Wallpaper/AppRow/Taxi"), NodePath("Frame/Screen/Wallpaper/AppRow/Boosts"), NodePath("Frame/Screen/Wallpaper/AppRow2/Clock"), NodePath("Frame/Screen/Wallpaper/AppRow2/Music"), NodePath("Frame/Screen/Wallpaper/AppRow2/Config")]
 app_screens = Dictionary[String, PackedScene]({

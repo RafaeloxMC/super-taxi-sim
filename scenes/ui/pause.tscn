@@ -16,16 +16,16 @@ grow_vertical = 2
 script = ExtResource("1_k23cl")
 settings_packed = ExtResource("2_5834a")
 
-[node name="UI Container" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-
-[node name="Background" type="ColorRect" parent="UI Container"]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 0.23529412)
+
+[node name="UI Container" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Title" type="Label" parent="UI Container"]
 layout_mode = 0
