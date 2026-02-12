@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl5e7qunpuvdf"]
+[gd_scene format=3 uid="uid://dl5e7qunpuvdf"]
 
 [ext_resource type="Script" uid="uid://dyhe42c5qtbo5" path="res://scripts/ui/company_creation.gd" id="1_tepb5"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="2_vb8o8"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="3_8k5c7"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="4_c7htq"]
 
-[node name="Company Creation" type="Control"]
+[node name="Company Creation" type="Control" unique_id=593526915]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tepb5")
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="LineEdit" type="LineEdit" parent="." unique_id=734885700]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -34,7 +34,7 @@ text = "Crazy Taxis Co."
 placeholder_text = "Name..."
 alignment = 1
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1791562491]
 layout_mode = 0
 offset_left = 433.0
 offset_top = 399.0
@@ -43,7 +43,7 @@ offset_bottom = 443.0
 theme = ExtResource("2_vb8o8")
 text = "Create Company"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1729959075]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -60,27 +60,27 @@ theme = ExtResource("2_vb8o8")
 theme_override_font_sizes/font_size = 48
 text = "Create your Taxi Company!"
 
-[node name="3D Container" type="Node3D" parent="."]
+[node name="3D Container" type="Node3D" parent="." unique_id=783552961]
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="3D Container"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="3D Container" unique_id=1418240546]
 use_collision = true
 radius = 2.5283203
 height = 0.26965332
 sides = 24
 script = ExtResource("3_2ocxq")
 
-[node name="Taxi" parent="3D Container/CSGCylinder3D" instance=ExtResource("3_8k5c7")]
+[node name="Taxi" parent="3D Container/CSGCylinder3D" unique_id=824582265 instance=ExtResource("3_8k5c7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0)
 
-[node name="Camera3D" type="Camera3D" parent="3D Container"]
+[node name="Camera3D" type="Camera3D" parent="3D Container" unique_id=1911827728]
 transform = Transform3D(0.69691485, 0, 0.71715397, 0, 1, 0, -0.71715397, 0, 0.69691485, 1.0287051, 1.7222168, 4.9962425)
 current = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="3D Container"]
+[node name="SpotLight3D" type="SpotLight3D" parent="3D Container" unique_id=516609181]
 transform = Transform3D(0.10411176, -0.30720565, 0.945931, 1.2406024e-08, 0.9510997, 0.30888423, -0.99456567, -0.03215847, 0.09902066, 6.4733477, 4.9328713, 0.7615409)
 spot_range = 12.155
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="3D Container"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="3D Container" unique_id=186219678]
 environment = ExtResource("4_c7htq")
 
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
