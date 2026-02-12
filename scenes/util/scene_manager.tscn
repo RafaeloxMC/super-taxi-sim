@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4yw6iohgl6pr"]
+[gd_scene format=3 uid="uid://b4yw6iohgl6pr"]
 
 [ext_resource type="Script" uid="uid://lmju3dyvlck3" path="res://scripts/util/scene_manager.gd" id="1_we8k5"]
 [ext_resource type="PackedScene" uid="uid://cet43gqdwse05" path="res://scenes/ui/main_menu.tscn" id="2_h7lqg"]
@@ -7,16 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://dl5e7qunpuvdf" path="res://scenes/ui/company_creation.tscn" id="5_70vva"]
 [ext_resource type="PackedScene" uid="uid://dsiy75genwa8o" path="res://scenes/ui/credits.tscn" id="6_btgcf"]
 [ext_resource type="PackedScene" uid="uid://c3c7dlk43ihrn" path="res://scenes/ui/transition.tscn" id="6_s4cqx"]
+[ext_resource type="PackedScene" uid="uid://cv0o0xobysup0" path="res://scenes/tutorial/tutorial.tscn" id="7_un3b6"]
 
-[node name="Scene Manager" type="Node"]
+[node name="Scene Manager" type="Node" unique_id=1241567471]
 script = ExtResource("1_we8k5")
 scenes = Dictionary[String, PackedScene]({
 "create_company": ExtResource("5_70vva"),
 "credits": ExtResource("6_btgcf"),
 "main_menu": ExtResource("2_h7lqg"),
 "settings": ExtResource("3_q7wi7"),
+"tutorial": ExtResource("7_un3b6"),
 "world": ExtResource("4_6k21d")
 })
 scene_history = Array[PackedScene]([ExtResource("2_h7lqg")])
 
-[node name="Transition" parent="." instance=ExtResource("6_s4cqx")]
+[node name="Transition" parent="." unique_id=323359080 instance=ExtResource("6_s4cqx")]
