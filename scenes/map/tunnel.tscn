@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc6ly3bpcqsy7"]
+[gd_scene format=3 uid="uid://cc6ly3bpcqsy7"]
 
 [ext_resource type="PackedScene" uid="uid://d4hvp7bp1557j" path="res://assets/models/tunnel.gltf" id="1_ib85l"]
+[ext_resource type="Script" uid="uid://7uvxyy4atjgu" path="res://scripts/world/tunnel.gd" id="1_n5iry"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n5iry"]
 size = Vector3(1, 10.5, 32)
@@ -14,72 +15,84 @@ size = Vector3(1, 2, 32)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ekxyv"]
 size = Vector3(1, 4, 32)
 
-[node name="Tunnel" type="StaticBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ib85l"]
+size = Vector3(29, 10, 17)
 
-[node name="Model" parent="." instance=ExtResource("1_ib85l")]
+[node name="Tunnel" type="StaticBody3D" unique_id=268306956]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("1_n5iry")
+
+[node name="Model" parent="." unique_id=1152397188 instance=ExtResource("1_ib85l")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1623964588]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 5.25, 0)
 shape = SubResource("BoxShape3D_n5iry")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2012673504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 13.5, 0)
 shape = SubResource("BoxShape3D_b1bfl")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=899340898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 17.5, 0)
 shape = SubResource("BoxShape3D_spk4n")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=870206525]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 19.5, 0)
 shape = SubResource("BoxShape3D_spk4n")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1062064002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 21.5, 0)
 shape = SubResource("BoxShape3D_spk4n")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=247749175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 23.5, 0)
 shape = SubResource("BoxShape3D_spk4n")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=536065158]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 8, 24.5, 0)
 shape = SubResource("BoxShape3D_spk4n")
 
-[node name="CollisionShape3D8" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="." unique_id=1183059867]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 5, 25.5, 0)
 shape = SubResource("BoxShape3D_ekxyv")
 
-[node name="CollisionShape3D9" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="." unique_id=749885055]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -14.503, 5.25, 0)
 shape = SubResource("BoxShape3D_n5iry")
 
-[node name="CollisionShape3D10" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="." unique_id=2019394528]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13.502643, 13.5, 2.5134048e-07)
 shape = SubResource("BoxShape3D_b1bfl")
 
-[node name="CollisionShape3D11" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="." unique_id=1926937318]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -12.502643, 17.5, 1.639177e-07)
 shape = SubResource("BoxShape3D_spk4n")
 
-[node name="CollisionShape3D12" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="." unique_id=240674734]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.502643, 19.5, 7.649493e-08)
 shape = SubResource("BoxShape3D_spk4n")
 
-[node name="CollisionShape3D13" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="." unique_id=1626096724]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.502643, 21.5, -1.0927847e-08)
 shape = SubResource("BoxShape3D_spk4n")
 
-[node name="CollisionShape3D14" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="." unique_id=1418383521]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9.502643, 23.5, -9.8350625e-08)
 shape = SubResource("BoxShape3D_spk4n")
 
-[node name="CollisionShape3D15" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="." unique_id=1457217453]
 transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -8.002643, 24.5, -2.2948478e-07)
 shape = SubResource("BoxShape3D_spk4n")
 
-[node name="CollisionShape3D16" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="." unique_id=1279911228]
 transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, -5.0026426, 25.5, -4.917531e-07)
 shape = SubResource("BoxShape3D_ekxyv")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1543702757]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1287112777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, -8)
+shape = SubResource("BoxShape3D_ib85l")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
