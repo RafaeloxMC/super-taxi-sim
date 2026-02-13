@@ -23,7 +23,7 @@ settings_packed = ExtResource("2_8ln24")
 [node name="3D Container" type="Node3D" parent="." unique_id=110811081]
 
 [node name="Taxi" parent="3D Container" unique_id=670963898 instance=ExtResource("1_l6cm7")]
-transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, -3, 2, 3)
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, -3, 0.51074696, 3)
 
 [node name="Camera3D" type="Camera3D" parent="3D Container" unique_id=1762070126]
 transform = Transform3D(0.25881907, -0.16773126, 0.9512512, 0, 0.9848077, 0.17364818, -0.9659258, -0.04494346, 0.254887, 5.6429253, 4.1789207, 8.084719)
