@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b72tgd6dopu1q"]
+[gd_scene format=3 uid="uid://b72tgd6dopu1q"]
 
 [ext_resource type="Script" uid="uid://ctwtf1vd1ijgf" path="res://scripts/ui/ingame_ui.gd" id="1_031h6"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_v3yap"]
@@ -20,7 +20,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="IngameUI" type="Control"]
+[node name="IngameUI" type="Control" unique_id=1135936906]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,14 +30,14 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_031h6")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1227589427]
 modulate = Color(1, 1, 1, 0.49019608)
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(1, 0.3355136, 0.26959568, 1)
 
-[node name="Money" type="Label" parent="."]
+[node name="Money" type="Label" parent="." unique_id=1358416824]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -54,7 +54,7 @@ theme_override_font_sizes/font_size = 24
 text = "$0"
 horizontal_alignment = 2
 
-[node name="Speed" type="Label" parent="."]
+[node name="Speed" type="Label" parent="." unique_id=333202321]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -70,10 +70,10 @@ theme_override_font_sizes/font_size = 24
 text = "0 km/h"
 horizontal_alignment = 2
 
-[node name="PauseMenu" parent="." instance=ExtResource("3_sl7ef")]
+[node name="PauseMenu" parent="." unique_id=1055652852 instance=ExtResource("3_sl7ef")]
 layout_mode = 1
 
-[node name="FPS" type="Label" parent="."]
+[node name="FPS" type="Label" parent="." unique_id=711460334]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -90,7 +90,8 @@ theme_override_font_sizes/font_size = 24
 text = "120 FPS"
 horizontal_alignment = 2
 
-[node name="DialogBox" type="Panel" parent="."]
+[node name="DialogBox" type="Panel" parent="." unique_id=932144725]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -105,19 +106,19 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(228, 67.5)
 
-[node name="ProgressBar" type="ColorRect" parent="DialogBox"]
+[node name="ProgressBar" type="ColorRect" parent="DialogBox" unique_id=1670776220]
 layout_mode = 0
 offset_left = 3.0
 offset_right = 453.0
 offset_bottom = 1.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DialogBox"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DialogBox" unique_id=900359080]
 position = Vector2(68, 67)
 scale = Vector2(4.0625, 4.0625)
 sprite_frames = SubResource("SpriteFrames_lxec5")
 autoplay = "default"
 
-[node name="Author" type="Label" parent="DialogBox"]
+[node name="Author" type="Label" parent="DialogBox" unique_id=2013660226]
 layout_mode = 0
 offset_left = 138.0
 offset_top = 1.0
@@ -127,7 +128,7 @@ theme = ExtResource("1_v3yap")
 text = "John Doe"
 vertical_alignment = 1
 
-[node name="Content" type="Label" parent="DialogBox"]
+[node name="Content" type="Label" parent="DialogBox" unique_id=603156301]
 layout_mode = 0
 offset_left = 138.0
 offset_top = 24.0
