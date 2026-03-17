@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cet43gqdwse05"]
 
-[ext_resource type="PackedScene" uid="uid://8wv5dau7tb2h" path="res://scenes/taxi.tscn" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://d254w180al3fy" path="res://scripts/ui/main_menu.gd" id="1_wu84c"]
 [ext_resource type="PackedScene" uid="uid://n0gdpr68s0ip" path="res://scenes/ui/settings.tscn" id="2_8ln24"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="2_ekxnf"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://485hl1qoq5nu" path="res://scenes/car.tscn" id="3_btxxm"]
 [ext_resource type="PackedScene" uid="uid://drvmdqgo2qr2s" path="res://scenes/map/street.tscn" id="5_uhagc"]
 [ext_resource type="PackedScene" uid="uid://bxgp3kvw1iiqi" path="res://scenes/map/house_wall.tscn" id="6_btxxm"]
 
@@ -22,8 +22,10 @@ settings_packed = ExtResource("2_8ln24")
 
 [node name="3D Container" type="Node3D" parent="." unique_id=110811081]
 
-[node name="Taxi" parent="3D Container" unique_id=670963898 instance=ExtResource("1_l6cm7")]
-transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, -3, 0.51074696, 3)
+[node name="Car" parent="3D Container" unique_id=1784379811 instance=ExtResource("3_btxxm")]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 0, 1.510747, 4)
+mass = 0.001
+gravity_scale = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="3D Container" unique_id=1762070126]
 transform = Transform3D(0.25881907, -0.16773126, 0.9512512, 0, 0.9848077, 0.17364818, -0.9659258, -0.04494346, 0.254887, 5.6429253, 4.1789207, 8.084719)
