@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsiy75genwa8o"]
+[gd_scene format=3 uid="uid://dsiy75genwa8o"]
 
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="1_oap8i"]
 [ext_resource type="PackedScene" uid="uid://dm3rauw2fhcxt" path="res://scenes/ui/back_button.tscn" id="2_jkvjv"]
 [ext_resource type="Environment" uid="uid://dkygvks1nh6en" path="res://assets/world/world.tres" id="3_pqmjv"]
 [ext_resource type="PackedScene" uid="uid://485hl1qoq5nu" path="res://scenes/car.tscn" id="4_e5ls7"]
+[ext_resource type="PackedScene" uid="uid://drvmdqgo2qr2s" path="res://scenes/map/street.tscn" id="5_y0bee"]
+[ext_resource type="PackedScene" uid="uid://bxgp3kvw1iiqi" path="res://scenes/map/house_wall.tscn" id="6_um21f"]
+[ext_resource type="PackedScene" uid="uid://b3y3baqt5y32s" path="res://scenes/map/corner.tscn" id="7_5fsmw"]
 
 [sub_resource type="Animation" id="Animation_y0bee"]
 length = 0.001
@@ -155,7 +158,7 @@ _data = {
 &"spin": SubResource("Animation_gleon")
 }
 
-[node name="Credits" type="Control"]
+[node name="Credits" type="Control" unique_id=1120299222]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -163,7 +166,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Credits" type="Label" parent="."]
+[node name="Credits" type="Label" parent="." unique_id=397137314]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -181,7 +184,7 @@ theme_override_font_sizes/font_size = 48
 text = "Credits"
 horizontal_alignment = 1
 
-[node name="Code" type="Label" parent="."]
+[node name="Code" type="Label" parent="." unique_id=773992009]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -199,7 +202,7 @@ theme_override_font_sizes/font_size = 32
 text = "Code"
 horizontal_alignment = 1
 
-[node name="xvcf" type="Label" parent="Code"]
+[node name="xvcf" type="Label" parent="Code" unique_id=1381618521]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -217,7 +220,7 @@ theme_override_font_sizes/font_size = 24
 text = "xvcf"
 horizontal_alignment = 1
 
-[node name="Models" type="Label" parent="."]
+[node name="Models" type="Label" parent="." unique_id=1069858809]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -235,7 +238,7 @@ theme_override_font_sizes/font_size = 32
 text = "Models"
 horizontal_alignment = 1
 
-[node name="xvcf" type="Label" parent="Models"]
+[node name="xvcf" type="Label" parent="Models" unique_id=1198475077]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -253,7 +256,7 @@ theme_override_font_sizes/font_size = 24
 text = "xvcf"
 horizontal_alignment = 1
 
-[node name="Music" type="Label" parent="."]
+[node name="Music" type="Label" parent="." unique_id=596139038]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -271,7 +274,7 @@ theme_override_font_sizes/font_size = 32
 text = "Music"
 horizontal_alignment = 1
 
-[node name="xvcf" type="Label" parent="Music"]
+[node name="xvcf" type="Label" parent="Music" unique_id=1158789508]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -289,7 +292,7 @@ theme_override_font_sizes/font_size = 24
 text = "xvcf"
 horizontal_alignment = 1
 
-[node name="SFX" type="Label" parent="."]
+[node name="SFX" type="Label" parent="." unique_id=1040611606]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -307,7 +310,7 @@ theme_override_font_sizes/font_size = 32
 text = "SFX"
 horizontal_alignment = 1
 
-[node name="xvcf" type="Label" parent="SFX"]
+[node name="xvcf" type="Label" parent="SFX" unique_id=71968184]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -325,7 +328,7 @@ theme_override_font_sizes/font_size = 24
 text = "xvcf"
 horizontal_alignment = 1
 
-[node name="BackButton" parent="." instance=ExtResource("2_jkvjv")]
+[node name="BackButton" parent="." unique_id=1217756119 instance=ExtResource("2_jkvjv")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -337,44 +340,168 @@ offset_right = 128.0
 offset_bottom = -72.0
 grow_vertical = 0
 
-[node name="3D Container" type="Node3D" parent="."]
+[node name="3D Container" type="Node3D" parent="." unique_id=719700784]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="3D Container"]
-use_collision = true
-size = Vector3(10, 1, 5)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="3D Container"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="3D Container" unique_id=82694248]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.245623, 0)
 light_angular_distance = 32.75
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="3D Container"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="3D Container" unique_id=1803242471]
 environment = ExtResource("3_pqmjv")
 
-[node name="Camera3D" type="Camera3D" parent="3D Container"]
+[node name="Camera3D" type="Camera3D" parent="3D Container" unique_id=161047851]
 transform = Transform3D(0.83441514, -0.23414877, 0.49892437, 0, 0.90526503, 0.42484733, -0.5511362, -0.3544991, 0.755367, 3.4029589, 5.4813533, 5.0506687)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="3D Container/Camera3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_gleon")
-}
-autoplay = "idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="3D Container/Camera3D" unique_id=348272044]
+libraries/ = SubResource("AnimationLibrary_gleon")
+autoplay = &"idle"
 
-[node name="Taxis" type="Node3D" parent="3D Container"]
+[node name="Taxis" type="Node3D" parent="3D Container" unique_id=132005768]
 
-[node name="Car" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+[node name="Car" parent="3D Container/Taxis" unique_id=629154009 instance=ExtResource("4_e5ls7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50009906, 0)
 
-[node name="Car2" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+[node name="Car2" parent="3D Container/Taxis" unique_id=26677954 instance=ExtResource("4_e5ls7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6996543, 0.50009906, 0)
 
-[node name="Car3" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+[node name="Car3" parent="3D Container/Taxis" unique_id=1030944916 instance=ExtResource("4_e5ls7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69971, 0.50009906, 0)
 
-[node name="Car4" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+[node name="Car4" parent="3D Container/Taxis" unique_id=2032182280 instance=ExtResource("4_e5ls7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 2.2, 0)
 
-[node name="Car5" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+[node name="Car5" parent="3D Container/Taxis" unique_id=166880933 instance=ExtResource("4_e5ls7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 2.2, 0)
 
-[node name="Car6" parent="3D Container/Taxis" instance=ExtResource("4_e5ls7")]
+[node name="Car6" parent="3D Container/Taxis" unique_id=1392013866 instance=ExtResource("4_e5ls7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9105592, 0)
+
+[node name="Streets" type="Node3D" parent="3D Container" unique_id=1766229675]
+
+[node name="Street" parent="3D Container/Streets" unique_id=1475414866 instance=ExtResource("5_y0bee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28)
+
+[node name="Street2" parent="3D Container/Streets" unique_id=374766145 instance=ExtResource("5_y0bee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="Street3" parent="3D Container/Streets" unique_id=77546551 instance=ExtResource("5_y0bee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Street4" parent="3D Container/Streets" unique_id=1402470577 instance=ExtResource("5_y0bee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Street5" parent="3D Container/Streets" unique_id=1762452511 instance=ExtResource("5_y0bee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Street6" parent="3D Container/Streets" unique_id=34801936 instance=ExtResource("5_y0bee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="Street7" parent="3D Container/Streets" unique_id=456057082 instance=ExtResource("5_y0bee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="Street8" parent="3D Container/Streets" unique_id=21701470 instance=ExtResource("5_y0bee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -28)
+
+[node name="HouseWalls" type="Node3D" parent="3D Container" unique_id=557418801]
+
+[node name="House" parent="3D Container/HouseWalls" unique_id=339308783 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, -46)
+
+[node name="House2" parent="3D Container/HouseWalls" unique_id=577869586 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, -38)
+
+[node name="House3" parent="3D Container/HouseWalls" unique_id=1139166013 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, -30)
+
+[node name="House4" parent="3D Container/HouseWalls" unique_id=788196168 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, -22)
+
+[node name="House5" parent="3D Container/HouseWalls" unique_id=2129522169 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, -14)
+
+[node name="House6" parent="3D Container/HouseWalls" unique_id=1529466913 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, -6)
+
+[node name="House7" parent="3D Container/HouseWalls" unique_id=1897164014 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, 2)
+
+[node name="House8" parent="3D Container/HouseWalls" unique_id=864908395 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, 10)
+
+[node name="House9" parent="3D Container/HouseWalls" unique_id=666728 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, 18)
+
+[node name="House10" parent="3D Container/HouseWalls" unique_id=831173490 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, 26)
+
+[node name="House11" parent="3D Container/HouseWalls" unique_id=1504340320 instance=ExtResource("6_um21f")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.875, 0.375, 34)
+
+[node name="House12" parent="3D Container/HouseWalls" unique_id=982730881 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, 46)
+
+[node name="House13" parent="3D Container/HouseWalls" unique_id=1486376111 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, 38)
+
+[node name="House14" parent="3D Container/HouseWalls" unique_id=1196842439 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, 30)
+
+[node name="House15" parent="3D Container/HouseWalls" unique_id=1004249072 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, 22)
+
+[node name="House16" parent="3D Container/HouseWalls" unique_id=1197116720 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, 14)
+
+[node name="House17" parent="3D Container/HouseWalls" unique_id=905511327 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, 6)
+
+[node name="House18" parent="3D Container/HouseWalls" unique_id=458093179 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, -2)
+
+[node name="House19" parent="3D Container/HouseWalls" unique_id=2116036977 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, -10)
+
+[node name="House20" parent="3D Container/HouseWalls" unique_id=360687055 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, -18)
+
+[node name="House21" parent="3D Container/HouseWalls" unique_id=441338772 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, -26)
+
+[node name="House22" parent="3D Container/HouseWalls" unique_id=1288511847 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, -34)
+
+[node name="House25" parent="3D Container/HouseWalls" unique_id=59776781 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, -42)
+
+[node name="House26" parent="3D Container/HouseWalls" unique_id=2060010028 instance=ExtResource("6_um21f")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.875, 0.375, -50)
+
+[node name="House23" parent="3D Container/HouseWalls" unique_id=419959041 instance=ExtResource("6_um21f")]
+transform = Transform3D(1, 0, -4.371139e-08, 0, 1, 0, 4.371139e-08, 0, 1, 4.375, 0.375, -50.375)
+
+[node name="House24" parent="3D Container/HouseWalls" unique_id=1115675616 instance=ExtResource("6_um21f")]
+transform = Transform3D(1, 0, -4.371139e-08, 0, 1, 0, 4.371139e-08, 0, 1, -3.625, 0.375, -50.375)
+
+[node name="House27" parent="3D Container/HouseWalls" unique_id=1171321694 instance=ExtResource("6_um21f")]
+transform = Transform3D(1, 0, -4.371139e-08, 0, 1, 0, 4.371139e-08, 0, 1, -11.625, 0.375, -50.375)
+
+[node name="House28" parent="3D Container/HouseWalls" unique_id=1554967101 instance=ExtResource("6_um21f")]
+transform = Transform3D(-1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, -1.3113416e-07, 8.875, 0.375, 42)
+
+[node name="House32" parent="3D Container/HouseWalls" unique_id=2038629481 instance=ExtResource("6_um21f")]
+transform = Transform3D(-1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, -1.3113416e-07, 8.875, 0.375, 50)
+
+[node name="House29" parent="3D Container/HouseWalls" unique_id=1713918558 instance=ExtResource("6_um21f")]
+transform = Transform3D(-1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, -1, -4.46875, 0.375, 50.375)
+
+[node name="House30" parent="3D Container/HouseWalls" unique_id=1126266527 instance=ExtResource("6_um21f")]
+transform = Transform3D(-1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, -1, 3.53125, 0.375, 50.375)
+
+[node name="House31" parent="3D Container/HouseWalls" unique_id=1529536764 instance=ExtResource("6_um21f")]
+transform = Transform3D(-1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, -1, 11.53125, 0.375, 50.375)
+
+[node name="Corner" parent="3D Container" unique_id=1418293608 instance=ExtResource("7_5fsmw")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 42)
+
+[node name="Corner2" parent="3D Container" unique_id=1321090860 instance=ExtResource("7_5fsmw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -42)
