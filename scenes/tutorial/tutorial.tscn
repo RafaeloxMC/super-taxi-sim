@@ -387,6 +387,245 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1, -54.375)
 [node name="House39" parent="TemporaryMap/Houses/Small House" unique_id=176978832 instance=ExtResource("12_ks8yg")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -24.375, 1, -58)
 
+[node name="Outer Walls" type="Node3D" parent="TemporaryMap" unique_id=1598859267]
+
+[node name="House" parent="TemporaryMap/Outer Walls" unique_id=1554582185 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 1, -16.875)
+
+[node name="House2" parent="TemporaryMap/Outer Walls" unique_id=232988169 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1, -16.875)
+
+[node name="House3" parent="TemporaryMap/Outer Walls" unique_id=810906111 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1, -16.875)
+
+[node name="House4" parent="TemporaryMap/Outer Walls" unique_id=1666197675 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, -16.875)
+
+[node name="House5" parent="TemporaryMap/Outer Walls" unique_id=1526821232 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -16.875)
+
+[node name="House6" parent="TemporaryMap/Outer Walls" unique_id=1386918308 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -16.875)
+
+[node name="House7" parent="TemporaryMap/Outer Walls" unique_id=584450774 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -16.875)
+
+[node name="House8" parent="TemporaryMap/Outer Walls" unique_id=1763808536 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1, -16.875)
+
+[node name="House9" parent="TemporaryMap/Outer Walls" unique_id=1778913701 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 1, -16.875)
+
+[node name="House10" parent="TemporaryMap/Outer Walls" unique_id=119234391 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 1, -16.875)
+
+[node name="House11" parent="TemporaryMap/Outer Walls" unique_id=1424143994 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 1, -16.875)
+
+[node name="House12" parent="TemporaryMap/Outer Walls" unique_id=205518620 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 1, -16.875)
+
+[node name="House13" parent="TemporaryMap/Outer Walls" unique_id=613040092 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 1, -16.875)
+
+[node name="House14" parent="TemporaryMap/Outer Walls" unique_id=1874423447 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 1, -16.875)
+
+[node name="House15" parent="TemporaryMap/Outer Walls" unique_id=978285572 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74, 1, -16.875)
+
+[node name="House16" parent="TemporaryMap/Outer Walls" unique_id=363462804 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 1, -16.875)
+
+[node name="House17" parent="TemporaryMap/Outer Walls" unique_id=2056641946 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 1, -16.875)
+
+[node name="House18" parent="TemporaryMap/Outer Walls" unique_id=375706229 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 1, -16.875)
+
+[node name="House19" parent="TemporaryMap/Outer Walls" unique_id=1598096544 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106, 1, -16.875)
+
+[node name="House20" parent="TemporaryMap/Outer Walls" unique_id=1660584745 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 1, 84.125)
+
+[node name="House39" parent="TemporaryMap/Outer Walls" unique_id=1797073348 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6, 1, 84.125)
+
+[node name="House40" parent="TemporaryMap/Outer Walls" unique_id=274716020 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -14, 1, 84.125)
+
+[node name="House48" parent="TemporaryMap/Outer Walls" unique_id=1262965612 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -22, 1, 84.125)
+
+[node name="House74" parent="TemporaryMap/Outer Walls" unique_id=567978088 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -94, 1, 84.125)
+
+[node name="House78" parent="TemporaryMap/Outer Walls" unique_id=248287307 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -102, 1, 84.125)
+
+[node name="House79" parent="TemporaryMap/Outer Walls" unique_id=1534693090 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -110, 1, 84.125)
+
+[node name="House21" parent="TemporaryMap/Outer Walls" unique_id=1440900155 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10, 1, 84.125)
+
+[node name="House22" parent="TemporaryMap/Outer Walls" unique_id=885126505 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 18, 1, 84.125)
+
+[node name="House23" parent="TemporaryMap/Outer Walls" unique_id=965350528 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 26, 1, 84.125)
+
+[node name="House24" parent="TemporaryMap/Outer Walls" unique_id=968370987 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 34, 1, 84.125)
+
+[node name="House41" parent="TemporaryMap/Outer Walls" unique_id=415984213 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25, 1, 119.125)
+
+[node name="House42" parent="TemporaryMap/Outer Walls" unique_id=1677955255 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25, 1, 127.125)
+
+[node name="House43" parent="TemporaryMap/Outer Walls" unique_id=1135991137 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25, 1, 135.125)
+
+[node name="House44" parent="TemporaryMap/Outer Walls" unique_id=1391316515 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25, 1, 111.125)
+
+[node name="House45" parent="TemporaryMap/Outer Walls" unique_id=85964699 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25, 1, 103.125)
+
+[node name="House46" parent="TemporaryMap/Outer Walls" unique_id=681780581 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25, 1, 95.125)
+
+[node name="House47" parent="TemporaryMap/Outer Walls" unique_id=637806020 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -25, 1, 87.125)
+
+[node name="House49" parent="TemporaryMap/Outer Walls" unique_id=1555053640 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -91, 1, 103.125)
+
+[node name="House50" parent="TemporaryMap/Outer Walls" unique_id=417069273 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -91, 1, 95.125)
+
+[node name="House51" parent="TemporaryMap/Outer Walls" unique_id=598846328 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -91, 1, 87.125)
+
+[node name="House52" parent="TemporaryMap/Outer Walls" unique_id=214502062 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -91, 1, 111.125)
+
+[node name="House53" parent="TemporaryMap/Outer Walls" unique_id=979924759 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -91, 1, 119.125)
+
+[node name="House54" parent="TemporaryMap/Outer Walls" unique_id=2108450392 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -91, 1, 127.125)
+
+[node name="House55" parent="TemporaryMap/Outer Walls" unique_id=2143205310 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -91, 1, 135.125)
+
+[node name="House25" parent="TemporaryMap/Outer Walls" unique_id=1746817819 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 42, 1, 84.125)
+
+[node name="House69" parent="TemporaryMap/Outer Walls" unique_id=1898548617 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -74, 1, 137.125)
+
+[node name="House70" parent="TemporaryMap/Outer Walls" unique_id=67405173 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -82, 1, 137.125)
+
+[node name="House71" parent="TemporaryMap/Outer Walls" unique_id=996933894 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -90, 1, 137.125)
+
+[node name="House72" parent="TemporaryMap/Outer Walls" unique_id=1496165548 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -98, 1, 137.125)
+
+[node name="House73" parent="TemporaryMap/Outer Walls" unique_id=2103355529 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -66, 1, 137.125)
+
+[node name="House75" parent="TemporaryMap/Outer Walls" unique_id=1748123262 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -42, 1, 137.125)
+
+[node name="House76" parent="TemporaryMap/Outer Walls" unique_id=900389909 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -34, 1, 137.125)
+
+[node name="House77" parent="TemporaryMap/Outer Walls" unique_id=136221632 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -26, 1, 137.125)
+
+[node name="House26" parent="TemporaryMap/Outer Walls" unique_id=1127936641 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 83.125)
+
+[node name="House27" parent="TemporaryMap/Outer Walls" unique_id=1769904642 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 75.125)
+
+[node name="House28" parent="TemporaryMap/Outer Walls" unique_id=983979934 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 67.125)
+
+[node name="House29" parent="TemporaryMap/Outer Walls" unique_id=1942151220 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 59.125)
+
+[node name="House30" parent="TemporaryMap/Outer Walls" unique_id=576831945 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 51.125)
+
+[node name="House31" parent="TemporaryMap/Outer Walls" unique_id=1001494229 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 43.125)
+
+[node name="House32" parent="TemporaryMap/Outer Walls" unique_id=2032673720 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 35.125)
+
+[node name="House33" parent="TemporaryMap/Outer Walls" unique_id=659684534 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 27.125)
+
+[node name="House34" parent="TemporaryMap/Outer Walls" unique_id=1121788327 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 19.125)
+
+[node name="House35" parent="TemporaryMap/Outer Walls" unique_id=1786081787 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 11.125)
+
+[node name="House36" parent="TemporaryMap/Outer Walls" unique_id=646153124 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, 3.125)
+
+[node name="House37" parent="TemporaryMap/Outer Walls" unique_id=264886726 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, -4.875)
+
+[node name="House38" parent="TemporaryMap/Outer Walls" unique_id=534027973 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 1, -12.875)
+
+[node name="House56" parent="TemporaryMap/Outer Walls" unique_id=1389635801 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, -12.875)
+
+[node name="House57" parent="TemporaryMap/Outer Walls" unique_id=767100655 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, -4.875)
+
+[node name="House58" parent="TemporaryMap/Outer Walls" unique_id=171658117 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 3.125)
+
+[node name="House59" parent="TemporaryMap/Outer Walls" unique_id=296787040 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 11.125)
+
+[node name="House60" parent="TemporaryMap/Outer Walls" unique_id=1385818872 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 19.125)
+
+[node name="House61" parent="TemporaryMap/Outer Walls" unique_id=628758353 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 27.125)
+
+[node name="House62" parent="TemporaryMap/Outer Walls" unique_id=207754341 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 35.125)
+
+[node name="House63" parent="TemporaryMap/Outer Walls" unique_id=784879852 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 43.125)
+
+[node name="House64" parent="TemporaryMap/Outer Walls" unique_id=523527509 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 51.125)
+
+[node name="House65" parent="TemporaryMap/Outer Walls" unique_id=1634119369 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 59.125)
+
+[node name="House66" parent="TemporaryMap/Outer Walls" unique_id=1290943725 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 67.125)
+
+[node name="House67" parent="TemporaryMap/Outer Walls" unique_id=1062125261 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 75.125)
+
+[node name="House68" parent="TemporaryMap/Outer Walls" unique_id=1986087981 instance=ExtResource("12_ks8yg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -110, 1, 83.125)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1309156394]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.245623, 0)
 light_angular_distance = 32.75
