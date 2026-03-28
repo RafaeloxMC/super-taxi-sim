@@ -533,9 +533,6 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -82,
 [node name="House71" parent="TemporaryMap/Outer Walls" unique_id=996933894 instance=ExtResource("12_ks8yg")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -90, 1, 137.125)
 
-[node name="House72" parent="TemporaryMap/Outer Walls" unique_id=1496165548 instance=ExtResource("12_ks8yg")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -98, 1, 137.125)
-
 [node name="House73" parent="TemporaryMap/Outer Walls" unique_id=2103355529 instance=ExtResource("12_ks8yg")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -66, 1, 137.125)
 
