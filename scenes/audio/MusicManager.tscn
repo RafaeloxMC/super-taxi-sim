@@ -31,3 +31,5 @@ songs = Array[ExtResource("2_ufibd")]([SubResource("Resource_cdgwq"), SubResourc
 stream = ExtResource("1_6kfwh")
 autoplay = true
 bus = &"Music"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

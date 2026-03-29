@@ -27,3 +27,20 @@ func play(song: Song) -> void:
 	audio_stream_player.stop()
 	audio_stream_player.stream = song.audio_stream
 	audio_stream_player.play()
+
+func next() -> void:
+	if songs.find(current_song) + 1 < songs.size():
+		play(songs[songs.find(current_song) + 1])
+	else:
+		play(songs[0])
+		
+func previous() -> void:
+	if songs.find(current_song) - 1 <= songs.size():
+		play(songs[songs.find(current_song) - 1])
+	else:
+		play(songs[songs.size() - 1])
+
+
+func _on_audio_stream_player_finished() -> void:
+	if is_playing():
+		next()

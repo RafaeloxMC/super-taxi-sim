@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 		cover.texture = default_cover
 
 func _on_previous_pressed() -> void:
-	pass # Replace with function body.
+	MusicManager.previous()
 
 func _on_play_pause_pressed() -> void:
 	if MusicManager.is_playing():
@@ -45,4 +45,4 @@ func _on_play_pause_pressed() -> void:
 		play_pause.text = "Pause"
 
 func _on_next_pressed() -> void:
-	pass # Replace with function body.
+	MusicManager.next()
