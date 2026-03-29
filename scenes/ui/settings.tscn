@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://n0gdpr68s0ip"]
+[gd_scene format=3 uid="uid://n0gdpr68s0ip"]
 
 [ext_resource type="Script" uid="uid://c2uiqivkgfu2x" path="res://scripts/ui/settings.gd" id="1_f4mfi"]
 [ext_resource type="Theme" uid="uid://nfbuw1d6mf3f" path="res://assets/themes/ui.tres" id="3_es4n0"]
 
-[node name="Settings" type="Control"]
+[node name="Settings" type="Control" unique_id=741272411]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,12 +12,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f4mfi")
 
-[node name="UI Container" type="Control" parent="."]
+[node name="UI Container" type="Control" parent="." unique_id=668412760]
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Title" type="Label" parent="UI Container"]
+[node name="Title" type="Label" parent="UI Container" unique_id=1862102414]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 160.0
@@ -28,7 +28,7 @@ theme_override_font_sizes/font_size = 48
 text = "Super Taxi Sim"
 horizontal_alignment = 1
 
-[node name="Subtitle" type="Label" parent="UI Container"]
+[node name="Subtitle" type="Label" parent="UI Container" unique_id=1293890184]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 216.0
@@ -39,21 +39,21 @@ theme_override_font_sizes/font_size = 24
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="Buttons" type="Control" parent="UI Container"]
+[node name="Buttons" type="Control" parent="UI Container" unique_id=274347360]
 anchors_preset = 0
 offset_left = 80.0
 offset_top = 360.0
 offset_right = 369.0
 offset_bottom = 560.0
 
-[node name="Setting 1" type="Button" parent="UI Container/Buttons"]
+[node name="Unit" type="Button" parent="UI Container/Buttons" unique_id=1219414934]
 layout_mode = 0
 offset_right = 289.0
 offset_bottom = 60.0
 theme = ExtResource("3_es4n0")
-text = "Setting 1"
+text = "Unit km/h"
 
-[node name="Credits" type="Button" parent="UI Container/Buttons"]
+[node name="Credits" type="Button" parent="UI Container/Buttons" unique_id=1576675630]
 layout_mode = 0
 offset_top = 70.0
 offset_right = 289.0
@@ -61,7 +61,7 @@ offset_bottom = 130.0
 theme = ExtResource("3_es4n0")
 text = "Credits"
 
-[node name="Back" type="Button" parent="UI Container/Buttons"]
+[node name="Back" type="Button" parent="UI Container/Buttons" unique_id=866886770]
 layout_mode = 0
 offset_top = 140.0
 offset_right = 289.0
@@ -69,6 +69,6 @@ offset_bottom = 200.0
 theme = ExtResource("3_es4n0")
 text = "Back"
 
-[connection signal="pressed" from="UI Container/Buttons/Setting 1" to="." method="_on_setting_1_pressed"]
+[connection signal="pressed" from="UI Container/Buttons/Unit" to="." method="_on_setting_1_pressed"]
 [connection signal="pressed" from="UI Container/Buttons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="UI Container/Buttons/Back" to="." method="_on_back_pressed"]

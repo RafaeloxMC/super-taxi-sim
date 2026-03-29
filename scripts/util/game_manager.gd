@@ -17,6 +17,9 @@ var transactions: Array[Transaction] = []
 # Boosts system
 var boosts: Array[String] = []
 
+# Settings
+var use_kmh: bool = true
+
 # Time system
 
 var day: int = 1

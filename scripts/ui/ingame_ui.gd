@@ -34,7 +34,7 @@ func money_update(old: float, new: float, _reason: String) -> void:
 	node.tick()
 
 func _process(_delta: float) -> void:
-	speed_label.text = str(abs(roundi(GameManager.speed))) + " km/h (" + str(roundi(GameManager.speed_limit)) + " km/h)"
+	speed_label.text = str(abs(roundi(GameManager.speed if GameManager.use_kmh else GameManager.speed * 0.6213712))) + " " + ("km/h" if GameManager.use_kmh else "mi/h") + " (" + str(roundi(GameManager.speed_limit if GameManager.use_kmh else GameManager.speed_limit * 0.6213712)) + " " + ("km/h" if GameManager.use_kmh else "mi/h") + ")"
 	if GameManager.speed > GameManager.speed_limit:
 		var col = Color(0.965, 0.347, 0.347, 1.0)
 		col.s = clamp((GameManager.speed - GameManager.speed_limit) / 100 * 4, 0, 1)
