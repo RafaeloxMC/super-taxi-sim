@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmnja6y1kvjfo"]
+[gd_scene format=3 uid="uid://dmnja6y1kvjfo"]
 
 [ext_resource type="AudioStream" uid="uid://c0nekrnjahiu4" path="res://assets/music/SuperTaxiSimTheme.wav" id="1_6kfwh"]
 [ext_resource type="Script" uid="uid://ce0pyierl33ng" path="res://scripts/audio/music_manager.gd" id="1_mvwer"]
 [ext_resource type="Script" uid="uid://bw17wkguuwtqg" path="res://scripts/types/song.gd" id="2_ufibd"]
 [ext_resource type="Texture2D" uid="uid://c51rvol68o8er" path="res://assets/music/covers/super-taxi-sim-theme-song.png" id="4_cdgwq"]
+[ext_resource type="AudioStream" uid="uid://c3p8onigpsall" path="res://assets/music/SynthwaveAlt.wav" id="5_an8ct"]
+[ext_resource type="Texture2D" uid="uid://dsblrhe5f8qxp" path="res://assets/music/covers/synthwave-alt.jpg" id="6_rdxe3"]
 
 [sub_resource type="Resource" id="Resource_cdgwq"]
 script = ExtResource("2_ufibd")
@@ -13,11 +15,19 @@ audio_stream = ExtResource("1_6kfwh")
 cover = ExtResource("4_cdgwq")
 metadata/_custom_type_script = "uid://bw17wkguuwtqg"
 
-[node name="MusicManager" type="Node"]
-script = ExtResource("1_mvwer")
-songs = Array[ExtResource("2_ufibd")]([SubResource("Resource_cdgwq")])
+[sub_resource type="Resource" id="Resource_w80og"]
+script = ExtResource("2_ufibd")
+name = "Synthwave Alternative"
+artist = "xvcf"
+audio_stream = ExtResource("5_an8ct")
+cover = ExtResource("6_rdxe3")
+metadata/_custom_type_script = "uid://bw17wkguuwtqg"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicManager" type="Node" unique_id=1951189615]
+script = ExtResource("1_mvwer")
+songs = Array[ExtResource("2_ufibd")]([SubResource("Resource_cdgwq"), SubResource("Resource_w80og")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1143180029]
 stream = ExtResource("1_6kfwh")
 autoplay = true
 bus = &"Music"
