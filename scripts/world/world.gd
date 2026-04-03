@@ -17,3 +17,5 @@ func _ready() -> void:
 	CustomerManager.spawn_customer()
 	CustomerManager.spawn_customer()
 	CustomerManager.spawn_customer()
+	if GameManager.customer:
+		CustomerManager.spawn_dropoff(GameManager.customer)
