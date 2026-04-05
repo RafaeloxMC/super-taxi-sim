@@ -92,15 +92,16 @@ func dialog_timeout(time: float) -> void:
 	var elapsed: float = 0.0
 
 	while elapsed < time:
-		if get_tree():
-			await get_tree().create_timer(step_size).timeout
+		var tree = get_tree()
+		if tree:
+			await tree.create_timer(step_size).timeout
+			if !is_inside_tree():
+				return
 			if current_dialog != dialog_queue[0]:
 				return
 			if dialog_timeout_paused:
 				continue
-			
 			elapsed += step_size
-			
 			var t: float = elapsed / time
 			progress_bar.size.x = lerp(initial_dialog_progress_bar_width, 0.0, t)
 	dialog_box.hide()
